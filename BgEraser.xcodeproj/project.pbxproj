@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */; };
+		BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1728A13FCE00681BCE /* AppDelegate.swift */; };
+		BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */; };
+		BDD06C1C28A13FCE00681BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1B28A13FCE00681BCE /* ViewController.swift */; };
+		BDD06C1F28A13FCE00681BCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD06C1D28A13FCE00681BCE /* Main.storyboard */; };
+		BDD06C2128A13FD100681BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD06C2028A13FD100681BCE /* Assets.xcassets */; };
+		BDD06C2428A13FD100681BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD06C2228A13FD100681BCE /* LaunchScreen.storyboard */; };
+		BDD06C2E28A141CF00681BCE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C2C28A141CF00681BCE /* SideMenuViewController.swift */; };
+		BDD06C2F28A141CF00681BCE /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C2D28A141CF00681BCE /* SideMenuItem.swift */; };
+		BDD06C3428A14B7800681BCE /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C3328A14B7800681BCE /* AboutVC.swift */; };
+		BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C3528A14B9E00681BCE /* TermsVC.swift */; };
+		BDD06C3828A14BC500681BCE /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C3728A14BC500681BCE /* PrivacyVC.swift */; };
+		D4DDB9C228AA149000BB9ADD /* RemoveBackgroundCoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C128AA149000BB9ADD /* RemoveBackgroundCoreML.swift */; };
+		D4DDB9D528AA14EE00BB9ADD /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C428AA14EE00BB9ADD /* Array+Extensions.swift */; };
+		D4DDB9D628AA14EE00BB9ADD /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C528AA14EE00BB9ADD /* Math.swift */; };
+		D4DDB9D728AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C628AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift */; };
+		D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C728AA14EE00BB9ADD /* Predictions.swift */; };
+		D4DDB9D928AA14EE00BB9ADD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C828AA14EE00BB9ADD /* UIImage+Extensions.swift */; };
+		D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9C928AA14EE00BB9ADD /* CGImagePropertyOrientation.swift */; };
+		D4DDB9DB28AA14EE00BB9ADD /* UIImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CA28AA14EE00BB9ADD /* UIImage+RawBytes.swift */; };
+		D4DDB9DC28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CB28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift */; };
+		D4DDB9DD28AA14EE00BB9ADD /* MLModel+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CC28AA14EE00BB9ADD /* MLModel+Images.swift */; };
+		D4DDB9DE28AA14EE00BB9ADD /* CoreML+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CD28AA14EE00BB9ADD /* CoreML+Combine.swift */; };
+		D4DDB9DF28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CE28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift */; };
+		D4DDB9E028AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9CF28AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift */; };
+		D4DDB9E128AA14EE00BB9ADD /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9D028AA14EE00BB9ADD /* NonMaxSuppression.swift */; };
+		D4DDB9E228AA14EE00BB9ADD /* CGImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9D128AA14EE00BB9ADD /* CGImage+RawBytes.swift */; };
+		D4DDB9E328AA14EE00BB9ADD /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9D228AA14EE00BB9ADD /* MLMultiArray+Image.swift */; };
+		D4DDB9E428AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9D328AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift */; };
+		D4DDB9E528AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9D428AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift */; };
+		D4DDB9E928AA184800BB9ADD /* cartoon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9E828AA184800BB9ADD /* cartoon.mlmodel */; };
+		D4DDB9F028AA262000BB9ADD /* cuphead.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9EB28AA262000BB9ADD /* cuphead.mlmodel */; };
+		D4DDB9F528AA27F900BB9ADD /* paint.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9F428AA27F900BB9ADD /* paint.mlmodel */; };
+		D4DDB9FD28AA363000BB9ADD /* bgRemover.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9FC28AA363000BB9ADD /* bgRemover.mlpackage */; };
+		D4DDBA0028AA3D0700BB9ADD /* night.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9FE28AA3D0700BB9ADD /* night.mlmodel */; };
+		D4DDBA0128AA3D0700BB9ADD /* mosaic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */; };
+		D4EA808A28AD3FD200730154 /* EffectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA808928AD3FD200730154 /* EffectsCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.debug.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.debug.xcconfig"; sourceTree = "<group>"; };
+		7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
+		BDD06C1428A13FCE00681BCE /* BgEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BgEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDD06C1728A13FCE00681BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BDD06C1B28A13FCE00681BCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDD06C1E28A13FCE00681BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDD06C2028A13FD100681BCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDD06C2328A13FD100681BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BDD06C2528A13FD100681BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDD06C2C28A141CF00681BCE /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		BDD06C2D28A141CF00681BCE /* SideMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
+		BDD06C3328A14B7800681BCE /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		BDD06C3528A14B9E00681BCE /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		BDD06C3728A14BC500681BCE /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
+		D4DDB9C128AA149000BB9ADD /* RemoveBackgroundCoreML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveBackgroundCoreML.swift; sourceTree = "<group>"; };
+		D4DDB9C428AA14EE00BB9ADD /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		D4DDB9C528AA14EE00BB9ADD /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		D4DDB9C628AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		D4DDB9C728AA14EE00BB9ADD /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
+		D4DDB9C828AA14EE00BB9ADD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		D4DDB9C928AA14EE00BB9ADD /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		D4DDB9CA28AA14EE00BB9ADD /* UIImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RawBytes.swift"; sourceTree = "<group>"; };
+		D4DDB9CB28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Helpers.swift"; sourceTree = "<group>"; };
+		D4DDB9CC28AA14EE00BB9ADD /* MLModel+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLModel+Images.swift"; sourceTree = "<group>"; };
+		D4DDB9CD28AA14EE00BB9ADD /* CoreML+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreML+Combine.swift"; sourceTree = "<group>"; };
+		D4DDB9CE28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Create.swift"; sourceTree = "<group>"; };
+		D4DDB9CF28AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		D4DDB9D028AA14EE00BB9ADD /* NonMaxSuppression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
+		D4DDB9D128AA14EE00BB9ADD /* CGImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+RawBytes.swift"; sourceTree = "<group>"; };
+		D4DDB9D228AA14EE00BB9ADD /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
+		D4DDB9D328AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Resize.swift"; sourceTree = "<group>"; };
+		D4DDB9D428AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
+		D4DDB9E828AA184800BB9ADD /* cartoon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cartoon.mlmodel; sourceTree = "<group>"; };
+		D4DDB9EB28AA262000BB9ADD /* cuphead.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cuphead.mlmodel; sourceTree = "<group>"; };
+		D4DDB9F428AA27F900BB9ADD /* paint.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = paint.mlmodel; sourceTree = "<group>"; };
+		D4DDB9FC28AA363000BB9ADD /* bgRemover.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = bgRemover.mlpackage; sourceTree = "<group>"; };
+		D4DDB9FE28AA3D0700BB9ADD /* night.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = night.mlmodel; sourceTree = "<group>"; };
+		D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mosaic.mlmodel; sourceTree = "<group>"; };
+		D4EA808928AD3FD200730154 /* EffectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDD06C1128A13FCE00681BCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FB42B8C92DCCCE19CC8AEFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */,
+				B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6226CFA6D922713172C1A9DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDD06C0B28A13FCE00681BCE = {
+			isa = PBXGroup;
+			children = (
+				BDD06C1628A13FCE00681BCE /* BgEraser */,
+				BDD06C1528A13FCE00681BCE /* Products */,
+				4FB42B8C92DCCCE19CC8AEFA /* Pods */,
+				6226CFA6D922713172C1A9DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BDD06C1528A13FCE00681BCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDD06C1428A13FCE00681BCE /* BgEraser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDD06C1628A13FCE00681BCE /* BgEraser */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB9C128AA149000BB9ADD /* RemoveBackgroundCoreML.swift */,
+				D4DDB9C328AA14EE00BB9ADD /* CoreMLHelpers */,
+				D4DDB9BE28AA11D300BB9ADD /* Models */,
+				BDD06C3228A1420500681BCE /* Storyboard */,
+				BDD06C3128A141F100681BCE /* ViewControllers */,
+				BDD06C3028A141DA00681BCE /* AppDelegate */,
+				BDD06C2B28A141CF00681BCE /* SideMenu */,
+				BDD06C2028A13FD100681BCE /* Assets.xcassets */,
+				BDD06C2528A13FD100681BCE /* Info.plist */,
+			);
+			path = BgEraser;
+			sourceTree = "<group>";
+		};
+		BDD06C2B28A141CF00681BCE /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BDD06C2C28A141CF00681BCE /* SideMenuViewController.swift */,
+				BDD06C2D28A141CF00681BCE /* SideMenuItem.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		BDD06C3028A141DA00681BCE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BDD06C1728A13FCE00681BCE /* AppDelegate.swift */,
+				BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BDD06C3128A141F100681BCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4EA808928AD3FD200730154 /* EffectsCollectionViewCell.swift */,
+				BDD06C1B28A13FCE00681BCE /* ViewController.swift */,
+				BDD06C3328A14B7800681BCE /* AboutVC.swift */,
+				BDD06C3528A14B9E00681BCE /* TermsVC.swift */,
+				BDD06C3728A14BC500681BCE /* PrivacyVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BDD06C3228A1420500681BCE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BDD06C1D28A13FCE00681BCE /* Main.storyboard */,
+				BDD06C2228A13FD100681BCE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D4DDB9BE28AA11D300BB9ADD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB9F428AA27F900BB9ADD /* paint.mlmodel */,
+				D4DDB9E828AA184800BB9ADD /* cartoon.mlmodel */,
+				D4DDB9EB28AA262000BB9ADD /* cuphead.mlmodel */,
+				D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */,
+				D4DDB9FE28AA3D0700BB9ADD /* night.mlmodel */,
+				D4DDB9FC28AA363000BB9ADD /* bgRemover.mlpackage */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4DDB9C328AA14EE00BB9ADD /* CoreMLHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB9C428AA14EE00BB9ADD /* Array+Extensions.swift */,
+				D4DDB9C528AA14EE00BB9ADD /* Math.swift */,
+				D4DDB9C628AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift */,
+				D4DDB9C728AA14EE00BB9ADD /* Predictions.swift */,
+				D4DDB9C828AA14EE00BB9ADD /* UIImage+Extensions.swift */,
+				D4DDB9C928AA14EE00BB9ADD /* CGImagePropertyOrientation.swift */,
+				D4DDB9CA28AA14EE00BB9ADD /* UIImage+RawBytes.swift */,
+				D4DDB9CB28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift */,
+				D4DDB9CC28AA14EE00BB9ADD /* MLModel+Images.swift */,
+				D4DDB9CD28AA14EE00BB9ADD /* CoreML+Combine.swift */,
+				D4DDB9CE28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift */,
+				D4DDB9CF28AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift */,
+				D4DDB9D028AA14EE00BB9ADD /* NonMaxSuppression.swift */,
+				D4DDB9D128AA14EE00BB9ADD /* CGImage+RawBytes.swift */,
+				D4DDB9D228AA14EE00BB9ADD /* MLMultiArray+Image.swift */,
+				D4DDB9D328AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift */,
+				D4DDB9D428AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift */,
+			);
+			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDD06C1328A13FCE00681BCE /* BgEraser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDD06C2828A13FD100681BCE /* Build configuration list for PBXNativeTarget "BgEraser" */;
+			buildPhases = (
+				376BD48A5867D52AF23239CA /* [CP] Check Pods Manifest.lock */,
+				BDD06C1028A13FCE00681BCE /* Sources */,
+				BDD06C1128A13FCE00681BCE /* Frameworks */,
+				BDD06C1228A13FCE00681BCE /* Resources */,
+				4ADB542C557D1686DC8D0CDE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BgEraser;
+			packageProductDependencies = (
+			);
+			productName = BgEraser;
+			productReference = BDD06C1428A13FCE00681BCE /* BgEraser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDD06C0C28A13FCE00681BCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					BDD06C1328A13FCE00681BCE = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = BDD06C0F28A13FCE00681BCE /* Build configuration list for PBXProject "BgEraser" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDD06C0B28A13FCE00681BCE;
+			packageReferences = (
+			);
+			productRefGroup = BDD06C1528A13FCE00681BCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDD06C1328A13FCE00681BCE /* BgEraser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDD06C1228A13FCE00681BCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDD06C2428A13FD100681BCE /* LaunchScreen.storyboard in Resources */,
+				BDD06C2128A13FD100681BCE /* Assets.xcassets in Resources */,
+				BDD06C1F28A13FCE00681BCE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		376BD48A5867D52AF23239CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BgEraser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ADB542C557D1686DC8D0CDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BgEraser/Pods-BgEraser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BgEraser/Pods-BgEraser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BgEraser/Pods-BgEraser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDD06C1028A13FCE00681BCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDD06C2E28A141CF00681BCE /* SideMenuViewController.swift in Sources */,
+				D4DDB9D728AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift in Sources */,
+				D4DDB9E228AA14EE00BB9ADD /* CGImage+RawBytes.swift in Sources */,
+				D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */,
+				D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */,
+				D4DDB9E528AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift in Sources */,
+				BDD06C3828A14BC500681BCE /* PrivacyVC.swift in Sources */,
+				D4DDB9E128AA14EE00BB9ADD /* NonMaxSuppression.swift in Sources */,
+				D4DDBA0128AA3D0700BB9ADD /* mosaic.mlmodel in Sources */,
+				BDD06C2F28A141CF00681BCE /* SideMenuItem.swift in Sources */,
+				D4DDB9DF28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift in Sources */,
+				D4DDB9D528AA14EE00BB9ADD /* Array+Extensions.swift in Sources */,
+				D4DDBA0028AA3D0700BB9ADD /* night.mlmodel in Sources */,
+				BDD06C3428A14B7800681BCE /* AboutVC.swift in Sources */,
+				BDD06C1C28A13FCE00681BCE /* ViewController.swift in Sources */,
+				D4DDB9F528AA27F900BB9ADD /* paint.mlmodel in Sources */,
+				D4DDB9F028AA262000BB9ADD /* cuphead.mlmodel in Sources */,
+				D4DDB9E428AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift in Sources */,
+				BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */,
+				BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */,
+				D4EA808A28AD3FD200730154 /* EffectsCollectionViewCell.swift in Sources */,
+				D4DDB9DB28AA14EE00BB9ADD /* UIImage+RawBytes.swift in Sources */,
+				BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */,
+				D4DDB9E928AA184800BB9ADD /* cartoon.mlmodel in Sources */,
+				D4DDB9DD28AA14EE00BB9ADD /* MLModel+Images.swift in Sources */,
+				D4DDB9D928AA14EE00BB9ADD /* UIImage+Extensions.swift in Sources */,
+				D4DDB9E028AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift in Sources */,
+				D4DDB9E328AA14EE00BB9ADD /* MLMultiArray+Image.swift in Sources */,
+				D4DDB9C228AA149000BB9ADD /* RemoveBackgroundCoreML.swift in Sources */,
+				D4DDB9DE28AA14EE00BB9ADD /* CoreML+Combine.swift in Sources */,
+				D4DDB9DC28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift in Sources */,
+				D4DDB9FD28AA363000BB9ADD /* bgRemover.mlpackage in Sources */,
+				D4DDB9D628AA14EE00BB9ADD /* Math.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BDD06C1D28A13FCE00681BCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDD06C1E28A13FCE00681BCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDD06C2228A13FD100681BCE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDD06C2328A13FD100681BCE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDD06C2628A13FD100681BCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDD06C2728A13FD100681BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDD06C2928A13FD100681BCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9YG7G7YB2J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BgEraser/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.BgEraser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDD06C2A28A13FD100681BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9YG7G7YB2J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BgEraser/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.BgEraser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDD06C0F28A13FCE00681BCE /* Build configuration list for PBXProject "BgEraser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDD06C2628A13FD100681BCE /* Debug */,
+				BDD06C2728A13FD100681BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDD06C2828A13FD100681BCE /* Build configuration list for PBXNativeTarget "BgEraser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDD06C2928A13FD100681BCE /* Debug */,
+				BDD06C2A28A13FD100681BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDD06C0C28A13FCE00681BCE /* Project object */;
+}
