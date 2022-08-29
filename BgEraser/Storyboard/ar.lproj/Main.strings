@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "309-3p-54c"; */
+"309-3p-54c.text" = "Terms and Conditions";
+
+/* Class = "UIButton"; configuration.title = "Create Effect"; ObjectID = "3dm-YW-vkO"; */
+"3dm-YW-vkO.configuration.title" = "Create Effect";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3dm-YW-vkO"; */
+"3dm-YW-vkO.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "AML-dX-f5O"; */
+"AML-dX-f5O.text" = "Privacy Policy";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CCE-hc-IXd"; */
+"CCE-hc-IXd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Photo Editor"; ObjectID = "GzN-cZ-27W"; */
+"GzN-cZ-27W.text" = "Photo Editor";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KJU-7o-kla"; */
+"KJU-7o-kla.text" = "Label";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "LI7-2b-DvQ"; */
+"LI7-2b-DvQ.text" = "About Us";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NlE-OH-NXC"; */
+"NlE-OH-NXC.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "U3x-Is-vfg"; */
+"U3x-Is-vfg.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "X6Y-nF-lhK"; */
+"X6Y-nF-lhK.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Y2t-Df-Grf"; */
+"Y2t-Df-Grf.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cOc-RE-bKc"; */
+"cOc-RE-bKc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Photo Editor"; ObjectID = "cjZ-Oz-X7k"; */
+"cjZ-Oz-X7k.text" = "Photo Editor";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kNA-tv-Frz"; */
+"kNA-tv-Frz.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Photo Editor"; ObjectID = "t5C-D5-uym"; */
+"t5C-D5-uym.text" = "Photo Editor";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tgu-Kv-0fa"; */
+"tgu-Kv-0fa.text" = "Label";

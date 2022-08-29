@@ -5,6 +5,7 @@ ${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework
 ${BUILT_PRODUCTS_DIR}/SSCustomSideMenu/SSCustomSideMenu.framework
 ${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework
 ${BUILT_PRODUCTS_DIR}/SwiftLoader/SwiftLoader.framework
+${BUILT_PRODUCTS_DIR}/ToastViewSwift/ToastViewSwift.framework
 ${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework
 ${BUILT_PRODUCTS_DIR}/ZLImageEditor/ZLImageEditor.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

@@ -27,6 +27,8 @@
 	<string>Please allow $(PRODUCT_NAME) to access your photo  library in order to uses picture</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Please allow $(PRODUCT_NAME) to access your photo  library in order to save picture</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6927425601931895~9576633815</string>
 </dict>
