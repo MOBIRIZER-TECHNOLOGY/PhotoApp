@@ -31,8 +31,7 @@ class SideMenuViewController: SSSideMenuContainerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSideMenu()
-        
-        self.view.backgroundColor = .clear
+        self.view.backgroundColor = .yellow
     }
     
     private func configureSideMenu() {
@@ -66,7 +65,7 @@ class SideMenuViewController: SSSideMenuContainerViewController {
         sideMenuConfig.sideMenuPlacement = .left // .right
         sideMenuConfig.menuWidth = UIScreen.main.bounds.width * SideMenuWidth.Quarter.valuesInFloat
         
-        let homeVC = storyboard?.instantiateViewController(withIdentifier: "ViewController")
+        let homeVC = storyboard?.instantiateViewController(withIdentifier: "NavigationVC")
         let aboutVC = storyboard?.instantiateViewController(withIdentifier: "AboutVC")
         let termsVC = storyboard?.instantiateViewController(withIdentifier: "TermsVC")
         let privacyVC = storyboard?.instantiateViewController(withIdentifier: "PrivacyVC")

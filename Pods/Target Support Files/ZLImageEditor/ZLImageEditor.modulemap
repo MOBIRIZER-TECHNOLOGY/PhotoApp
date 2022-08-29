@@ -1,6 +1,0 @@
-framework module ZLImageEditor {
-  umbrella header "ZLImageEditor-umbrella.h"
-
-  export *
-  module * { export * }
-}

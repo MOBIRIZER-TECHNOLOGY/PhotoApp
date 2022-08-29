@@ -17,6 +17,8 @@ target 'BgEraser' do
   
   pod 'YPImagePicker'
   pod 'ZLImageEditor'
+  
+  pod "ToastViewSwift"
 
 
 end

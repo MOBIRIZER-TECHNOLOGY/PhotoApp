@@ -10,14 +10,13 @@ import SSCustomSideMenu
 import SwiftLoader
 import WebKit
 
-class AboutVC: UIViewController {
+class AboutVC: BaseVC {
     
     @IBOutlet weak var sideMenuBtn: SSMenuButton!
     @IBOutlet weak var webview: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         SwiftLoader.show(title: "Loading...", animated: true)
         self.sideMenuBtn.setTitle("", for: .normal)
         webview.navigationDelegate = self
