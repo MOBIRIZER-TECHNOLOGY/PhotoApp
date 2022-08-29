@@ -27,6 +27,10 @@ class EffectVC: BaseVC {
         self.backButton.setTitle(String.empty, for: .normal)
         self.shareBtn.setTitle("", for: .normal)
         self.imageView?.image =  UIImage(named: "placeholder")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //Call First Style of effect
         self.selectItemAt(indexPath: IndexPath(row: 0, section: 0))
     }
@@ -52,21 +56,48 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func createRealisticCartoon(indexPath: IndexPath) {
-        SwiftLoader.show(title: "Processing please wait...", animated: true)
-        let effectName = self.effectBackgrounds[indexPath.row].name
-        let effectBackgroundImageName = self.effectBackgrounds[indexPath.row].backgroundImage
-        let effectBackImage = UIImage(named:effectBackgroundImageName)
-        var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-        faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-        var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-        faceCartoonImage = faceCartoonImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-//        var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: faceCartoonImage!)
-        let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
-        self.imageView?.image = swappedImage
-        Router.shared.outPutImage = swappedImage
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            SwiftLoader.hide()
+       
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+            
+            DispatchQueue.main.async {
+                SwiftLoader.show(title: "Processing please wait...", animated: true)
+            }
+            
+            let effectName = self.effectBackgrounds[indexPath.row].name
+            let effectBackgroundImageName = self.effectBackgrounds[indexPath.row].backgroundImage
+            let effectBackImage = UIImage(named:effectBackgroundImageName)
+             
+            debugPrint("faceRectangle start")
+            var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
+            
+            debugPrint("removeBackground start")
+
+            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
+            
+            debugPrint("applyPaintEffects start")
+
+            var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
+            
+            debugPrint("removeBackground start")
+
+            faceCartoonImage = faceCartoonImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
+            
+            debugPrint("saliencyBlend start")
+
+            let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
+            Router.shared.outPutImage = swappedImage
+         
+            debugPrint("processing stop")
+
+            DispatchQueue.main.async {
+                self.imageView?.image = swappedImage
+                SwiftLoader.hide()
+                debugPrint("SwiftLoader hide")
+
+            }
+            
         }
+
     }
     
 

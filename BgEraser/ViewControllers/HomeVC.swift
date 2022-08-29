@@ -29,22 +29,24 @@ class ViewController: BaseVC {
         config.screens = [.library, .photo]
         config.library.mediaType = .photo
         let picker = YPImagePicker(configuration: config)
-        picker.didFinishPicking { [self, unowned picker] items, _ in
-            if let photo = items.singlePhoto {
-                Router.shared.image = photo.image
-                var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
-                if (faceImage != nil) {
-                    let vc = ImageSelectorVC.instantiate()
-                    self.navigationController?.pushViewController(vc, animated: true)
+        picker.didFinishPicking { [self, unowned picker] items, cancelled in
+            picker.dismiss(animated: true) {
+                if cancelled == false {
+                if let photo = items.singlePhoto {
+                    Router.shared.image = photo.image
+                    var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
+                    if (faceImage != nil) {
+                        let vc = ImageSelectorVC.instantiate()
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    else {
+                        print("FACE NOT FOUND")
+                        self.showToast(controller: self.navigationController!, message: "Please select different Image as Unable to find face in that Image", seconds: 10.0)
+ 
+                    }
                 }
-                else {
-                    print("FACE NOT FOUND")
-                    self.showToast(controller: self.navigationController!, message: "Please select different Image as Unable to find face in that Image", seconds: 2.0)
-//                    let toast = Toast.text("Please select different Image as Unable to find face in that Image")
-//                    toast.show()
-                }
+               }
             }
-            picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)
     }
@@ -54,12 +56,10 @@ class ViewController: BaseVC {
 extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return  Constants.effects.count
     }
 

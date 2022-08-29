@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6927425601931895~9576633815</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -21,15 +23,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Please allow $(PRODUCT_NAME) to access your camera in order to uses of take picture</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please allow $(PRODUCT_NAME) to access your photo  library in order to uses picture</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow $(PRODUCT_NAME) to access your photo  library in order to save picture</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6927425601931895~9576633815</string>
 </dict>
 </plist>
