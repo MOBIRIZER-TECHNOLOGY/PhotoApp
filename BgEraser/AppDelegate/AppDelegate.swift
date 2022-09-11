@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import FirebaseCore
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GADMobileAds.sharedInstance().start { status in
+            print("GADMobileAds ",status)
+        }
+
         Router.initialize()
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         return true
     }
@@ -33,3 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+//Name:ToonAppKey
+//Key ID:QUMYW78UK5
+//Services:Apple Push Notifications service (APNs)
+//TeamId: 9YG7G7YB2J

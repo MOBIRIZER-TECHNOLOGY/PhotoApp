@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftLoader
+import GoogleMobileAds
 
 class ImageSelectorVC: BaseVC {
 
@@ -15,14 +16,30 @@ class ImageSelectorVC: BaseVC {
     @IBOutlet weak var sideMenuBtn: UIButton!
 
     var semanticImage = SemanticImage()
+    private var interstitial: GADInterstitialAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView?.image = Router.shared.image
         self.sideMenuBtn.setTitle(String.empty, for: .normal)
 //        createNewProfilePic()
+        showAds()
     }
 
+    func showAds() {
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-9915443997240109/6764273495",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
+    }
+    
     
     func createNewProfilePic() {
         let effectBackgroundImageName = "Style2_s5_back"

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */; };
+		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
 		BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1728A13FCE00681BCE /* AppDelegate.swift */; };
 		BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */; };
 		BDD06C1C28A13FCE00681BCE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1B28A13FCE00681BCE /* HomeVC.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.debug.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.debug.xcconfig"; sourceTree = "<group>"; };
 		7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
 		BDD06C1428A13FCE00681BCE /* BgEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BgEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD06C1728A13FCE00681BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		BDD06C1628A13FCE00681BCE /* BgEraser */ = {
 			isa = PBXGroup;
 			children = (
+				87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */,
 				D40F03D128BA03DD006F3AA5 /* Router */,
 				D40F03C828BA02D0006F3AA5 /* Localization */,
 				D40F03B928BA0148006F3AA5 /* Configuration */,
@@ -343,6 +346,7 @@
 				BDD06C1128A13FCE00681BCE /* Frameworks */,
 				BDD06C1228A13FCE00681BCE /* Resources */,
 				4ADB542C557D1686DC8D0CDE /* [CP] Embed Pods Frameworks */,
+				87DC55E428CDE160008F6AEB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -401,6 +405,7 @@
 				BDD06C2128A13FD100681BCE /* Assets.xcassets in Resources */,
 				D44941E628B0FBCE006EEA08 /* segmentation.mlmodelc in Resources */,
 				BDD06C1F28A13FCE00681BCE /* Main.storyboard in Resources */,
+				87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +450,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BgEraser/Pods-BgEraser-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		87DC55E428CDE160008F6AEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n#\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -661,24 +684,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BgEraser/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow $(PRODUCT_NAME) to access your camera in order to uses of take picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow $(PRODUCT_NAME) to access your photo  library in order to save picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow $(PRODUCT_NAME) to access your photo  library in order to uses picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.BgEraser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.cartoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -691,24 +721,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BgEraser/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow $(PRODUCT_NAME) to access your camera in order to uses of take picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow $(PRODUCT_NAME) to access your photo  library in order to save picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow $(PRODUCT_NAME) to access your photo  library in order to uses picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.BgEraser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobirizer.cartoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,18 +9,26 @@ import UIKit
 import SSCustomSideMenu
 import YPImagePicker
 import ToastViewSwift
+import GoogleMobileAds
 
 class ViewController: BaseVC {
     
     @IBOutlet weak var sideMenuBtn: SSMenuButton!
     @IBOutlet weak var effectsCollectionView: UICollectionView?
     var semanticImage = SemanticImage()
+    var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Router.shared.navigationController = self.navigationController
         self.sideMenuBtn.setTitle(String.empty, for: .normal)
         effectsCollectionView?.reloadData()
+        
+        // In this case, we instantiate the banner with desired ad size.
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-9915443997240109/4712825220"
+        bannerView.rootViewController = self
+        addBannerViewToView(bannerView)
     }
     
     func selectPhotoAction() {
@@ -86,13 +94,40 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate 
         else if indexPath.row == 3 {
             Router.shared.currentEffect = .funnyCaricatures
         }
+        
+//        let numbers = [0]
+//        let _ = numbers[1]
+        
         selectPhotoAction()
 //        let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
 //        Router.shared.image = userImage
 //        let vc = ImageSelectorVC.instantiate()
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
-}
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    }
+
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
