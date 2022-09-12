@@ -35,7 +35,6 @@
 		D40F03D328BA03FE006F3AA5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F03D228BA03FE006F3AA5 /* Router.swift */; };
 		D40F03D528BA0AFD006F3AA5 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F03D428BA0AFD006F3AA5 /* Effect.swift */; };
 		D41BF26E28B92EFC00484A56 /* EffectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BF26D28B92EFC00484A56 /* EffectVC.swift */; };
-		D41BF27028B93C7B00484A56 /* ImageSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BF26F28B93C7B00484A56 /* ImageSelectorVC.swift */; };
 		D44941E628B0FBCE006EEA08 /* segmentation.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = D44941E528B0FBCD006EEA08 /* segmentation.mlmodelc */; };
 		D44941E928B0FC00006EEA08 /* segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44941E728B0FBFF006EEA08 /* segmentation.swift */; };
 		D44941EA28B0FC00006EEA08 /* SemanticImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44941E828B0FC00006EEA08 /* SemanticImage.swift */; };
@@ -102,7 +101,6 @@
 		D40F03D228BA03FE006F3AA5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D40F03D428BA0AFD006F3AA5 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		D41BF26D28B92EFC00484A56 /* EffectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectVC.swift; sourceTree = "<group>"; };
-		D41BF26F28B93C7B00484A56 /* ImageSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorVC.swift; sourceTree = "<group>"; };
 		D44941E528B0FBCD006EEA08 /* segmentation.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = segmentation.mlmodelc; sourceTree = "<group>"; };
 		D44941E728B0FBFF006EEA08 /* segmentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = segmentation.swift; sourceTree = "<group>"; };
 		D44941E828B0FC00006EEA08 /* SemanticImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticImage.swift; sourceTree = "<group>"; };
@@ -232,13 +230,12 @@
 		BDD06C3128A141F100681BCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D40F03B728BA0072006F3AA5 /* BaseVC.swift */,
+				BDD06C1B28A13FCE00681BCE /* HomeVC.swift */,
+				D41BF26D28B92EFC00484A56 /* EffectVC.swift */,
 				BDD06C3328A14B7800681BCE /* AboutVC.swift */,
 				BDD06C3528A14B9E00681BCE /* TermsVC.swift */,
 				BDD06C3728A14BC500681BCE /* PrivacyVC.swift */,
-				BDD06C1B28A13FCE00681BCE /* HomeVC.swift */,
-				D41BF26F28B93C7B00484A56 /* ImageSelectorVC.swift */,
-				D41BF26D28B92EFC00484A56 /* EffectVC.swift */,
-				D40F03B728BA0072006F3AA5 /* BaseVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -529,7 +526,6 @@
 				D44941E928B0FC00006EEA08 /* segmentation.swift in Sources */,
 				D4DDB9DD28AA14EE00BB9ADD /* MLModel+Images.swift in Sources */,
 				D4DDB9D928AA14EE00BB9ADD /* UIImage+Extensions.swift in Sources */,
-				D41BF27028B93C7B00484A56 /* ImageSelectorVC.swift in Sources */,
 				D4DDB9E028AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift in Sources */,
 				D40F03C128BA0171006F3AA5 /* ImageConstants.swift in Sources */,
 				D40F03D328BA03FE006F3AA5 /* Router.swift in Sources */,

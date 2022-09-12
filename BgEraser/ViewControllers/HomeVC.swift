@@ -51,7 +51,8 @@ class ViewController: BaseVC {
                     Router.shared.image = photo.image
                     var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
                     if (faceImage != nil) {
-                        let vc = ImageSelectorVC.instantiate()
+//                        let vc = ImageSelectorVC.instantiate()
+                        let vc = EffectVC.instantiate()
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
                     else {

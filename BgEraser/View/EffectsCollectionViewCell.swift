@@ -46,11 +46,8 @@ class EffectsCollectionViewCell: BaseStylizedCollectionViewCell {
     @IBOutlet weak var tryButton: UIButton!
 }
 
-
-
 class EffectBgCollectionViewCell: BaseStylizedCollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 }
-
 
