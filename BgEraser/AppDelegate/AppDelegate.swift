@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start { status in
             print("GADMobileAds ",status)
         }
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
+
 
         Router.initialize()
         FirebaseApp.configure()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */; };
 		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
+		BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2D28CF188700DC16E5 /* GRView.swift */; };
+		BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */; };
 		BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1728A13FCE00681BCE /* AppDelegate.swift */; };
 		BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */; };
 		BDD06C1C28A13FCE00681BCE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06C1B28A13FCE00681BCE /* HomeVC.swift */; };
@@ -69,6 +71,8 @@
 		7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
+		BD9C4B2D28CF188700DC16E5 /* GRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRView.swift; sourceTree = "<group>"; };
+		BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRButton.swift; sourceTree = "<group>"; };
 		BDD06C1428A13FCE00681BCE /* BgEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BgEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD06C1728A13FCE00681BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD06C1928A13FCE00681BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BD9C4B2C28CF186F00DC16E5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				BD9C4B2D28CF188700DC16E5 /* GRView.swift */,
+				BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		BDD06C0B28A13FCE00681BCE = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 		D40F03B028B9FB9B006F3AA5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BD9C4B2C28CF186F00DC16E5 /* Library */,
 				D40F03B328B9FCCB006F3AA5 /* LogUtils.swift */,
 				D44941E728B0FBFF006EEA08 /* segmentation.swift */,
 				D44941E828B0FC00006EEA08 /* SemanticImage.swift */,
@@ -482,6 +496,7 @@
 				D4DDB9E228AA14EE00BB9ADD /* CGImage+RawBytes.swift in Sources */,
 				D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */,
 				D40F03BD28BA0164006F3AA5 /* ColorConstants.swift in Sources */,
+				BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */,
 				D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */,
 				D40F03C328BA0177006F3AA5 /* LocalizationConstants.swift in Sources */,
 				D4DDB9E528AA14EE00BB9ADD /* CVPixelBuffer+Rotate.swift in Sources */,
@@ -508,6 +523,7 @@
 				D40F03BF28BA016A006F3AA5 /* AccessibilityConstants.swift in Sources */,
 				BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */,
 				D4DDB9E928AA184800BB9ADD /* cartoon.mlmodel in Sources */,
+				BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */,
 				D40F03C528BA017C006F3AA5 /* NetworkConstants.swift in Sources */,
 				D40F03B828BA0072006F3AA5 /* BaseVC.swift in Sources */,
 				D44941E928B0FC00006EEA08 /* segmentation.swift in Sources */,

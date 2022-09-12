@@ -15,8 +15,9 @@ class ViewController: BaseVC {
     
     @IBOutlet weak var sideMenuBtn: SSMenuButton!
     @IBOutlet weak var effectsCollectionView: UICollectionView?
+    @IBOutlet weak var bannerView: GADBannerView!
     var semanticImage = SemanticImage()
-    var bannerView: GADBannerView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,16 @@ class ViewController: BaseVC {
         effectsCollectionView?.reloadData()
         
         // In this case, we instantiate the banner with desired ad size.
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-9915443997240109/4712825220"
+        // plist pawan : ca-app-pub-9915443997240109~7187192749
+        // plist narender : ca-app-pub-6927425601931895~9576633815
+        
+        let narenderAds = "ca-app-pub-6927425601931895/6264074763"
+        let pawanAds =  "ca-app-pub-9915443997240109/4712825220"
+        bannerView.adUnitID = narenderAds
         bannerView.rootViewController = self
-        addBannerViewToView(bannerView)
+        bannerView.delegate = self;
+        bannerView.load(GADRequest())
+        //addBannerViewToView(bannerView)
     }
     
     func selectPhotoAction() {
@@ -78,20 +85,24 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate 
         cell.descLabel.text = effect.descText
         cell.effectImageViewFirst.image = UIImage(named: effect.imageFirst)
         cell.effectImageViewSecond.image = UIImage(named: effect.imageSecond)
+        cell.tryButton.tag = indexPath.row
+        cell.tryButton.addTarget(self, action: #selector(ViewController.tryBtnClick(_:)), for: .touchUpInside)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+    
+    @IBAction func tryBtnClick(_ sender: UIButton) {
+        let index = (sender as AnyObject).tag
+        if index == 0 {
             Router.shared.currentEffect = .realisticCartoon
         }
-        else if indexPath.row == 1 {
+        else if index == 1 {
             Router.shared.currentEffect = .newProfilePic
         }
-        else if indexPath.row == 2 {
+        else if index == 2 {
             Router.shared.currentEffect = .styleTransfer
         }
-        else if indexPath.row == 3 {
+        else if index == 3 {
             Router.shared.currentEffect = .funnyCaricatures
         }
         
@@ -103,9 +114,10 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate 
 //        Router.shared.image = userImage
 //        let vc = ImageSelectorVC.instantiate()
 //        self.navigationController?.pushViewController(vc, animated: true)
+
+            
     }
-    
-    
+  
     func addBannerViewToView(_ bannerView: GADBannerView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
@@ -136,3 +148,38 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+
+extension ViewController: GADBannerViewDelegate {
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+        bannerView.alpha = 0
+          UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+          })
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+        //bannerView:didFailToReceiveAdWithError: Publisher data not found.
+        //https://support.google.com/admob/answer/9905175#9
+    }
+    
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+    
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+    
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+    
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
+    }
+    
+}
