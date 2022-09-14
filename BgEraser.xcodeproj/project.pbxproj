@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */; };
+		870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */; };
+		870A59AC28D2414B00F300A2 /* UIOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */; };
+		870A59AF28D2421900F300A2 /* Onboarder in Frameworks */ = {isa = PBXBuildFile; productRef = 870A59AE28D2421900F300A2 /* Onboarder */; };
 		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
 		BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2D28CF188700DC16E5 /* GRView.swift */; };
 		BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */; };
@@ -68,6 +71,8 @@
 /* Begin PBXFileReference section */
 		37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.debug.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.debug.xcconfig"; sourceTree = "<group>"; };
 		7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
+		870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnboardingView.swift; sourceTree = "<group>"; };
 		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
 		BD9C4B2D28CF188700DC16E5 /* GRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRView.swift; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */,
+				870A59AF28D2421900F300A2 /* Onboarder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +236,8 @@
 		BDD06C3128A141F100681BCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */,
+				870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */,
 				D40F03B728BA0072006F3AA5 /* BaseVC.swift */,
 				BDD06C1B28A13FCE00681BCE /* HomeVC.swift */,
 				D41BF26D28B92EFC00484A56 /* EffectVC.swift */,
@@ -365,6 +373,7 @@
 			);
 			name = BgEraser;
 			packageProductDependencies = (
+				870A59AE28D2421900F300A2 /* Onboarder */,
 			);
 			productName = BgEraser;
 			productReference = BDD06C1428A13FCE00681BCE /* BgEraser.app */;
@@ -396,6 +405,7 @@
 			);
 			mainGroup = BDD06C0B28A13FCE00681BCE;
 			packageReferences = (
+				870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */,
 			);
 			productRefGroup = BDD06C1528A13FCE00681BCE /* Products */;
 			projectDirPath = "";
@@ -492,6 +502,7 @@
 				D4DDB9D728AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift in Sources */,
 				D4DDB9E228AA14EE00BB9ADD /* CGImage+RawBytes.swift in Sources */,
 				D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */,
+				870A59AC28D2414B00F300A2 /* UIOnboardingView.swift in Sources */,
 				D40F03BD28BA0164006F3AA5 /* ColorConstants.swift in Sources */,
 				BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */,
 				D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */,
@@ -512,6 +523,7 @@
 				D44941EA28B0FC00006EEA08 /* SemanticImage.swift in Sources */,
 				D4DDB9F028AA262000BB9ADD /* cuphead.mlmodel in Sources */,
 				D40F03B428B9FCCB006F3AA5 /* LogUtils.swift in Sources */,
+				870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */,
 				D4DDB9E428AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift in Sources */,
 				BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */,
 				BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */,
@@ -624,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -680,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -712,7 +724,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -748,7 +760,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -785,6 +797,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JemAlvarez/onboarder";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		870A59AE28D2421900F300A2 /* Onboarder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */;
+			productName = Onboarder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BDD06C0C28A13FCE00681BCE /* Project object */;
 }
