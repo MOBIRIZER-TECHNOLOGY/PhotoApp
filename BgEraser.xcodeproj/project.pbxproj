@@ -10,7 +10,6 @@
 		47629BBBBD617AF10A9655D7 /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE4583270016ED4E3A9429C /* Pods_BgEraser.framework */; };
 		870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */; };
 		870A59AC28D2414B00F300A2 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59AA28D2414B00F300A2 /* OnboardingVC.swift */; };
-		870A59B128D6422400F300A2 /* MyStyleTransfer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */; };
 		8764C43528D71551008FA430 /* UIOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42928D71551008FA430 /* UIOnboardingView.swift */; };
 		8764C43628D71551008FA430 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42C28D71551008FA430 /* ViewExtensions.swift */; };
 		8764C43728D71551008FA430 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42D28D71551008FA430 /* Defaults.swift */; };
@@ -18,6 +17,12 @@
 		8764C43928D71551008FA430 /* OBPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43028D71551008FA430 /* OBPage.swift */; };
 		8764C43A28D71551008FA430 /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43328D71551008FA430 /* RoundedCornerShape.swift */; };
 		8764C43B28D71551008FA430 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43428D71551008FA430 /* OnboardingView.swift */; };
+		8764C44228D72AC8008FA430 /* Muse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43C28D72AC5008FA430 /* Muse.mlmodel */; };
+		8764C44328D72AC8008FA430 /* Shipwreck.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43D28D72AC6008FA430 /* Shipwreck.mlmodel */; };
+		8764C44428D72AC8008FA430 /* Udnie.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43E28D72AC6008FA430 /* Udnie.mlmodel */; };
+		8764C44528D72AC8008FA430 /* Princess.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43F28D72AC7008FA430 /* Princess.mlmodel */; };
+		8764C44628D72AC8008FA430 /* Scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C44028D72AC7008FA430 /* Scream.mlmodel */; };
+		8764C44728D72AC8008FA430 /* Wave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C44128D72AC8008FA430 /* Wave.mlmodel */; };
 		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
 		BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2D28CF188700DC16E5 /* GRView.swift */; };
 		BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */; };
@@ -79,7 +84,6 @@
 		2D8ED1C681D5DC44F3BD2E87 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
 		870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
 		870A59AA28D2414B00F300A2 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-		870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyStyleTransfer.mlmodel; sourceTree = "<group>"; };
 		8764C42928D71551008FA430 /* UIOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnboardingView.swift; sourceTree = "<group>"; };
 		8764C42C28D71551008FA430 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8764C42D28D71551008FA430 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -87,6 +91,12 @@
 		8764C43028D71551008FA430 /* OBPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBPage.swift; sourceTree = "<group>"; };
 		8764C43328D71551008FA430 /* RoundedCornerShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
 		8764C43428D71551008FA430 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8764C43C28D72AC5008FA430 /* Muse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Muse.mlmodel; sourceTree = "<group>"; };
+		8764C43D28D72AC6008FA430 /* Shipwreck.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Shipwreck.mlmodel; sourceTree = "<group>"; };
+		8764C43E28D72AC6008FA430 /* Udnie.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Udnie.mlmodel; sourceTree = "<group>"; };
+		8764C43F28D72AC7008FA430 /* Princess.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Princess.mlmodel; sourceTree = "<group>"; };
+		8764C44028D72AC7008FA430 /* Scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Scream.mlmodel; sourceTree = "<group>"; };
+		8764C44128D72AC8008FA430 /* Wave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Wave.mlmodel; sourceTree = "<group>"; };
 		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD9C4B2D28CF188700DC16E5 /* GRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRView.swift; sourceTree = "<group>"; };
 		BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRButton.swift; sourceTree = "<group>"; };
@@ -395,9 +405,14 @@
 		D4DDB9BE28AA11D300BB9ADD /* CoreMLModels */ = {
 			isa = PBXGroup;
 			children = (
+				8764C43C28D72AC5008FA430 /* Muse.mlmodel */,
+				8764C43F28D72AC7008FA430 /* Princess.mlmodel */,
+				8764C44028D72AC7008FA430 /* Scream.mlmodel */,
+				8764C43D28D72AC6008FA430 /* Shipwreck.mlmodel */,
+				8764C43E28D72AC6008FA430 /* Udnie.mlmodel */,
+				8764C44128D72AC8008FA430 /* Wave.mlmodel */,
 				D44941E528B0FBCD006EEA08 /* segmentation.mlmodelc */,
 				D4DDB9F428AA27F900BB9ADD /* paint.mlmodel */,
-				870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */,
 				D4DDB9E828AA184800BB9ADD /* cartoon.mlmodel */,
 				D4DDB9EB28AA262000BB9ADD /* cuphead.mlmodel */,
 				D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */,
@@ -576,7 +591,6 @@
 				D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */,
 				8764C43B28D71551008FA430 /* OnboardingView.swift in Sources */,
 				870A59AC28D2414B00F300A2 /* OnboardingVC.swift in Sources */,
-				870A59B128D6422400F300A2 /* MyStyleTransfer.mlmodel in Sources */,
 				D40F03BD28BA0164006F3AA5 /* ColorConstants.swift in Sources */,
 				BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */,
 				D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */,
@@ -586,6 +600,7 @@
 				D4DDB9E128AA14EE00BB9ADD /* NonMaxSuppression.swift in Sources */,
 				D4DDBA0128AA3D0700BB9ADD /* mosaic.mlmodel in Sources */,
 				BDD06C2F28A141CF00681BCE /* SideMenuItem.swift in Sources */,
+				8764C44228D72AC8008FA430 /* Muse.mlmodel in Sources */,
 				D40F03B228B9FBE1006F3AA5 /* Extenstions.swift in Sources */,
 				8764C43828D71551008FA430 /* OBConfiguration.swift in Sources */,
 				D40F03BB28BA015D006F3AA5 /* Constants.swift in Sources */,
@@ -600,6 +615,7 @@
 				D40F03B428B9FCCB006F3AA5 /* LogUtils.swift in Sources */,
 				870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */,
 				D4DDB9E428AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift in Sources */,
+				8764C44528D72AC8008FA430 /* Princess.mlmodel in Sources */,
 				BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */,
 				BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */,
 				D4EA808A28AD3FD200730154 /* EffectsCollectionViewCell.swift in Sources */,
@@ -609,11 +625,13 @@
 				D40F03BF28BA016A006F3AA5 /* AccessibilityConstants.swift in Sources */,
 				BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */,
 				D4DDB9E928AA184800BB9ADD /* cartoon.mlmodel in Sources */,
+				8764C44428D72AC8008FA430 /* Udnie.mlmodel in Sources */,
 				BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */,
 				D40F03C528BA017C006F3AA5 /* NetworkConstants.swift in Sources */,
 				D40F03B828BA0072006F3AA5 /* BaseVC.swift in Sources */,
 				D44941E928B0FC00006EEA08 /* segmentation.swift in Sources */,
 				8764C43628D71551008FA430 /* ViewExtensions.swift in Sources */,
+				8764C44328D72AC8008FA430 /* Shipwreck.mlmodel in Sources */,
 				D4DDB9DD28AA14EE00BB9ADD /* MLModel+Images.swift in Sources */,
 				D4DDB9D928AA14EE00BB9ADD /* UIImage+Extensions.swift in Sources */,
 				D4DDB9E028AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift in Sources */,
@@ -621,11 +639,13 @@
 				8764C43A28D71551008FA430 /* RoundedCornerShape.swift in Sources */,
 				D40F03D328BA03FE006F3AA5 /* Router.swift in Sources */,
 				D4DDB9E328AA14EE00BB9ADD /* MLMultiArray+Image.swift in Sources */,
+				8764C44728D72AC8008FA430 /* Wave.mlmodel in Sources */,
 				D41BF26E28B92EFC00484A56 /* EffectVC.swift in Sources */,
 				D4DDB9C228AA149000BB9ADD /* RemoveBackgroundCoreML.swift in Sources */,
 				D4DDB9DE28AA14EE00BB9ADD /* CoreML+Combine.swift in Sources */,
 				D4DDB9DC28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift in Sources */,
 				D4DDB9FD28AA363000BB9ADD /* bgRemover.mlpackage in Sources */,
+				8764C44628D72AC8008FA430 /* Scream.mlmodel in Sources */,
 				D4DDB9D628AA14EE00BB9ADD /* Math.swift in Sources */,
 				8764C43528D71551008FA430 /* UIOnboardingView.swift in Sources */,
 			);
