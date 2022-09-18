@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */; };
+		47629BBBBD617AF10A9655D7 /* Pods_BgEraser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE4583270016ED4E3A9429C /* Pods_BgEraser.framework */; };
 		870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */; };
-		870A59AC28D2414B00F300A2 /* UIOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */; };
-		870A59AF28D2421900F300A2 /* Onboarder in Frameworks */ = {isa = PBXBuildFile; productRef = 870A59AE28D2421900F300A2 /* Onboarder */; };
+		870A59AC28D2414B00F300A2 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A59AA28D2414B00F300A2 /* OnboardingVC.swift */; };
+		870A59B128D6422400F300A2 /* MyStyleTransfer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */; };
+		8764C43528D71551008FA430 /* UIOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42928D71551008FA430 /* UIOnboardingView.swift */; };
+		8764C43628D71551008FA430 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42C28D71551008FA430 /* ViewExtensions.swift */; };
+		8764C43728D71551008FA430 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42D28D71551008FA430 /* Defaults.swift */; };
+		8764C43828D71551008FA430 /* OBConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C42F28D71551008FA430 /* OBConfiguration.swift */; };
+		8764C43928D71551008FA430 /* OBPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43028D71551008FA430 /* OBPage.swift */; };
+		8764C43A28D71551008FA430 /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43328D71551008FA430 /* RoundedCornerShape.swift */; };
+		8764C43B28D71551008FA430 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43428D71551008FA430 /* OnboardingView.swift */; };
 		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
 		BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2D28CF188700DC16E5 /* GRView.swift */; };
 		BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */; };
@@ -69,12 +76,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.debug.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.debug.xcconfig"; sourceTree = "<group>"; };
-		7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D8ED1C681D5DC44F3BD2E87 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
 		870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
-		870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnboardingView.swift; sourceTree = "<group>"; };
+		870A59AA28D2414B00F300A2 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyStyleTransfer.mlmodel; sourceTree = "<group>"; };
+		8764C42928D71551008FA430 /* UIOnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnboardingView.swift; sourceTree = "<group>"; };
+		8764C42C28D71551008FA430 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		8764C42D28D71551008FA430 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		8764C42F28D71551008FA430 /* OBConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBConfiguration.swift; sourceTree = "<group>"; };
+		8764C43028D71551008FA430 /* OBPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBPage.swift; sourceTree = "<group>"; };
+		8764C43328D71551008FA430 /* RoundedCornerShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
+		8764C43428D71551008FA430 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.release.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.release.xcconfig"; sourceTree = "<group>"; };
 		BD9C4B2D28CF188700DC16E5 /* GRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRView.swift; sourceTree = "<group>"; };
 		BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRButton.swift; sourceTree = "<group>"; };
 		BDD06C1428A13FCE00681BCE /* BgEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BgEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +103,7 @@
 		BDD06C3328A14B7800681BCE /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		BDD06C3528A14B9E00681BCE /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		BDD06C3728A14BC500681BCE /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
+		BF3A4981987E273CBA22CEF2 /* Pods-BgEraser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BgEraser.debug.xcconfig"; path = "Target Support Files/Pods-BgEraser/Pods-BgEraser.debug.xcconfig"; sourceTree = "<group>"; };
 		D40F03B128B9FBE1006F3AA5 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		D40F03B328B9FCCB006F3AA5 /* LogUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
 		D40F03B728BA0072006F3AA5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -134,6 +148,7 @@
 		D4DDB9FE28AA3D0700BB9ADD /* night.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = night.mlmodel; sourceTree = "<group>"; };
 		D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mosaic.mlmodel; sourceTree = "<group>"; };
 		D4EA808928AD3FD200730154 /* EffectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBE4583270016ED4E3A9429C /* Pods_BgEraser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BgEraser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62DE3EF82E12BA30BAE3E9BD /* Pods_BgEraser.framework in Frameworks */,
-				870A59AF28D2421900F300A2 /* Onboarder in Frameworks */,
+				47629BBBBD617AF10A9655D7 /* Pods_BgEraser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,16 +166,78 @@
 		4FB42B8C92DCCCE19CC8AEFA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */,
-				B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */,
+				BF3A4981987E273CBA22CEF2 /* Pods-BgEraser.debug.xcconfig */,
+				2D8ED1C681D5DC44F3BD2E87 /* Pods-BgEraser.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6226CFA6D922713172C1A9DF /* Frameworks */ = {
+		8764C42728D71551008FA430 /* Onboarder */ = {
 			isa = PBXGroup;
 			children = (
-				7C66AD353BB1CDAEFDFF43B6 /* Pods_BgEraser.framework */,
+				8764C42828D71551008FA430 /* UIKit Views */,
+				8764C42A28D71551008FA430 /* Shared */,
+				8764C42E28D71551008FA430 /* Models */,
+				8764C43128D71551008FA430 /* SwiftUI Views */,
+			);
+			path = Onboarder;
+			sourceTree = "<group>";
+		};
+		8764C42828D71551008FA430 /* UIKit Views */ = {
+			isa = PBXGroup;
+			children = (
+				8764C42928D71551008FA430 /* UIOnboardingView.swift */,
+			);
+			path = "UIKit Views";
+			sourceTree = "<group>";
+		};
+		8764C42A28D71551008FA430 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8764C42B28D71551008FA430 /* Extensions */,
+				8764C42D28D71551008FA430 /* Defaults.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8764C42B28D71551008FA430 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8764C42C28D71551008FA430 /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8764C42E28D71551008FA430 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8764C42F28D71551008FA430 /* OBConfiguration.swift */,
+				8764C43028D71551008FA430 /* OBPage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8764C43128D71551008FA430 /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				8764C43228D71551008FA430 /* Shared */,
+				8764C43428D71551008FA430 /* OnboardingView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		8764C43228D71551008FA430 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8764C43328D71551008FA430 /* RoundedCornerShape.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B25F2AE3DF8C1BD4407613A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBE4583270016ED4E3A9429C /* Pods_BgEraser.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +245,7 @@
 		BD9C4B2C28CF186F00DC16E5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8764C42728D71551008FA430 /* Onboarder */,
 				BD9C4B2D28CF188700DC16E5 /* GRView.swift */,
 				BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */,
 			);
@@ -181,7 +258,7 @@
 				BDD06C1628A13FCE00681BCE /* BgEraser */,
 				BDD06C1528A13FCE00681BCE /* Products */,
 				4FB42B8C92DCCCE19CC8AEFA /* Pods */,
-				6226CFA6D922713172C1A9DF /* Frameworks */,
+				B25F2AE3DF8C1BD4407613A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				870A59A928D2414B00F300A2 /* RootViewControllerFactory.swift */,
-				870A59AA28D2414B00F300A2 /* UIOnboardingView.swift */,
+				870A59AA28D2414B00F300A2 /* OnboardingVC.swift */,
 				D40F03B728BA0072006F3AA5 /* BaseVC.swift */,
 				BDD06C1B28A13FCE00681BCE /* HomeVC.swift */,
 				D41BF26D28B92EFC00484A56 /* EffectVC.swift */,
@@ -320,6 +397,7 @@
 			children = (
 				D44941E528B0FBCD006EEA08 /* segmentation.mlmodelc */,
 				D4DDB9F428AA27F900BB9ADD /* paint.mlmodel */,
+				870A59B028D6422400F300A2 /* MyStyleTransfer.mlmodel */,
 				D4DDB9E828AA184800BB9ADD /* cartoon.mlmodel */,
 				D4DDB9EB28AA262000BB9ADD /* cuphead.mlmodel */,
 				D4DDB9FF28AA3D0700BB9ADD /* mosaic.mlmodel */,
@@ -360,21 +438,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDD06C2828A13FD100681BCE /* Build configuration list for PBXNativeTarget "BgEraser" */;
 			buildPhases = (
-				376BD48A5867D52AF23239CA /* [CP] Check Pods Manifest.lock */,
+				14EF4085B92F29344B2F4CFC /* [CP] Check Pods Manifest.lock */,
 				BDD06C1028A13FCE00681BCE /* Sources */,
 				BDD06C1128A13FCE00681BCE /* Frameworks */,
 				BDD06C1228A13FCE00681BCE /* Resources */,
-				4ADB542C557D1686DC8D0CDE /* [CP] Embed Pods Frameworks */,
 				87DC55E428CDE160008F6AEB /* ShellScript */,
+				4A8253D3053575E00A462FC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BgEraser;
-			packageProductDependencies = (
-				870A59AE28D2421900F300A2 /* Onboarder */,
-			);
 			productName = BgEraser;
 			productReference = BDD06C1428A13FCE00681BCE /* BgEraser.app */;
 			productType = "com.apple.product-type.application";
@@ -404,9 +479,6 @@
 				ar,
 			);
 			mainGroup = BDD06C0B28A13FCE00681BCE;
-			packageReferences = (
-				870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */,
-			);
 			productRefGroup = BDD06C1528A13FCE00681BCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,7 +505,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		376BD48A5867D52AF23239CA /* [CP] Check Pods Manifest.lock */ = {
+		14EF4085B92F29344B2F4CFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,7 +527,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4ADB542C557D1686DC8D0CDE /* [CP] Embed Pods Frameworks */ = {
+		4A8253D3053575E00A462FC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,7 +574,9 @@
 				D4DDB9D728AA14EE00BB9ADD /* UIImage+CVPixelBuffer.swift in Sources */,
 				D4DDB9E228AA14EE00BB9ADD /* CGImage+RawBytes.swift in Sources */,
 				D4DDB9DA28AA14EE00BB9ADD /* CGImagePropertyOrientation.swift in Sources */,
-				870A59AC28D2414B00F300A2 /* UIOnboardingView.swift in Sources */,
+				8764C43B28D71551008FA430 /* OnboardingView.swift in Sources */,
+				870A59AC28D2414B00F300A2 /* OnboardingVC.swift in Sources */,
+				870A59B128D6422400F300A2 /* MyStyleTransfer.mlmodel in Sources */,
 				D40F03BD28BA0164006F3AA5 /* ColorConstants.swift in Sources */,
 				BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */,
 				D4DDB9D828AA14EE00BB9ADD /* Predictions.swift in Sources */,
@@ -513,6 +587,7 @@
 				D4DDBA0128AA3D0700BB9ADD /* mosaic.mlmodel in Sources */,
 				BDD06C2F28A141CF00681BCE /* SideMenuItem.swift in Sources */,
 				D40F03B228B9FBE1006F3AA5 /* Extenstions.swift in Sources */,
+				8764C43828D71551008FA430 /* OBConfiguration.swift in Sources */,
 				D40F03BB28BA015D006F3AA5 /* Constants.swift in Sources */,
 				D4DDB9DF28AA14EE00BB9ADD /* CVPixelBuffer+Create.swift in Sources */,
 				D4DDB9D528AA14EE00BB9ADD /* Array+Extensions.swift in Sources */,
@@ -528,6 +603,8 @@
 				BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */,
 				BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */,
 				D4EA808A28AD3FD200730154 /* EffectsCollectionViewCell.swift in Sources */,
+				8764C43728D71551008FA430 /* Defaults.swift in Sources */,
+				8764C43928D71551008FA430 /* OBPage.swift in Sources */,
 				D4DDB9DB28AA14EE00BB9ADD /* UIImage+RawBytes.swift in Sources */,
 				D40F03BF28BA016A006F3AA5 /* AccessibilityConstants.swift in Sources */,
 				BDD06C1A28A13FCE00681BCE /* SceneDelegate.swift in Sources */,
@@ -536,10 +613,12 @@
 				D40F03C528BA017C006F3AA5 /* NetworkConstants.swift in Sources */,
 				D40F03B828BA0072006F3AA5 /* BaseVC.swift in Sources */,
 				D44941E928B0FC00006EEA08 /* segmentation.swift in Sources */,
+				8764C43628D71551008FA430 /* ViewExtensions.swift in Sources */,
 				D4DDB9DD28AA14EE00BB9ADD /* MLModel+Images.swift in Sources */,
 				D4DDB9D928AA14EE00BB9ADD /* UIImage+Extensions.swift in Sources */,
 				D4DDB9E028AA14EE00BB9ADD /* CGImage+CVPixelBuffer.swift in Sources */,
 				D40F03C128BA0171006F3AA5 /* ImageConstants.swift in Sources */,
+				8764C43A28D71551008FA430 /* RoundedCornerShape.swift in Sources */,
 				D40F03D328BA03FE006F3AA5 /* Router.swift in Sources */,
 				D4DDB9E328AA14EE00BB9ADD /* MLMultiArray+Image.swift in Sources */,
 				D41BF26E28B92EFC00484A56 /* EffectVC.swift in Sources */,
@@ -548,6 +627,7 @@
 				D4DDB9DC28AA14EE00BB9ADD /* MLMultiArray+Helpers.swift in Sources */,
 				D4DDB9FD28AA363000BB9ADD /* bgRemover.mlpackage in Sources */,
 				D4DDB9D628AA14EE00BB9ADD /* Math.swift in Sources */,
+				8764C43528D71551008FA430 /* UIOnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +784,7 @@
 		};
 		BDD06C2928A13FD100681BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37AE03A8D52D6B02AFDEF657 /* Pods-BgEraser.debug.xcconfig */;
+			baseConfigurationReference = BF3A4981987E273CBA22CEF2 /* Pods-BgEraser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -741,7 +821,7 @@
 		};
 		BDD06C2A28A13FD100681BCE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B34D0EF1EC4EED264FA4A587 /* Pods-BgEraser.release.xcconfig */;
+			baseConfigurationReference = 2D8ED1C681D5DC44F3BD2E87 /* Pods-BgEraser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -797,25 +877,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JemAlvarez/onboarder";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		870A59AE28D2421900F300A2 /* Onboarder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 870A59AD28D2421900F300A2 /* XCRemoteSwiftPackageReference "onboarder" */;
-			productName = Onboarder;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BDD06C0C28A13FCE00681BCE /* Project object */;
 }

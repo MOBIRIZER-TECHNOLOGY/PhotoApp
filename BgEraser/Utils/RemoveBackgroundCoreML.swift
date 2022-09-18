@@ -142,10 +142,9 @@ extension UIImage {
       return finalImage
     }
     
-    func applyNightEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+    func applyNightEffectsT(returnResult: RemoveBackroundResult) -> UIImage? {
     
         guard let model = getNightModel() else { return nil }
-        
         let width: CGFloat = 640
         let height: CGFloat = 960
 
@@ -163,7 +162,34 @@ extension UIImage {
       return finalImage
     }
     
-   
+    func applyNightEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+      
+        print("applyNightEffects 1")
+        guard let model = getMyStyleTransferModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
     
     private func getBgRemoverModel() -> bgRemover? {
         do {
@@ -216,6 +242,19 @@ extension UIImage {
             return nil
         }
     }
+    
+    private func getMyStyleTransferModel() -> MyStyleTransfer? {
+        do {
+            let config = MLModelConfiguration()
+            return try MyStyleTransfer(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+    
+    
+    
     
 //
 //

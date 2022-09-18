@@ -27,9 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        guard let windowScene = (scene as? UIWindowScene) else { return }
        window = UIWindow(frame: UIScreen.main.bounds)
        window?.windowScene = windowScene
-        self.window?.rootViewController = RootViewControllerFactory().rootViewController
-        self.window?.makeKeyAndVisible()
-
+       self.window?.rootViewController = RootViewControllerFactory().rootViewController
+       self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -19,7 +19,7 @@ class RootViewControllerFactory {
 
   private func shouldDisplayOnboardingScreen() -> Bool {
     // Your logic to decide whether you should display it or not.
-      return false
+      return true
   }
 
   func generateOnboardingScreen() -> UIViewController {

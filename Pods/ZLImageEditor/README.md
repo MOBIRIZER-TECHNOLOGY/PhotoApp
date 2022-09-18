@@ -20,6 +20,7 @@ ZLImageEditor is extracted from [ZLPhotoBrowser](https://github.com/longitachi/Z
 * [Change Log](#ChangeLog)
 * [Languages](#Languages)
 * [Installation(Support Cocoapods/Carthage/SPM)](#Installation)
+* [Support](#Support)
 * [Demo Effect](#DemoEffect)
 
 ### <a id="Features"></a>Features
@@ -50,20 +51,27 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
 ### <a id="ChangeLog"></a>Change Log
 > [More logs](https://github.com/longitachi/ZLImageEditor/blob/master/CHANGELOG.md)
 ```
+● 1.1.3
+  Add:
+    Adapt iPad.
+● 1.1.2
+  Add:
+    Adjust loading progress hud style to make it prettier.
+    Support Portuguese, Spanish and Turkish.
+    Support crop round image.
+    Support for custom text.
+    Support redo in graffiti and mosaic tools.
+    Add wrapper for ZLImageEditor compatible types.
 ● 1.1.1
   Add:
     Can select custom font before adding text sticker.
     Change the authority of ZLEditImageViewController to open.
     Add ZLImageEditorUIConfiguration.
-● 1.0.7
-    Fix the bug that crop does not work.
-● 1.0.6
-    Revert the code for image compression.
 ...
 ```
 
 ### <a id="Languages"></a>Languages
-🇨🇳 Chinese, 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩Indonesian.
+🇨🇳 Chinese, 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩 Indonesian, 🇪🇸 Spanish, 🇵🇹 Portuguese, 🇹🇷 Turkey.
 
 ### <a id="Installation"></a>Installation
 There are four ways to use ZLImageEditor in your project:
@@ -113,6 +121,10 @@ $ carthage update ZLImageEditor
 1. Select File > Swift Packages > Add Package Dependency. Enter https://github.com/longitachi/ZLImageEditor.git in the "Choose Package Repository" dialog.
 2. In the next page, specify the version resolving rule as "Up to Next Major" with "4.0.9" as its earliest version.
 3. After Xcode checking out the source and resolving the version, you can choose the "ZLImageEditor" library and add it to your app target.
+
+### <a id="Support"></a> Support
+* [**★ Star**](#) this repo.
+* Support with <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/ap.png" width = "100" height = "125" /> or <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/wp.png" width = "100" height = "125" /> or <img src="https://github.com/longitachi/ImageFolder/blob/master/ZLPhotoBrowser/pp.png" width = "150" height = "125" />
 
 ### <a id="DemoEffect"></a> Demo Effect
 ![image](https://github.com/longitachi/ImageFolder/blob/master/ZLImageEditor/editImage.gif)

@@ -40,11 +40,12 @@ import Foundation
     case malay
     case italian
     case indonesian
+    case portuguese
+    case spanish
+    case turkish
 }
 
-
 public struct ZLLocalLanguageKey: Hashable {
-    
     public let rawValue: String
     
     public init(rawValue: String) {
@@ -75,8 +76,14 @@ public struct ZLLocalLanguageKey: Hashable {
     /// Drag here to remove (拖到此处删除)
     public static let textStickerRemoveTips = ZLLocalLanguageKey(rawValue: "textStickerRemoveTips")
     
+    /// waiting... (正在处理...)
+    public static let hudLoading = ZLLocalLanguageKey(rawValue: "hudLoading")
 }
 
 func localLanguageTextValue(_ key: ZLLocalLanguageKey) -> String {
+    if let value = ZLImageEditorUIConfiguration.default().customLanguageConfig[key] {
+        return value
+    }
+    
     return Bundle.zlLocalizedString(key.rawValue)
 }

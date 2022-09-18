@@ -26,60 +26,82 @@
 
 import UIKit
 
-extension ZLImageEditorUIConfiguration {
+public extension ZLImageEditorUIConfiguration {
+    @discardableResult
+    func hudStyle(_ style: ZLProgressHUD.HUDStyle) -> ZLImageEditorUIConfiguration {
+        hudStyle = style
+        return self
+    }
     
     @discardableResult
-    public func languageType(_ type: ZLImageEditorLanguageType) -> ZLImageEditorUIConfiguration {
+    func languageType(_ type: ZLImageEditorLanguageType) -> ZLImageEditorUIConfiguration {
         languageType = type
         return self
     }
     
     @discardableResult
-    public func customImageNames(_ names: [String]) -> ZLImageEditorUIConfiguration {
+    func customLanguageConfig(_ config: [ZLLocalLanguageKey: String]) -> ZLImageEditorUIConfiguration {
+        customLanguageConfig = config
+        return self
+    }
+    
+    @discardableResult
+    func customImageNames(_ names: [String]) -> ZLImageEditorUIConfiguration {
         customImageNames = names
         return self
     }
     
     @discardableResult
-    public func customImageForKey(_ map: [String: UIImage?]) -> ZLImageEditorUIConfiguration {
+    func customImageForKey(_ map: [String: UIImage?]) -> ZLImageEditorUIConfiguration {
         customImageForKey = map
         return self
     }
     
     @discardableResult
-    public func adjustSliderNormalColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func adjustSliderNormalColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         adjustSliderNormalColor = color
         return self
     }
     
     @discardableResult
-    public func adjustSliderTintColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func adjustSliderTintColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         adjustSliderTintColor = color
         return self
     }
     
     @discardableResult
-    public func editDoneBtnBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func editDoneBtnBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         editDoneBtnBgColor = color
         return self
     }
     
     @discardableResult
-    public func editDoneBtnTitleColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func editDoneBtnTitleColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         editDoneBtnTitleColor = color
         return self
     }
     
     @discardableResult
-    public func ashbinNormalBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func ashbinNormalBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         ashbinNormalBgColor = color
         return self
     }
     
     @discardableResult
-    public func ashbinTintBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+    func ashbinTintBgColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
         ashbinTintBgColor = color
         return self
     }
     
+    @discardableResult
+    func toolTitleNormalColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+        toolTitleNormalColor = color
+        return self
+    }
+    
+    @discardableResult
+    func toolTitleTintColor(_ color: UIColor) -> ZLImageEditorUIConfiguration {
+        toolTitleTintColor = color
+        return self
+    }
 }
