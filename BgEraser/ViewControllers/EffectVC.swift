@@ -63,25 +63,16 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             let effectBackImage = UIImage(named:effectBackgroundImageName)
              
             debugPrint("faceRectangle start")
-            var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-            
-            debugPrint("removeBackground start")
-
+            var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
             faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
             
             debugPrint("applyPaintEffects start")
-
             var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-            
-            debugPrint("removeBackground start")
 
-            faceCartoonImage = faceCartoonImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-            
             debugPrint("saliencyBlend start")
 
             let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
             Router.shared.outPutImage = swappedImage
-         
             debugPrint("processing stop")
 
             DispatchQueue.main.async {
@@ -112,9 +103,10 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             
             var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: faceImage!)
             swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
-            self.imageView?.image = swappedImage
             Router.shared.outPutImage = swappedImage
+
             DispatchQueue.main.async {
+                self.imageView?.image = swappedImage
                 SwiftLoader.hide()
             }
         }
@@ -157,10 +149,10 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             else if indexPath.row == 8 {//StyleTransfer_wave
                 outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
             }
-            
             Router.shared.outPutImage = outPutImage
-            self.imageView?.image = outPutImage
+
             DispatchQueue.main.async {
+                self.imageView?.image = outPutImage
                 SwiftLoader.hide()
             }
         }
@@ -169,11 +161,12 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     func createFunnyCaricatures(indexPath: IndexPath) {
         SwiftLoader.show(title: "Processing please wait...", animated: true)
         DispatchQueue.global(qos: .userInitiated).async { [self] in
+           
             let effectName = self.effectBackgrounds[indexPath.row].name
             let effectBackgroundImageName = self.effectBackgrounds[indexPath.row].backgroundImage
             let effectBackImage = UIImage(named:effectBackgroundImageName)
             let faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-            let faceCartoonImage = faceImage?.applyCartoonEffects(returnResult: RemoveBackroundResult.finalImage)
+            let faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
             let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
             //        self.imageView?.image = swappedImage
             //        Router.shared.outPutImage = swappedImage
@@ -181,9 +174,13 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             let effectFrontImageName = self.effectBackgrounds[indexPath.row].forgroundImage
             let effectFrontImage = UIImage(named:effectFrontImageName)
             let finalImage = semanticImage.saliencyBlend(objectUIImage:effectFrontImage!, backgroundUIImage: swappedImage!)
-            self.imageView?.image = finalImage
+//            Router.shared.outPutImage = finalImage
+
             Router.shared.outPutImage = finalImage
+
+            
             DispatchQueue.main.async {
+                self.imageView?.image = finalImage
                 SwiftLoader.hide()
             }
         }
