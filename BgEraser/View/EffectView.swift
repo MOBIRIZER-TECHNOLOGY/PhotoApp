@@ -75,5 +75,14 @@ class EffectView: UIView {
         profileImageView?.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
     }
     
+    func screenshot() -> UIImage? {
+        let containerView = self
+        let containerSuperview = containerView.superview
+        let renderer = UIGraphicsImageRenderer(bounds: containerView.frame)
+        return renderer.image { (context) in
+            containerSuperview?.layer.render(in: context.cgContext)
+       }
+  }
+    
 } // end MyView
 
