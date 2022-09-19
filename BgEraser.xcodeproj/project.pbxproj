@@ -23,6 +23,7 @@
 		8764C44528D72AC8008FA430 /* Princess.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C43F28D72AC7008FA430 /* Princess.mlmodel */; };
 		8764C44628D72AC8008FA430 /* Scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C44028D72AC7008FA430 /* Scream.mlmodel */; };
 		8764C44728D72AC8008FA430 /* Wave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8764C44128D72AC8008FA430 /* Wave.mlmodel */; };
+		8764C4BA28D8F33C008FA430 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764C4B928D8F33C008FA430 /* EffectView.swift */; };
 		87DC55E328CDE0B3008F6AEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */; };
 		BD9C4B2E28CF188700DC16E5 /* GRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2D28CF188700DC16E5 /* GRView.swift */; };
 		BD9C4B3028CF18CB00DC16E5 /* GRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */; };
@@ -97,6 +98,7 @@
 		8764C43F28D72AC7008FA430 /* Princess.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Princess.mlmodel; sourceTree = "<group>"; };
 		8764C44028D72AC7008FA430 /* Scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Scream.mlmodel; sourceTree = "<group>"; };
 		8764C44128D72AC8008FA430 /* Wave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Wave.mlmodel; sourceTree = "<group>"; };
+		8764C4B928D8F33C008FA430 /* EffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectView.swift; sourceTree = "<group>"; };
 		87DC55E228CDE0B3008F6AEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD9C4B2D28CF188700DC16E5 /* GRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRView.swift; sourceTree = "<group>"; };
 		BD9C4B2F28CF18CB00DC16E5 /* GRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRButton.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		D40F03B528B9FF96006F3AA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8764C4B928D8F33C008FA430 /* EffectView.swift */,
 				D4EA808928AD3FD200730154 /* EffectsCollectionViewCell.swift */,
 			);
 			path = View;
@@ -616,6 +619,7 @@
 				870A59AB28D2414B00F300A2 /* RootViewControllerFactory.swift in Sources */,
 				D4DDB9E428AA14EE00BB9ADD /* CVPixelBuffer+Resize.swift in Sources */,
 				8764C44528D72AC8008FA430 /* Princess.mlmodel in Sources */,
+				8764C4BA28D8F33C008FA430 /* EffectView.swift in Sources */,
 				BDD06C1828A13FCE00681BCE /* AppDelegate.swift in Sources */,
 				BDD06C3628A14B9E00681BCE /* TermsVC.swift in Sources */,
 				D4EA808A28AD3FD200730154 /* EffectsCollectionViewCell.swift in Sources */,

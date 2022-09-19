@@ -320,6 +320,40 @@ public class SemanticImage {
         }
     }
     
+    public func faceWithoutShoulder(uiImage:UIImage) -> UIImage? {
+        let newImage = getCorrectOrientationUIImage(uiImage:uiImage)
+        guard let ciImage = CIImage(image: newImage) else { print("Image processing failed.Please try with another image."); return nil }
+        let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+        do {
+            try handler.perform([faceRectangleRequest])
+            guard let result = faceRectangleRequest.results?.first else { print("Image processing failed.Please try with another image."); return nil }
+                let boundingBox = result.boundingBox
+                let faceRect = VNImageRectForNormalizedRect((boundingBox),Int(ciImage.extent.size.width), Int(ciImage.extent.size.height))
+            var doubleScaleRect = CGRect(x: faceRect.minX - faceRect.width * 0.5, y: faceRect.minY - 0, width: faceRect.width * 2, height: faceRect.height * 2)
+
+            if doubleScaleRect.minX < 0 {
+                doubleScaleRect.origin.x = 0
+            }
+
+            if doubleScaleRect.minY < 0 {
+                doubleScaleRect.origin.y = 0
+            }
+            if doubleScaleRect.maxX > ciImage.extent.maxX  {
+                doubleScaleRect = CGRect(x: doubleScaleRect.origin.x, y: doubleScaleRect.origin.y, width: ciImage.extent.width - doubleScaleRect.origin.x, height: doubleScaleRect.height)
+            }
+            if doubleScaleRect.maxY > ciImage.extent.maxY  {
+                doubleScaleRect = CGRect(x: doubleScaleRect.origin.x, y: doubleScaleRect.origin.y, width: doubleScaleRect.width, height: ciImage.extent.height - doubleScaleRect.origin.y)
+            }
+            let faceImage = ciImage.cropped(to: doubleScaleRect)
+            guard let final = ciContext.createCGImage(faceImage, from: faceImage.extent) else { print("Image processing failed.Please try with another image."); return nil }
+            let finalUiimage =  UIImage(cgImage: final)
+            return finalUiimage
+        } catch let error {
+            print("Vision error \(error)")
+            return nil
+        }
+    }
+    
     public func faceRectangles(uiImage:UIImage) -> [UIImage] {
         var faceUIImages:[UIImage] = []
         let semaphore = DispatchSemaphore(value: 0)

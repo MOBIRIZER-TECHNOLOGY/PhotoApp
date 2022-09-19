@@ -454,7 +454,6 @@
         <!--EffectVC-->
         <scene sceneID="s89-mU-Ggj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="crk-y8-zW3" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="EffectVC" id="scg-dl-8ax" customClass="EffectVC" customModule="BgEraser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3L-Nb-aSe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -471,9 +470,6 @@
                                     <action selector="backButtonTapped:" destination="scg-dl-8ax" eventType="touchUpInside" id="pGR-eX-ubh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLx-kv-wjj">
-                                <rect key="frame" x="20" y="122" width="335" height="455"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6Y-nF-lhK">
                                 <rect key="frame" x="306.66666666666669" y="52.666666666666657" width="48.333333333333314" height="40"/>
                                 <constraints>
@@ -603,6 +599,13 @@
                                     <outlet property="delegate" destination="scg-dl-8ax" id="Xar-1Z-v0O"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-4l-lIB" customClass="EffectView" customModule="cartoon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="240" width="375" height="332"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GM9-4l-lIB" secondAttribute="height" multiplier="375:332" id="4lV-Sd-z5B"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIS-9s-f33"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -611,14 +614,13 @@
                             <constraint firstItem="CCE-hc-IXd" firstAttribute="leading" secondItem="PIS-9s-f33" secondAttribute="leading" constant="20" id="9SQ-7Y-08u"/>
                             <constraint firstItem="PIS-9s-f33" firstAttribute="trailing" secondItem="X6Y-nF-lhK" secondAttribute="trailing" constant="20" id="C0e-oP-ZCE"/>
                             <constraint firstItem="CCE-hc-IXd" firstAttribute="top" secondItem="PIS-9s-f33" secondAttribute="top" constant="9" id="C1O-EJ-oX8"/>
+                            <constraint firstItem="GM9-4l-lIB" firstAttribute="centerY" secondItem="a3L-Nb-aSe" secondAttribute="centerY" id="IUg-go-aSL"/>
                             <constraint firstItem="X6Y-nF-lhK" firstAttribute="top" secondItem="PIS-9s-f33" secondAttribute="top" constant="5.6666666666666572" id="Nie-jc-Nqo"/>
-                            <constraint firstItem="SLx-kv-wjj" firstAttribute="top" secondItem="CCE-hc-IXd" secondAttribute="bottom" constant="30" id="QMv-hM-hMr"/>
-                            <constraint firstItem="SLx-kv-wjj" firstAttribute="leading" secondItem="PIS-9s-f33" secondAttribute="leading" constant="20" id="TdW-Mu-tZd"/>
                             <constraint firstItem="NWI-bM-FVH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CCE-hc-IXd" secondAttribute="trailing" constant="8" symbolic="YES" id="aOV-Sc-W9S"/>
                             <constraint firstItem="JWo-Hb-2tS" firstAttribute="leading" secondItem="PIS-9s-f33" secondAttribute="leading" id="eKd-jk-zVV"/>
                             <constraint firstAttribute="bottom" secondItem="JWo-Hb-2tS" secondAttribute="bottom" constant="10" id="eh2-8q-Pii"/>
-                            <constraint firstItem="PIS-9s-f33" firstAttribute="trailing" secondItem="SLx-kv-wjj" secondAttribute="trailing" constant="20" id="fwX-ey-51S"/>
-                            <constraint firstItem="JWo-Hb-2tS" firstAttribute="top" secondItem="SLx-kv-wjj" secondAttribute="bottom" constant="75" id="rDU-s0-MjJ"/>
+                            <constraint firstAttribute="trailing" secondItem="GM9-4l-lIB" secondAttribute="trailing" id="gmi-Lv-i4O"/>
+                            <constraint firstItem="GM9-4l-lIB" firstAttribute="leading" secondItem="PIS-9s-f33" secondAttribute="leading" id="wFv-ua-YZD"/>
                             <constraint firstItem="NWI-bM-FVH" firstAttribute="top" secondItem="PIS-9s-f33" secondAttribute="top" constant="7" id="y2S-lN-SQw"/>
                             <constraint firstItem="PIS-9s-f33" firstAttribute="trailing" secondItem="JWo-Hb-2tS" secondAttribute="trailing" id="z1a-ye-x91"/>
                         </constraints>
@@ -626,10 +628,11 @@
                     <connections>
                         <outlet property="backButton" destination="CCE-hc-IXd" id="BBX-jW-OGX"/>
                         <outlet property="effectCollectionView" destination="JWo-Hb-2tS" id="Tv7-j5-KL5"/>
-                        <outlet property="imageView" destination="SLx-kv-wjj" id="nNK-Rb-9At"/>
+                        <outlet property="effectView" destination="GM9-4l-lIB" id="Yvi-T1-T43"/>
                         <outlet property="shareBtn" destination="X6Y-nF-lhK" id="KjN-Iu-8Q1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crk-y8-zW3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="97.536945812807886"/>
         </scene>
@@ -646,6 +649,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

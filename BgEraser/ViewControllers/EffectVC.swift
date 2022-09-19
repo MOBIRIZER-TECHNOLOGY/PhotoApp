@@ -14,11 +14,10 @@ class EffectVC: BaseVC {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var imageView: UIImageView?
-
+    @IBOutlet weak var effectView:EffectView?
     @IBOutlet weak var effectCollectionView: UICollectionView?
+    
     var semanticImage = SemanticImage()
-
     var effectBackgrounds:[EffectBackgrounds] = []
 
     override func viewDidLoad() {
@@ -26,7 +25,7 @@ class EffectVC: BaseVC {
         initializeEffectBackgrounds()
         self.backButton.setTitle(String.empty, for: .normal)
         self.shareBtn.setTitle("", for: .normal)
-        self.imageView?.image =  UIImage(named: "placeholder")
+        self.effectView?.bgImageView?.image =  UIImage(named: "placeholder")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,10 +75,9 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             debugPrint("processing stop")
 
             DispatchQueue.main.async {
-                self.imageView?.image = swappedImage
+                self.effectView?.bgImageView?.image  = swappedImage
                 SwiftLoader.hide()
                 debugPrint("SwiftLoader hide")
-
             }
         }
     }
@@ -106,7 +104,7 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             Router.shared.outPutImage = swappedImage
 
             DispatchQueue.main.async {
-                self.imageView?.image = swappedImage
+                self.effectView?.bgImageView?.image  = swappedImage
                 SwiftLoader.hide()
             }
         }
@@ -150,9 +148,8 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
                 outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
             }
             Router.shared.outPutImage = outPutImage
-
             DispatchQueue.main.async {
-                self.imageView?.image = outPutImage
+                self.effectView?.bgImageView?.image  = outPutImage
                 SwiftLoader.hide()
             }
         }
@@ -161,26 +158,23 @@ extension EffectVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     func createFunnyCaricatures(indexPath: IndexPath) {
         SwiftLoader.show(title: "Processing please wait...", animated: true)
         DispatchQueue.global(qos: .userInitiated).async { [self] in
-           
             let effectName = self.effectBackgrounds[indexPath.row].name
+            
             let effectBackgroundImageName = self.effectBackgrounds[indexPath.row].backgroundImage
             let effectBackImage = UIImage(named:effectBackgroundImageName)
-            let faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-            let faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-            let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
-            //        self.imageView?.image = swappedImage
-            //        Router.shared.outPutImage = swappedImage
             
+            var faceImage:UIImage? = semanticImage.faceWithoutShoulder(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
+            faceImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
+            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)//Middle Image
+
             let effectFrontImageName = self.effectBackgrounds[indexPath.row].forgroundImage
             let effectFrontImage = UIImage(named:effectFrontImageName)
-            let finalImage = semanticImage.saliencyBlend(objectUIImage:effectFrontImage!, backgroundUIImage: swappedImage!)
-//            Router.shared.outPutImage = finalImage
-
-            Router.shared.outPutImage = finalImage
-
-            
+           
+//            Router.shared.outPutImage = faceImage
             DispatchQueue.main.async {
-                self.imageView?.image = finalImage
+                effectView?.bgImageView?.image = effectBackImage
+                effectView?.profileImageView?.image = faceImage
+                effectView?.fgImageView?.image = effectFrontImage
                 SwiftLoader.hide()
             }
         }
@@ -214,7 +208,7 @@ extension EffectVC {
             return
         }
         // set up activity view controller
-        let imageToShare = [ self.imageView?.image]
+        let imageToShare = [ self.effectView?.bgImageView?.image ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
@@ -234,15 +228,16 @@ extension EffectVC {
             .editImageTools([.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust])
             .adjustTools([.brightness, .contrast, .saturation])
 
-        ZLEditImageViewController.showEditImageVC(parentVC: self, image:self.imageView?.image ?? UIImage(), editModel: nil) { [weak self] (resImage, editModel) in
+        ZLEditImageViewController.showEditImageVC(parentVC: self, image:self.effectView?.bgImageView?.image  ?? UIImage(), editModel: nil) { [weak self] (resImage, editModel) in
             // your code
-            self?.imageView?.image = resImage
+            self?.effectView?.bgImageView?.image  = resImage
             Router.shared.outPutImage = resImage
         }
     }
     
     func initializeEffectBackgrounds() {
         self.effectBackgrounds = []
+        effectView?.isUserInteractionEnabled = false
         if Router.shared.currentEffect == .realisticCartoon {
             self.initializeRealisticCartoonBackgrounds()
         }
@@ -253,6 +248,7 @@ extension EffectVC {
             self.initializeStyleTransferBackgrounds()
         }
         else if Router.shared.currentEffect == .funnyCaricatures {
+            effectView?.isUserInteractionEnabled = true
             self.initializeFunnyCaricaturesBackgrounds()
         }
     }
