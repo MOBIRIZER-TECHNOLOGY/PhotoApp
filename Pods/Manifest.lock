@@ -1,36 +1,54 @@
 PODS:
+  - Nuke (10.7.1)
   - PryntTrimmerView (4.0.2)
+  - RxSwift (6.5.0)
   - SSSpinnerButton (3.0.2)
   - SteviaLayout (4.7.3)
   - SwiftLoader (1.0.0)
+  - SwiftyStoreKit (0.16.1)
   - ToastViewSwift (1.1.0)
   - YPImagePicker (5.2.1):
     - PryntTrimmerView (= 4.0.2)
     - SteviaLayout (= 4.7.3)
+  - ZLImageEditor (1.1.3):
+    - ZLImageEditor/Core (= 1.1.3)
+  - ZLImageEditor/Core (1.1.3)
 
 DEPENDENCIES:
+  - Nuke
+  - RxSwift
   - SSSpinnerButton
   - SwiftLoader (= 1.0.0)
+  - SwiftyStoreKit
   - ToastViewSwift
   - YPImagePicker
+  - ZLImageEditor
 
 SPEC REPOS:
   trunk:
+    - Nuke
     - PryntTrimmerView
+    - RxSwift
     - SSSpinnerButton
     - SteviaLayout
     - SwiftLoader
+    - SwiftyStoreKit
     - ToastViewSwift
     - YPImagePicker
+    - ZLImageEditor
 
 SPEC CHECKSUMS:
+  Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SSSpinnerButton: ba9ec6858f2f6fa902a5131d3aec5282588241f8
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SwiftLoader: f12f3a6fb42576862a3a5eb80c7e59fc881b6982
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   ToastViewSwift: 8fc7b518fdd834daf4b8009d09435a3fb1d8df46
   YPImagePicker: f36043210c10b0783034eb1947d6e06e31c461e4
+  ZLImageEditor: f86778805f878b69ff3cce58ee8f7e78848fc2c6
 
-PODFILE CHECKSUM: 9dcf518bcbfeee42a56e82c91582266107bb179a
+PODFILE CHECKSUM: 2b3141aa8611074e1bdc799dd35d1023e83487a1
 
 COCOAPODS: 1.11.2

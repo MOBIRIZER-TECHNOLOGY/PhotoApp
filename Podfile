@@ -10,6 +10,10 @@ target 'cartoon' do
   pod 'SwiftLoader', '1.0.0'
   pod 'YPImagePicker'
   pod "ToastViewSwift"
+  pod "Nuke"
+  pod "RxSwift"
+  pod 'SwiftyStoreKit'
+  pod 'ZLImageEditor'
 
 #  pod 'FirebaseAnalytics'
 #  pod 'FirebaseAuth'

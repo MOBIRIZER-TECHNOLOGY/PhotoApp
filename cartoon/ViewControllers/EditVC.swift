@@ -7,6 +7,9 @@
 
 import UIKit
 import SwiftLoader
+import Nuke
+import RxSwift
+import ZLImageEditor
 
 class EditVC: BaseVC {
 
@@ -24,11 +27,15 @@ class EditVC: BaseVC {
     var selecteEffectIndex = 0
     var isColorModuleVisible = false
     
+    internal var disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCollectionCell()
         setupView()
         loadEffectsData()
+        loadColorsData()
+        self.selectItemAt(indexPath: IndexPath(row: 0, section: 0))
     }
     
     func setupView() {
@@ -40,34 +47,94 @@ class EditVC: BaseVC {
     
     func registerCollectionCell() {
         self.effectsCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
-        
         self.colorsCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
     }
     
     func loadEffectsData() {
-        do {
-            if let data = try? EffectsArray.readLocalJSONFile(forName: "FullChangeover") {
-                if let effectsArray = EffectsArray.parse(jsonData: data as! Data) {
-                  //You can read sampleRecordObj just like below.
-                  print("effect list: \(effectsArray.effects)")
+        var effectsData:EffectsCodable?
+        self.effects.removeAll()
+
+        if  Router.shared.currentEffect == .realisticCartoon {
+//            effectsData = EffectsCodable.loadFullChangeoverData()
+            effectsData = EffectsCodable.loadToonAvatarsData()
+//            effectsData = EffectsCodable.loadRealisticCartoonData()
+
+            if let effects = effectsData?.effects  {
+                for data in effects {
+                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
+                    if obj.thumbUrl != nil && obj.bgImageUrl != nil {
+                        self.effects.append(obj)
+                    }
                 }
             }
-        } catch {
-            print("error: \(error)")
+            
         }
-        
+        else  if  Router.shared.currentEffect == .newProfilePic {
+            effectsData = EffectsCodable.loadRealisticCartoonData()
+//            effectsData = EffectsCodable.loadToonAvatarsData()
+
+            if let effects = effectsData?.effects  {
+                for data in effects {
+                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
+                    
+                    if obj.thumbUrl != nil && obj.bgImageUrl != nil  {
+                        self.effects.append(obj)
+                    }
+                }
+            }
+        }
+        else  if  Router.shared.currentEffect == .styleTransfer {
+            initializeStyleTransferBackgrounds()
+        }
+        else  if  Router.shared.currentEffect == .funnyCaricatures {
+//            effectsData = EffectsCodable.loadToonAvatarsData()
+            effectsData = EffectsCodable.loadFullChangeoverData()
+
+            if let effects = effectsData?.effects  {
+                for data in effects {
+                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
+                    
+                    if obj.thumbUrl != nil  && obj.bgImageUrl != nil {
+                        self.effects.append(obj)
+                    }
+                }
+            }
+        }
+
+        self.effectsCollectionView?.reloadData()
     }
     
-    @IBAction func doneBtnClick(_ sender: UIButton) {
-        
-        
+    func loadColorsData() {
+        return
+        var effectsData:EffectsCodable?
+        if  Router.shared.currentEffect == .realisticCartoon {
+            effectsData = EffectsCodable.loadFullChangeoverData()
+        }
+        else  if  Router.shared.currentEffect == .newProfilePic {
+            effectsData = EffectsCodable.loadRealisticCartoonData()
+        }
+        else  if  Router.shared.currentEffect == .styleTransfer {
+            // Will show color plate
+        }
+        else  if  Router.shared.currentEffect == .funnyCaricatures {
+            effectsData = EffectsCodable.loadToonAvatarsData()
+            
+        }
+        self.colors.removeAll()
+        if let effects = effectsData?.effects  {
+            for data in effects {
+                var data = ColorEffect(iconImage: data.thumbUrl!, backgroundImage: data.bgImageUrl ?? String.empty, blendHashKey: String.empty, name: String.empty)
+                self.colors.append(data)
+            }
+        }
+        self.colorsCollectionView?.reloadData()
     }
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //Call First Style of effect
-//        self.selectItemAt(indexPath: IndexPath(row: 0, section: 0))
     }
+
 }
 
 
@@ -78,7 +145,6 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
         if effectsCollectionView == collectionView {
             return self.effects.count
         }
@@ -86,20 +152,39 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
            return self.colors.count
         }
     }
-
+ 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if effectsCollectionView == collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectViewCell.reuseIdentifier, for: indexPath) as! EffectViewCell
-//            let effectBackground = self.effects[indexPath.row]
-//            cell.imageView.image = UIImage(named: effectBackground.iconImage)
+           if Router.shared.currentEffect == .styleTransfer {
+               
+               let thumbUrl = self.effects[indexPath.row].thumbUrl
+               cell.imageView.image = UIImage(named: thumbUrl!)
+            }
+            else {
+                let thumbUrl = self.effects[indexPath.row].thumbUrl
+                let bgImageUrl = self.effects[indexPath.row].bgImageUrl
+                let fgImageUrl = self.effects[indexPath.row].fgImageUrl
+
+                cell.imageView.image = nil
+                var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+                Nuke.loadImage(with: url, into: cell.imageView)
+            }
+            
+  
             cell.setupUI(isSelected: indexPath.row == self.selecteEffectIndex)
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorViewCell.reuseIdentifier, for: indexPath) as! ColorViewCell
-//            let effectBackground = self.colors[indexPath.row]
-//            cell.imageView.image = UIImage(named: effectBackground.iconImage)
+            
+            let thumbUrl = self.effects[indexPath.row].thumbUrl
+            let bgImageUrl = self.effects[indexPath.row].bgImageUrl
+
+            cell.imageView.image = nil
+            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+            Nuke.loadImage(with: url, into: cell.imageView)
             cell.setupUI(isSelected: indexPath.row == self.selectedColorIndex)
             return cell
         }
@@ -107,136 +192,10 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if effectsCollectionView == collectionView {
-            return CGSize(width: 80, height: 100)
+            return CGSize(width: 100, height: 100)
         }
         else {
             return CGSize(width: 75, height: 75)
-        }
-    }
-    
-    func createRealisticCartoon(indexPath: IndexPath) {
-//        SwiftLoader.show(title: "Processing please wait...", animated: true)
-//        DispatchQueue.global(qos: .userInitiated).async { [self] in
-//            let effectName = self.effects[indexPath.row].name
-//            let effectBackgroundImageName = self.effects[indexPath.row].backgroundImage
-//            let effectBackImage = UIImage(named:effectBackgroundImageName)
-//
-//            debugPrint("faceRectangle start")
-//            var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-//            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-//
-//            debugPrint("applyPaintEffects start")
-//            var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-//
-//            debugPrint("saliencyBlend start")
-//
-//            let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
-//            Router.shared.outPutImage = swappedImage
-//            debugPrint("processing stop")
-//
-//            DispatchQueue.main.async {
-//                self.effectView?.bgImageView?.image  = swappedImage
-//                SwiftLoader.hide()
-//                debugPrint("SwiftLoader hide")
-//            }
-//        }
-    }
-    
-
-    func createNewProfilePic(indexPath: IndexPath) {
-//        SwiftLoader.show(title: "Processing please wait...", animated: true)
-//        DispatchQueue.global(qos: .userInitiated).async { [self] in
-//            let effectName = self.effects[indexPath.row].name
-//            let effectBackgroundImageName = self.effects[indexPath.row].backgroundImage
-//            let effectBackImage = UIImage(named:effectBackgroundImageName)
-//
-//            let effectFrontImageName = self.effects[indexPath.row].forgroundImage
-//            let effectFrontImage = UIImage(named:effectFrontImageName)
-//
-//            var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
-//            faceImage = faceImage?.withBackground(color: UIColor.green)
-//            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-//            faceImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-//            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-//
-//            var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: faceImage!)
-//            swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
-//            Router.shared.outPutImage = swappedImage
-//
-//            DispatchQueue.main.async {
-//                self.effectView?.bgImageView?.image  = swappedImage
-//                SwiftLoader.hide()
-//            }
-//        }
-    }
-    
-    func createStyleTransfer(indexPath: IndexPath) {
-        SwiftLoader.show(title: "Processing please wait...", animated: true)
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-            var outPutImage:UIImage?
-//            if indexPath.row == 0 {
-//                outPutImage = Router.shared.image?.applyCupheadEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//            else if indexPath.row == 1 {
-//                outPutImage = Router.shared.image?.applyMosicEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//            else if indexPath.row == 2 {
-//                outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 3 {//StyleTransfer_la_muse
-//                outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 4 {//StyleTransfer_rain_princess
-//                outPutImage = Router.shared.image?.applyPrincessEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 5 {//StyleTransfer_shipwreck
-//                outPutImage = Router.shared.image?.applyShipwreckEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 6 {//StyleTransfer_the_scream
-//                outPutImage = Router.shared.image?.applyScreamEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 7 {//StyleTransfer_udnie
-//                outPutImage = Router.shared.image?.applyUdnieEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-//
-//            else if indexPath.row == 8 {//StyleTransfer_wave
-//                outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
-//            }
-            Router.shared.outPutImage = outPutImage
-            DispatchQueue.main.async {
-                self.effectView?.bgImageView?.image  = outPutImage
-                SwiftLoader.hide()
-            }
-        }
-    }
-    
-    func createFunnyCaricatures(indexPath: IndexPath) {
-        SwiftLoader.show(title: "Processing please wait...", animated: true)
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-//            let effectName = self.effects[indexPath.row].name
-//
-//            let effectBackgroundImageName = self.effects[indexPath.row].backgroundImage
-//            let effectBackImage = UIImage(named:effectBackgroundImageName)
-//
-//            var faceImage:UIImage? = semanticImage.faceWithoutShoulder(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-//            faceImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-//            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)//Middle Image
-//
-//            let effectFrontImageName = self.effects[indexPath.row].forgroundImage
-//            let effectFrontImage = UIImage(named:effectFrontImageName)
-//
-////            Router.shared.outPutImage = faceImage
-//            DispatchQueue.main.async {
-//                effectView?.bgImageView?.image = effectBackImage
-//                effectView?.profileImageView?.image = faceImage
-//                effectView?.fgImageView?.image = effectFrontImage
-//                SwiftLoader.hide()
-//            }
         }
     }
     
@@ -245,37 +204,33 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
         if effectsCollectionView == collectionView {
             self.selecteEffectIndex = indexPath.row
             self.effectsCollectionView?.reloadData()
-            
-//            let effectBackground = self.effects[indexPath.row]
-//            self.selectItemAt(indexPath: indexPath)
+            self.selectItemAt(indexPath: indexPath)
         }
         else {
             self.selectedColorIndex = indexPath.row
             self.colorsCollectionView?.reloadData()
-            
 //            let effectBackground = self.colors[indexPath.row]
 //            self.selectItemAt(indexPath: indexPath)
         }
     }
     
     func selectItemAt(indexPath: IndexPath) {
-        if Router.shared.currentEffect == .realisticCartoon {
-            self.createRealisticCartoon(indexPath: indexPath)
-        }
-        else if Router.shared.currentEffect == .newProfilePic {
-            self.createNewProfilePic(indexPath: indexPath)
-        }
-        else if Router.shared.currentEffect == .styleTransfer {
+        if Router.shared.currentEffect == .styleTransfer {
             self.createStyleTransfer(indexPath: indexPath)
         }
-        else if Router.shared.currentEffect == .funnyCaricatures {
-            self.createFunnyCaricatures(indexPath: indexPath)
+        else {
+            loadEffectImages(indexPath: indexPath)
         }
-    }
+     }
 }
 
 extension EditVC {
-
+    
+    @IBAction func doneBtnClick(_ sender: UIButton) {
+        let vc = ShareVC.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func shareAction(_ sender: UIButton) {
         guard (Router.shared.outPutImage != nil) else {
             return
@@ -293,73 +248,20 @@ extension EditVC {
     }
     
     
-    func initializeEffect() {
-        self.effects = []
-        effectView?.isUserInteractionEnabled = false
-        if Router.shared.currentEffect == .realisticCartoon {
-            self.initializeRealisticCartoonBackgrounds()
+    @IBAction func editAction(_ sender: UIButton) {
+        guard (Router.shared.outPutImage != nil) else {
+            return
         }
-        else if Router.shared.currentEffect == .newProfilePic {
-            self.initializeProfilePicBackgrounds()
+        
+        ZLImageEditorConfiguration.default()
+            .editImageTools([.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust])
+            .adjustTools([.brightness, .contrast, .saturation])
+        
+        ZLEditImageViewController.showEditImageVC(parentVC: self, image:self.effectView?.bgImageView?.image  ?? UIImage(), editModel: nil) { [weak self] (resImage, editModel) in
+            // your code
+            self?.effectView?.bgImageView?.image  = resImage
+            Router.shared.outPutImage = resImage
         }
-        else if Router.shared.currentEffect == .styleTransfer {
-            self.initializeStyleTransferBackgrounds()
-        }
-        else if Router.shared.currentEffect == .funnyCaricatures {
-            effectView?.isUserInteractionEnabled = true
-            self.initializeFunnyCaricaturesBackgrounds()
-        }
-    }
-    
-    func initializeRealisticCartoonBackgrounds(){
-//        var effectBackground = Effect(iconImage: "Style1_s1_icon", backgroundImage: "Style1_s1_back", forgroundImage: "", blendHashKey: String.empty, name: "Style1_s1")
-//        effects.append(effectBackground)
-    }
-    
-    func initializeProfilePicBackgrounds(){
-//        var effectBackground = Effect(iconImage: "Style2_s1_icon", backgroundImage: "Style2_s1_back", forgroundImage: "Style2_s1_front", blendHashKey: String.empty, name: "Style2_s1")
-//        effects.append(effectBackground)
-    }
-    
-    func initializeStyleTransferBackgrounds(){
-//        var effectBackground = Effect(iconImage: "StyleTransfer_Cuphead", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Cuphead")
-//        effects.append(effectBackground)
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_Mosaic", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Mosaic")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_Night", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Night")
-//        effects.append(effectBackground)
-//
-//
-//        ///
-//        effectBackground = Effect(iconImage: "StyleTransfer_la_muse", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "La Muse")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_rain_princess", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Rain Princess")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_shipwreck", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Shipwreck")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_the_scream", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Scream")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_udnie", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Udnie")
-//        effects.append(effectBackground)
-//
-//
-//        effectBackground = Effect(iconImage: "StyleTransfer_wave", backgroundImage: "", forgroundImage: "", blendHashKey: String.empty, name: "Wave")
-//        effects.append(effectBackground)
-    }
-    
-    func initializeFunnyCaricaturesBackgrounds(){
-//        var effectBackground = Effect(iconImage: "Style3_s1_icon", backgroundImage: "Style3_s1_back", forgroundImage: "Style3_s1_front", blendHashKey: String.empty, name: "Style3_s1")
-//        effects.append(effectBackground)
     }
 }
+

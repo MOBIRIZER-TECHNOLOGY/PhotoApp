@@ -7,7 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38DAD2A71BEA0CD237AACA45 /* Pods_cartoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B262924D2C67BC27758A64 /* Pods_cartoon.framework */; };
+		17218A3C006CC117106BD99A /* Pods_cartoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B6D14151A510B1E7242B23 /* Pods_cartoon.framework */; };
+		192448B59C1CB2BC81FA2AF9 /* Pods_cartoon_cartoonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03248E004122CABBA78B82BE /* Pods_cartoon_cartoonUITests.framework */; };
+		3F03B67B8997BDCC56F369BA /* Pods_cartoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */; };
+		873DA4ED28E37ECB00C03F79 /* mosaic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E028E37ECB00C03F79 /* mosaic.mlmodel */; };
+		873DA4EE28E37ECB00C03F79 /* paint.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E128E37ECB00C03F79 /* paint.mlmodel */; };
+		873DA4EF28E37ECB00C03F79 /* bgRemover.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E228E37ECB00C03F79 /* bgRemover.mlpackage */; };
+		873DA4F028E37ECB00C03F79 /* Princess.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E328E37ECB00C03F79 /* Princess.mlmodel */; };
+		873DA4F128E37ECB00C03F79 /* segmentation.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 873DA4E428E37ECB00C03F79 /* segmentation.mlmodelc */; };
+		873DA4F228E37ECB00C03F79 /* Shipwreck.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E528E37ECB00C03F79 /* Shipwreck.mlmodel */; };
+		873DA4F328E37ECB00C03F79 /* night.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E628E37ECB00C03F79 /* night.mlmodel */; };
+		873DA4F428E37ECB00C03F79 /* Udnie.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E728E37ECB00C03F79 /* Udnie.mlmodel */; };
+		873DA4F528E37ECB00C03F79 /* cartoon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E828E37ECB00C03F79 /* cartoon.mlmodel */; };
+		873DA4F628E37ECB00C03F79 /* cuphead.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4E928E37ECB00C03F79 /* cuphead.mlmodel */; };
+		873DA4F728E37ECB00C03F79 /* Muse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EA28E37ECB00C03F79 /* Muse.mlmodel */; };
+		873DA4F828E37ECB00C03F79 /* Scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EB28E37ECB00C03F79 /* Scream.mlmodel */; };
+		873DA4F928E37ECB00C03F79 /* Wave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EC28E37ECB00C03F79 /* Wave.mlmodel */; };
 		87A9060128DEE29F008EA07E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9060028DEE29F008EA07E /* AppDelegate.swift */; };
 		87A9060328DEE29F008EA07E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9060228DEE29F008EA07E /* SceneDelegate.swift */; };
 		87A9060828DEE29F008EA07E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A9060628DEE29F008EA07E /* Main.storyboard */; };
@@ -55,10 +70,6 @@
 		87A9069328DEF917008EA07E /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9068228DEF917008EA07E /* CVPixelBuffer+Rotate.swift */; };
 		87A9069528DEF967008EA07E /* RemoveBackgroundCoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9069428DEF967008EA07E /* RemoveBackgroundCoreML.swift */; };
 		87A9069728DEF999008EA07E /* SemanticImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9069628DEF999008EA07E /* SemanticImage.swift */; };
-		87A9069D28DEF9D3008EA07E /* segmentation.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 87A9069928DEF9D3008EA07E /* segmentation.mlmodelc */; };
-		87A9069E28DEF9D3008EA07E /* cartoon.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 87A9069A28DEF9D3008EA07E /* cartoon.mlmodel */; };
-		87A9069F28DEF9D3008EA07E /* paint.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 87A9069B28DEF9D3008EA07E /* paint.mlmodel */; };
-		87A906A028DEF9D3008EA07E /* bgRemover.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 87A9069C28DEF9D3008EA07E /* bgRemover.mlpackage */; };
 		87A906A228DEFB1B008EA07E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906A128DEFB1B008EA07E /* Router.swift */; };
 		87A906A928DEFB6F008EA07E /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906A328DEFB6E008EA07E /* ColorConstants.swift */; };
 		87A906AA28DEFB6F008EA07E /* LocalizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906A428DEFB6F008EA07E /* LocalizationConstants.swift */; };
@@ -69,7 +80,9 @@
 		87A906B028DEFC09008EA07E /* segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906AF28DEFC09008EA07E /* segmentation.swift */; };
 		87A906B228DF0338008EA07E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B128DF0338008EA07E /* Extenstions.swift */; };
 		87A906B428DF03A0008EA07E /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B328DF039F008EA07E /* LogUtils.swift */; };
-		B03BF2DD643B1901F3566B07 /* Pods_cartoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894D227EF717C6A4C6EC5DAC /* Pods_cartoonTests.framework */; };
+		D423028428E290E300DC9D08 /* RxNuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423028328E290E300DC9D08 /* RxNuke.swift */; };
+		D445332928E35C0B00E745C8 /* GoProDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D445332828E35C0B00E745C8 /* GoProDetailCell.swift */; };
+		D445332B28E36F3500E745C8 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D445332A28E36F3500E745C8 /* EditVC+Extension.swift */; };
 		D4EE004628DF287400B4C639 /* FullChangeover.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004328DF287400B4C639 /* FullChangeover.json */; };
 		D4EE004728DF287400B4C639 /* RealisticCartoon.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004428DF287400B4C639 /* RealisticCartoon.json */; };
 		D4EE004828DF287400B4C639 /* ToonAvatars.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004528DF287400B4C639 /* ToonAvatars.json */; };
@@ -85,7 +98,6 @@
 		D4EE005C28E08CE400B4C639 /* ProfilePicCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005428E08CE400B4C639 /* ProfilePicCardCell.swift */; };
 		D4EE005E28E0D2FE00B4C639 /* ColorEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005D28E0D2FE00B4C639 /* ColorEffect.swift */; };
 		D4EE006028E1405C00B4C639 /* JSONSaveLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005F28E1405C00B4C639 /* JSONSaveLoad.swift */; };
-		DAE7B3AB32F99D47E6C5AE30 /* Pods_cartoon_cartoonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45A171EB3BD24DF1A61B7CE /* Pods_cartoon_cartoonUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,11 +118,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		030C42FFCC69D5AD603ED0DE /* Pods-cartoon-cartoonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon-cartoonUITests.release.xcconfig"; path = "Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests.release.xcconfig"; sourceTree = "<group>"; };
-		460B22CF5A95257017775B92 /* Pods-cartoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.debug.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.debug.xcconfig"; sourceTree = "<group>"; };
-		505BCFF4E34FF9E7DBC60D24 /* Pods-cartoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.release.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.release.xcconfig"; sourceTree = "<group>"; };
-		52B262924D2C67BC27758A64 /* Pods_cartoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E82B953757A5A2CAEA574E6 /* Pods-cartoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.release.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.release.xcconfig"; sourceTree = "<group>"; };
+		03248E004122CABBA78B82BE /* Pods_cartoon_cartoonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon_cartoonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D64C168528BE849A5E47902 /* Pods-cartoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.release.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.release.xcconfig"; sourceTree = "<group>"; };
+		873DA4E028E37ECB00C03F79 /* mosaic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mosaic.mlmodel; sourceTree = "<group>"; };
+		873DA4E128E37ECB00C03F79 /* paint.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = paint.mlmodel; sourceTree = "<group>"; };
+		873DA4E228E37ECB00C03F79 /* bgRemover.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = bgRemover.mlpackage; sourceTree = "<group>"; };
+		873DA4E328E37ECB00C03F79 /* Princess.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Princess.mlmodel; sourceTree = "<group>"; };
+		873DA4E428E37ECB00C03F79 /* segmentation.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = segmentation.mlmodelc; sourceTree = "<group>"; };
+		873DA4E528E37ECB00C03F79 /* Shipwreck.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Shipwreck.mlmodel; sourceTree = "<group>"; };
+		873DA4E628E37ECB00C03F79 /* night.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = night.mlmodel; sourceTree = "<group>"; };
+		873DA4E728E37ECB00C03F79 /* Udnie.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Udnie.mlmodel; sourceTree = "<group>"; };
+		873DA4E828E37ECB00C03F79 /* cartoon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cartoon.mlmodel; sourceTree = "<group>"; };
+		873DA4E928E37ECB00C03F79 /* cuphead.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cuphead.mlmodel; sourceTree = "<group>"; };
+		873DA4EA28E37ECB00C03F79 /* Muse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Muse.mlmodel; sourceTree = "<group>"; };
+		873DA4EB28E37ECB00C03F79 /* Scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Scream.mlmodel; sourceTree = "<group>"; };
+		873DA4EC28E37ECB00C03F79 /* Wave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Wave.mlmodel; sourceTree = "<group>"; };
 		87A905FD28DEE29F008EA07E /* cartoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A9060028DEE29F008EA07E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A9060228DEE29F008EA07E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,10 +184,6 @@
 		87A9068228DEF917008EA07E /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
 		87A9069428DEF967008EA07E /* RemoveBackgroundCoreML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveBackgroundCoreML.swift; sourceTree = "<group>"; };
 		87A9069628DEF999008EA07E /* SemanticImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticImage.swift; sourceTree = "<group>"; };
-		87A9069928DEF9D3008EA07E /* segmentation.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = segmentation.mlmodelc; sourceTree = "<group>"; };
-		87A9069A28DEF9D3008EA07E /* cartoon.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cartoon.mlmodel; sourceTree = "<group>"; };
-		87A9069B28DEF9D3008EA07E /* paint.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = paint.mlmodel; sourceTree = "<group>"; };
-		87A9069C28DEF9D3008EA07E /* bgRemover.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = bgRemover.mlpackage; sourceTree = "<group>"; };
 		87A906A128DEFB1B008EA07E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		87A906A328DEFB6E008EA07E /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		87A906A428DEFB6F008EA07E /* LocalizationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationConstants.swift; sourceTree = "<group>"; };
@@ -176,10 +194,14 @@
 		87A906AF28DEFC09008EA07E /* segmentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = segmentation.swift; sourceTree = "<group>"; };
 		87A906B128DF0338008EA07E /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		87A906B328DF039F008EA07E /* LogUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtils.swift; sourceTree = "<group>"; };
-		87B3C8CAE10675FF2A6F2B74 /* Pods-cartoon-cartoonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon-cartoonUITests.debug.xcconfig"; path = "Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		894D227EF717C6A4C6EC5DAC /* Pods_cartoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A45A171EB3BD24DF1A61B7CE /* Pods_cartoon_cartoonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon_cartoonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B39678637574DA852D205A22 /* Pods-cartoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.debug.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D7CBC30B85FAF9D1E1EFEF8 /* Pods-cartoon-cartoonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon-cartoonUITests.release.xcconfig"; path = "Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9CE3AB3C64D18A031A96B640 /* Pods-cartoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.debug.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.debug.xcconfig"; sourceTree = "<group>"; };
+		A3B6D14151A510B1E7242B23 /* Pods_cartoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB256D4A80485F0AB614F405 /* Pods-cartoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.debug.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D423028328E290E300DC9D08 /* RxNuke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNuke.swift; sourceTree = "<group>"; };
+		D445332828E35C0B00E745C8 /* GoProDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProDetailCell.swift; sourceTree = "<group>"; };
+		D445332A28E36F3500E745C8 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		D4EE004328DF287400B4C639 /* FullChangeover.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FullChangeover.json; sourceTree = "<group>"; };
 		D4EE004428DF287400B4C639 /* RealisticCartoon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RealisticCartoon.json; sourceTree = "<group>"; };
 		D4EE004528DF287400B4C639 /* ToonAvatars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ToonAvatars.json; sourceTree = "<group>"; };
@@ -195,6 +217,8 @@
 		D4EE005428E08CE400B4C639 /* ProfilePicCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicCardCell.swift; sourceTree = "<group>"; };
 		D4EE005D28E0D2FE00B4C639 /* ColorEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEffect.swift; sourceTree = "<group>"; };
 		D4EE005F28E1405C00B4C639 /* JSONSaveLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSaveLoad.swift; sourceTree = "<group>"; };
+		EA36FAD349F237563F7B01B9 /* Pods-cartoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.release.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.release.xcconfig"; sourceTree = "<group>"; };
+		F74BA3B6C4998E4162F235D4 /* Pods-cartoon-cartoonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon-cartoonUITests.debug.xcconfig"; path = "Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38DAD2A71BEA0CD237AACA45 /* Pods_cartoon.framework in Frameworks */,
+				17218A3C006CC117106BD99A /* Pods_cartoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03BF2DD643B1901F3566B07 /* Pods_cartoonTests.framework in Frameworks */,
+				3F03B67B8997BDCC56F369BA /* Pods_cartoonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,19 +242,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE7B3AB32F99D47E6C5AE30 /* Pods_cartoon_cartoonUITests.framework in Frameworks */,
+				192448B59C1CB2BC81FA2AF9 /* Pods_cartoon_cartoonUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60C2E5D08F883A3834010314 /* Frameworks */ = {
+		54AC9F58213A34F7E9F6C576 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52B262924D2C67BC27758A64 /* Pods_cartoon.framework */,
-				A45A171EB3BD24DF1A61B7CE /* Pods_cartoon_cartoonUITests.framework */,
-				894D227EF717C6A4C6EC5DAC /* Pods_cartoonTests.framework */,
+				A3B6D14151A510B1E7242B23 /* Pods_cartoon.framework */,
+				03248E004122CABBA78B82BE /* Pods_cartoon_cartoonUITests.framework */,
+				C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -243,7 +267,7 @@
 				87A9062028DEE2A2008EA07E /* cartoonUITests */,
 				87A905FE28DEE29F008EA07E /* Products */,
 				EFBE74C7B01FB4488D6B5ACF /* Pods */,
-				60C2E5D08F883A3834010314 /* Frameworks */,
+				54AC9F58213A34F7E9F6C576 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +359,7 @@
 				87A9063928DEED33008EA07E /* HomeVC.swift */,
 				87A9063B28DEED4F008EA07E /* SettingsVC.swift */,
 				87A9063D28DEEEBE008EA07E /* EditVC.swift */,
+				D445332A28E36F3500E745C8 /* EditVC+Extension.swift */,
 				87A9063F28DEEEE6008EA07E /* GoProVC.swift */,
 				87A9064128DEEF1E008EA07E /* ShareVC.swift */,
 			);
@@ -350,6 +375,7 @@
 				87A9064B28DEF0C4008EA07E /* ColorViewCell.xib */,
 				87A9064F28DEF0DF008EA07E /* EffectViewCell.xib */,
 				87A9064E28DEF0DF008EA07E /* EffectViewCell.swift */,
+				D445332828E35C0B00E745C8 /* GoProDetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -377,6 +403,7 @@
 			children = (
 				87A906B328DF039F008EA07E /* LogUtils.swift */,
 				87A906B128DF0338008EA07E /* Extenstions.swift */,
+				D423028328E290E300DC9D08 /* RxNuke.swift */,
 				87A906AF28DEFC09008EA07E /* segmentation.swift */,
 				87A9069628DEF999008EA07E /* SemanticImage.swift */,
 				87A9069428DEF967008EA07E /* RemoveBackgroundCoreML.swift */,
@@ -425,10 +452,19 @@
 		87A9069828DEF9C7008EA07E /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				87A9069C28DEF9D3008EA07E /* bgRemover.mlpackage */,
-				87A9069A28DEF9D3008EA07E /* cartoon.mlmodel */,
-				87A9069B28DEF9D3008EA07E /* paint.mlmodel */,
-				87A9069928DEF9D3008EA07E /* segmentation.mlmodelc */,
+				873DA4E228E37ECB00C03F79 /* bgRemover.mlpackage */,
+				873DA4E828E37ECB00C03F79 /* cartoon.mlmodel */,
+				873DA4E928E37ECB00C03F79 /* cuphead.mlmodel */,
+				873DA4E028E37ECB00C03F79 /* mosaic.mlmodel */,
+				873DA4EA28E37ECB00C03F79 /* Muse.mlmodel */,
+				873DA4E628E37ECB00C03F79 /* night.mlmodel */,
+				873DA4E128E37ECB00C03F79 /* paint.mlmodel */,
+				873DA4E328E37ECB00C03F79 /* Princess.mlmodel */,
+				873DA4EB28E37ECB00C03F79 /* Scream.mlmodel */,
+				873DA4E428E37ECB00C03F79 /* segmentation.mlmodelc */,
+				873DA4E528E37ECB00C03F79 /* Shipwreck.mlmodel */,
+				873DA4E728E37ECB00C03F79 /* Udnie.mlmodel */,
+				873DA4EC28E37ECB00C03F79 /* Wave.mlmodel */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -446,12 +482,12 @@
 		EFBE74C7B01FB4488D6B5ACF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				460B22CF5A95257017775B92 /* Pods-cartoon.debug.xcconfig */,
-				505BCFF4E34FF9E7DBC60D24 /* Pods-cartoon.release.xcconfig */,
-				87B3C8CAE10675FF2A6F2B74 /* Pods-cartoon-cartoonUITests.debug.xcconfig */,
-				030C42FFCC69D5AD603ED0DE /* Pods-cartoon-cartoonUITests.release.xcconfig */,
-				B39678637574DA852D205A22 /* Pods-cartoonTests.debug.xcconfig */,
-				7E82B953757A5A2CAEA574E6 /* Pods-cartoonTests.release.xcconfig */,
+				9CE3AB3C64D18A031A96B640 /* Pods-cartoon.debug.xcconfig */,
+				EA36FAD349F237563F7B01B9 /* Pods-cartoon.release.xcconfig */,
+				F74BA3B6C4998E4162F235D4 /* Pods-cartoon-cartoonUITests.debug.xcconfig */,
+				8D7CBC30B85FAF9D1E1EFEF8 /* Pods-cartoon-cartoonUITests.release.xcconfig */,
+				BB256D4A80485F0AB614F405 /* Pods-cartoonTests.debug.xcconfig */,
+				6D64C168528BE849A5E47902 /* Pods-cartoonTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -463,11 +499,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A9062728DEE2A2008EA07E /* Build configuration list for PBXNativeTarget "cartoon" */;
 			buildPhases = (
-				1213A755F9DC7F865E650700 /* [CP] Check Pods Manifest.lock */,
+				A4F81C4A136D083CF75ED7A1 /* [CP] Check Pods Manifest.lock */,
 				87A905F928DEE29F008EA07E /* Sources */,
 				87A905FA28DEE29F008EA07E /* Frameworks */,
 				87A905FB28DEE29F008EA07E /* Resources */,
-				6D09B13A8FE5195871723FF9 /* [CP] Embed Pods Frameworks */,
+				709B171778CEDE8624FA4F01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -482,7 +518,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A9062A28DEE2A2008EA07E /* Build configuration list for PBXNativeTarget "cartoonTests" */;
 			buildPhases = (
-				838679DF963B82CCEC8C9E05 /* [CP] Check Pods Manifest.lock */,
+				6326A4FA2D28F66289E95F7B /* [CP] Check Pods Manifest.lock */,
 				87A9060F28DEE2A2008EA07E /* Sources */,
 				87A9061028DEE2A2008EA07E /* Frameworks */,
 				87A9061128DEE2A2008EA07E /* Resources */,
@@ -501,11 +537,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A9062D28DEE2A2008EA07E /* Build configuration list for PBXNativeTarget "cartoonUITests" */;
 			buildPhases = (
-				64FA1025CF212D198C8472B6 /* [CP] Check Pods Manifest.lock */,
+				683BD12395742025D9966C02 /* [CP] Check Pods Manifest.lock */,
 				87A9061928DEE2A2008EA07E /* Sources */,
 				87A9061A28DEE2A2008EA07E /* Frameworks */,
 				87A9061B28DEE2A2008EA07E /* Resources */,
-				F06F817732F35EF0157E61D8 /* [CP] Embed Pods Frameworks */,
+				4F768A9A4433784F97376DBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -578,8 +614,8 @@
 				D4EE005628E08CE400B4C639 /* RealisticCartoonCardCell.xib in Resources */,
 				87A9060A28DEE2A1008EA07E /* Assets.xcassets in Resources */,
 				87A9060828DEE29F008EA07E /* Main.storyboard in Resources */,
-				87A9069D28DEF9D3008EA07E /* segmentation.mlmodelc in Resources */,
 				D4EE005B28E08CE400B4C639 /* ProfilePicCardCell.xib in Resources */,
+				873DA4F128E37ECB00C03F79 /* segmentation.mlmodelc in Resources */,
 				87A9065128DEF0DF008EA07E /* EffectViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,68 +637,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1213A755F9DC7F865E650700 /* [CP] Check Pods Manifest.lock */ = {
+		4F768A9A4433784F97376DBB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cartoon-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		64FA1025CF212D198C8472B6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cartoon-cartoonUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D09B13A8FE5195871723FF9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		838679DF963B82CCEC8C9E05 /* [CP] Check Pods Manifest.lock */ = {
+		6326A4FA2D28F66289E95F7B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -684,21 +676,65 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F06F817732F35EF0157E61D8 /* [CP] Embed Pods Frameworks */ = {
+		683BD12395742025D9966C02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cartoon-cartoonUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		709B171778CEDE8624FA4F01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartoon/Pods-cartoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4F81C4A136D083CF75ED7A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cartoon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -710,57 +746,69 @@
 			files = (
 				87A906AE28DEFB6F008EA07E /* NetworkConstants.swift in Sources */,
 				87A9068E28DEF917008EA07E /* CGImage+CVPixelBuffer.swift in Sources */,
-				87A9069E28DEF9D3008EA07E /* cartoon.mlmodel in Sources */,
 				87A9064028DEEEE6008EA07E /* GoProVC.swift in Sources */,
 				87A9068D28DEF917008EA07E /* CVPixelBuffer+Create.swift in Sources */,
 				87A906B428DF03A0008EA07E /* LogUtils.swift in Sources */,
 				87A906A928DEFB6F008EA07E /* ColorConstants.swift in Sources */,
 				87A9068528DEF917008EA07E /* UIImage+CVPixelBuffer.swift in Sources */,
-				87A906A028DEF9D3008EA07E /* bgRemover.mlpackage in Sources */,
+				873DA4F528E37ECB00C03F79 /* cartoon.mlmodel in Sources */,
 				D4EE005928E08CE400B4C639 /* StyleTransferCardCell.swift in Sources */,
 				87A9069728DEF999008EA07E /* SemanticImage.swift in Sources */,
 				87A9068728DEF917008EA07E /* UIImage+Extensions.swift in Sources */,
+				873DA4F628E37ECB00C03F79 /* cuphead.mlmodel in Sources */,
 				87A9068C28DEF917008EA07E /* CoreML+Combine.swift in Sources */,
 				87A906AA28DEFB6F008EA07E /* LocalizationConstants.swift in Sources */,
 				87A9069028DEF917008EA07E /* CGImage+RawBytes.swift in Sources */,
+				873DA4F228E37ECB00C03F79 /* Shipwreck.mlmodel in Sources */,
 				87A9068428DEF917008EA07E /* Math.swift in Sources */,
-				87A9069F28DEF9D3008EA07E /* paint.mlmodel in Sources */,
 				87A9063A28DEED33008EA07E /* HomeVC.swift in Sources */,
 				87A906A228DEFB1B008EA07E /* Router.swift in Sources */,
 				87A9067028DEF838008EA07E /* Effect.swift in Sources */,
 				D4EE005C28E08CE400B4C639 /* ProfilePicCardCell.swift in Sources */,
 				87A9060128DEE29F008EA07E /* AppDelegate.swift in Sources */,
+				D423028428E290E300DC9D08 /* RxNuke.swift in Sources */,
+				873DA4ED28E37ECB00C03F79 /* mosaic.mlmodel in Sources */,
 				87A9069528DEF967008EA07E /* RemoveBackgroundCoreML.swift in Sources */,
 				87A906AD28DEFB6F008EA07E /* ImageConstants.swift in Sources */,
 				87A9066C28DEF6CF008EA07E /* ExtensionUIViewController.swift in Sources */,
 				87A9064C28DEF0C4008EA07E /* ColorViewCell.swift in Sources */,
+				873DA4F428E37ECB00C03F79 /* Udnie.mlmodel in Sources */,
 				87A9068928DEF917008EA07E /* UIImage+RawBytes.swift in Sources */,
 				87A906AC28DEFB6F008EA07E /* Constants.swift in Sources */,
 				87A9064728DEF01B008EA07E /* BaseCollectionViewCell.swift in Sources */,
 				87A9060328DEE29F008EA07E /* SceneDelegate.swift in Sources */,
 				87A9064928DEF068008EA07E /* BaseCardCell.swift in Sources */,
+				D445332928E35C0B00E745C8 /* GoProDetailCell.swift in Sources */,
 				87A9063828DEEC20008EA07E /* BaseVC.swift in Sources */,
 				87A9069128DEF917008EA07E /* MLMultiArray+Image.swift in Sources */,
 				87A9066A28DEF6CF008EA07E /* CommonAlertVC.swift in Sources */,
 				87A9068828DEF917008EA07E /* CGImagePropertyOrientation.swift in Sources */,
+				873DA4EF28E37ECB00C03F79 /* bgRemover.mlpackage in Sources */,
 				D4EE005728E08CE400B4C639 /* RealisticCartoonCardCell.swift in Sources */,
 				87A9069228DEF917008EA07E /* CVPixelBuffer+Resize.swift in Sources */,
 				D4EE004B28DF29EA00B4C639 /* DynamicCardCell.swift in Sources */,
 				87A9068A28DEF917008EA07E /* MLMultiArray+Helpers.swift in Sources */,
 				87A9069328DEF917008EA07E /* CVPixelBuffer+Rotate.swift in Sources */,
+				873DA4F828E37ECB00C03F79 /* Scream.mlmodel in Sources */,
+				873DA4F928E37ECB00C03F79 /* Wave.mlmodel in Sources */,
 				D4EE005E28E0D2FE00B4C639 /* ColorEffect.swift in Sources */,
 				87A906AB28DEFB6F008EA07E /* AccessibilityConstants.swift in Sources */,
 				87A9066928DEF6CF008EA07E /* UIViewExtension.swift in Sources */,
+				873DA4F328E37ECB00C03F79 /* night.mlmodel in Sources */,
 				87A9063C28DEED4F008EA07E /* SettingsVC.swift in Sources */,
+				873DA4EE28E37ECB00C03F79 /* paint.mlmodel in Sources */,
 				87A9064428DEEF9C008EA07E /* EffectView.swift in Sources */,
 				87A9068328DEF917008EA07E /* Array+Extensions.swift in Sources */,
 				87A906B028DEFC09008EA07E /* segmentation.swift in Sources */,
 				87A9068B28DEF917008EA07E /* MLModel+Images.swift in Sources */,
+				D445332B28E36F3500E745C8 /* EditVC+Extension.swift in Sources */,
+				873DA4F728E37ECB00C03F79 /* Muse.mlmodel in Sources */,
 				D4EE005A28E08CE400B4C639 /* FullBodyCardCell.swift in Sources */,
 				87A9068628DEF917008EA07E /* Predictions.swift in Sources */,
 				87A9065028DEF0DF008EA07E /* EffectViewCell.swift in Sources */,
 				87A9063E28DEEEBE008EA07E /* EditVC.swift in Sources */,
 				87A9064228DEEF1E008EA07E /* ShareVC.swift in Sources */,
+				873DA4F028E37ECB00C03F79 /* Princess.mlmodel in Sources */,
 				D4EE006028E1405C00B4C639 /* JSONSaveLoad.swift in Sources */,
 				87A9068F28DEF917008EA07E /* NonMaxSuppression.swift in Sources */,
 				87A906B228DF0338008EA07E /* Extenstions.swift in Sources */,
@@ -936,7 +984,7 @@
 		};
 		87A9062828DEE2A2008EA07E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 460B22CF5A95257017775B92 /* Pods-cartoon.debug.xcconfig */;
+			baseConfigurationReference = 9CE3AB3C64D18A031A96B640 /* Pods-cartoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -967,7 +1015,7 @@
 		};
 		87A9062928DEE2A2008EA07E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 505BCFF4E34FF9E7DBC60D24 /* Pods-cartoon.release.xcconfig */;
+			baseConfigurationReference = EA36FAD349F237563F7B01B9 /* Pods-cartoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -998,7 +1046,7 @@
 		};
 		87A9062B28DEE2A2008EA07E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B39678637574DA852D205A22 /* Pods-cartoonTests.debug.xcconfig */;
+			baseConfigurationReference = BB256D4A80485F0AB614F405 /* Pods-cartoonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1019,7 +1067,7 @@
 		};
 		87A9062C28DEE2A2008EA07E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E82B953757A5A2CAEA574E6 /* Pods-cartoonTests.release.xcconfig */;
+			baseConfigurationReference = 6D64C168528BE849A5E47902 /* Pods-cartoonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1040,7 +1088,7 @@
 		};
 		87A9062E28DEE2A2008EA07E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87B3C8CAE10675FF2A6F2B74 /* Pods-cartoon-cartoonUITests.debug.xcconfig */;
+			baseConfigurationReference = F74BA3B6C4998E4162F235D4 /* Pods-cartoon-cartoonUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1059,7 +1107,7 @@
 		};
 		87A9062F28DEE2A2008EA07E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 030C42FFCC69D5AD603ED0DE /* Pods-cartoon-cartoonUITests.release.xcconfig */;
+			baseConfigurationReference = 8D7CBC30B85FAF9D1E1EFEF8 /* Pods-cartoon-cartoonUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

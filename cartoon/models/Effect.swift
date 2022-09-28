@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Effect:Codable {
+struct Effect {
     var thumbUrl:String? = String.empty
     var bgImageUrl:String? = String.empty
     var fgImageUrl:String? = String.empty
@@ -15,19 +15,48 @@ struct Effect:Codable {
     var name:String? = String.empty
 }
 
+struct EffectCodable: Codable {
+  var thumbUrl   : String? = nil
+  var bgImageUrl : String? = nil
+  var fgImageUrl : String? = nil
 
-//{
-//  "thumbUrl": "images/FullChangeover/template42_17/template42_17_icon.png",
-//  "bgImageUrl": "images/FullChangeover/template42_17/template42_17_back.png",
-//  "fgImageUrl": "images/FullChangeover/template42_17/template42_17_front.png"
-//},
+  enum CodingKeys: String, CodingKey {
+    case thumbUrl   = "thumbUrl"
+    case bgImageUrl = "bgImageUrl"
+    case fgImageUrl = "fgImageUrl"
+  
+  }
 
-struct EffectsArray: Codable {
-    let effects: [Effect]
-    
-    static func parse(jsonData: Data) -> EffectsArray?{
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    thumbUrl   = try values.decodeIfPresent(String.self , forKey: .thumbUrl   )
+    bgImageUrl = try values.decodeIfPresent(String.self , forKey: .bgImageUrl )
+    fgImageUrl = try values.decodeIfPresent(String.self , forKey: .fgImageUrl )
+   }
+
+  init() {}
+}
+
+struct EffectsCodable: Codable {
+
+  var effects : [EffectCodable]? = []
+
+  enum CodingKeys: String, CodingKey {
+
+    case effects = "effects"
+  
+  }
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    effects = try values.decodeIfPresent([EffectCodable].self , forKey: .effects )
+   }
+
+    init() {}
+
+    static func parse(jsonData: Data) -> EffectsCodable?{
         do {
-            let decodedData = try JSONDecoder().decode(EffectsArray.self, from: jsonData)
+            let decodedData = try JSONDecoder().decode(EffectsCodable.self, from: jsonData)
             return decodedData
         } catch {
             print("error: \(error)")
@@ -48,4 +77,54 @@ struct EffectsArray: Codable {
         }
         return nil
     }
+                        
+    static func loadFullChangeoverData()-> EffectsCodable? {
+        do {
+            if let data = try? EffectsCodable.readLocalJSONFile(forName: "FullChangeover") {
+                if let effectsArray = EffectsCodable.parse(jsonData: data as! Data) as? EffectsCodable{
+                  print("effect list: \(effectsArray.effects)")
+                return effectsArray
+                }
+            }
+        } catch {
+            print("error: \(error)")
+        }
+        return nil
+    }
+    
+    static func loadRealisticCartoonData()-> EffectsCodable? {
+        do {
+            if let data = try? EffectsCodable.readLocalJSONFile(forName: "RealisticCartoon") {
+                if let effectsArray = EffectsCodable.parse(jsonData: data as! Data) as? EffectsCodable{
+                  print("effect list: \(effectsArray.effects)")
+                return effectsArray
+                }
+            }
+        } catch {
+            print("error: \(error)")
+        }
+        return nil
+    }
+    
+    
+    static  func loadToonAvatarsData()-> EffectsCodable? {
+        do {
+            if let data = try? EffectsCodable.readLocalJSONFile(forName: "ToonAvatars") {
+                if let effectsArray = EffectsCodable.parse(jsonData: data as! Data) as? EffectsCodable{
+                  print("effect list: \(effectsArray.effects)")
+                return effectsArray
+                }
+            }
+        } catch {
+            print("error: \(error)")
+        }
+        return nil
+    }
+    
+    
+    static func loadStyleTransferData()-> EffectsCodable? {
+       
+        return nil
+    }
+    
 }

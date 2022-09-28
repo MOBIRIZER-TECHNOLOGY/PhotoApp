@@ -10,4 +10,5 @@ import Foundation
 
 class NetworkConstants {
     static let helpUrl = "https://www.google.com/"
+    static let baseS3Url = "https://toon-app-s3.s3.ap-south-1.amazonaws.com/"
 }

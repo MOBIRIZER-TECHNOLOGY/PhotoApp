@@ -60,6 +60,26 @@ extension UIImage {
       return finalImage
     }
 
+//    func applySketchEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+//
+//        guard let model = getSketchModel() else { return nil }
+//        let width: CGFloat = 512
+//        let height: CGFloat = 512
+//
+//        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+//        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+//        let outputPredictionImage = try? model.prediction(input: sketchInput(input_1: pixelBuffer))
+//        else { return nil }
+//        let outputBuffer = outputPredictionImage.activation_out
+//        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+//        let finalImage = UIImage(
+//                        ciImage: outputImage,
+//                        scale: scale,
+//                        orientation: self.imageOrientation
+//                    ).resized(to: CGSize(width: size.width, height: size.height))
+//      return finalImage
+//    }
+//
     func applyPaintEffects(returnResult: RemoveBackroundResult) -> UIImage? {
     
         guard let model = getPaintModel() else { return nil }
@@ -79,6 +99,245 @@ extension UIImage {
                     ).resized(to: CGSize(width: size.width, height: size.height))
       return finalImage
     }
+    
+    func applyCupheadEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+    
+        guard let model = getCupheadModel() else { return nil }
+        let width: CGFloat = 640
+        let height: CGFloat = 960
+
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(input: pixelBuffer)
+        else { return nil }
+        let outputBuffer = outputPredictionImage.squeeze_out
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+      return finalImage
+    }
+    
+
+    
+    func applyMosicEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+    
+        guard let model = getMosaicModel() else { return nil }
+        let width: CGFloat = 640
+        let height: CGFloat = 960
+
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(input: pixelBuffer)
+        else { return nil }
+        let outputBuffer = outputPredictionImage.squeeze_out
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+      return finalImage
+    }
+    
+    func applyNightEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+    
+        guard let model = getNightModel() else { return nil }
+        let width: CGFloat = 640
+        let height: CGFloat = 960
+
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(input: pixelBuffer)
+        else { return nil }
+        let outputBuffer = outputPredictionImage.squeeze_out
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+      return finalImage
+    }
+    
+    func applyMuseEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getMuseModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
+    func applyPrincessEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getPrincessModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+     
+    
+    func applyShipwreckEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getShipwreckModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
+    
+    
+    
+    func applyScreamEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getScreamModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
+    
+    
+    func applyUdnieEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getUdnieModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
+    
+    func applyWaveEffects(returnResult: RemoveBackroundResult) -> UIImage? {
+
+        print("applyNightEffects 1")
+        guard let model = getWaveModel() else { return nil }
+        print("applyNightEffects 2")
+
+        let width: CGFloat = 512
+        let height: CGFloat = 512
+        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
+        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
+        let outputPredictionImage = try? model.prediction(image: pixelBuffer)
+        else { return nil }
+        
+        print("applyNightEffects 3")
+
+        let outputBuffer = outputPredictionImage.stylizedImage
+        let outputImage = CIImage(cvPixelBuffer: outputBuffer, options: [:])
+        let finalImage = UIImage(
+                        ciImage: outputImage,
+                        scale: scale,
+                        orientation: self.imageOrientation
+                    ).resized(to: CGSize(width: size.width, height: size.height))
+        
+        print("applyNightEffects 4")
+
+      return finalImage
+    }
+    
+    
     private func getBgRemoverModel() -> bgRemover? {
         do {
             let config = MLModelConfiguration()
@@ -99,7 +358,38 @@ extension UIImage {
             return nil
         }
     }
+    private func getCupheadModel() -> cuphead? {
+        do {
+            let config = MLModelConfiguration()
+            return try cuphead(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
     
+    
+    private func getMosaicModel() -> mosaic? {
+        do {
+            let config = MLModelConfiguration()
+            return try mosaic(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+    
+    
+    private func getNightModel() -> night? {
+        do {
+            let config = MLModelConfiguration()
+            return try night(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
     private func getPaintModel() -> paint? {
         do {
             let config = MLModelConfiguration()
@@ -109,6 +399,68 @@ extension UIImage {
             return nil
         }
     }
+    
+    
+    private func getMuseModel() -> Muse? {
+        do {
+            let config = MLModelConfiguration()
+            return try Muse(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
+    private func getPrincessModel() -> Princess? {
+        do {
+            let config = MLModelConfiguration()
+            return try Princess(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
+    private func getShipwreckModel() -> Shipwreck? {
+        do {
+            let config = MLModelConfiguration()
+            return try Shipwreck(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
+    private func getScreamModel() -> Scream? {
+        do {
+            let config = MLModelConfiguration()
+            return try Scream(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
+    private func getUdnieModel() -> Udnie? {
+        do {
+            let config = MLModelConfiguration()
+            return try Udnie(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+
+    private func getWaveModel() -> Wave? {
+        do {
+            let config = MLModelConfiguration()
+            return try Wave(configuration: config)
+        } catch {
+            print("Error loading model: \(error)")
+            return nil
+        }
+    }
+ 
 }
 
 extension CIImage {

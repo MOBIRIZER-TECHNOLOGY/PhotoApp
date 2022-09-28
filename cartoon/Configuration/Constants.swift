@@ -68,3 +68,8 @@ public enum Effects {
     case funnyCaricatures
     case none
 }
+
+struct InAppProduct {
+    static let ONE_WEEK: String = "com.mobirizer.cartoon.oneweek"
+    static let ONE_YEAR: String = "com.mobirizer.cartoon.oneyear"
+}
