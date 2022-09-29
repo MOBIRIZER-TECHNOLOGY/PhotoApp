@@ -28,7 +28,7 @@
                             <constraint firstAttribute="width" constant="75" id="Lda-QF-703"/>
                             <constraint firstAttribute="height" constant="30" id="WR1-8n-6Ic"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="13"/>
+                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="13"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Try Now" backgroundImage="tab_button_unsel">
                             <color key="titleColor" red="0.92505210640000002" green="0.57319796089999997" blue="0.53723263740000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

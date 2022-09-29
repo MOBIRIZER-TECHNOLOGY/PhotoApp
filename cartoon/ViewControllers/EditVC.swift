@@ -39,7 +39,7 @@ class EditVC: BaseVC {
     }
     
     func setupView() {
-        self.effectView?.bgImageView?.image =  UIImage(named: "placeholder")
+        self.effectView?.bgImageView?.image =  UIImage(named: "empty_edit_place_holder")
         effectsCategoriesView.backgroundColor = .clear
         colorsCollectionView?.backgroundColor = .clear
         effectsCollectionView?.backgroundColor = .clear
