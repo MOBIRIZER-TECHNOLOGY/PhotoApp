@@ -87,11 +87,11 @@ class HomeVC: BaseVC {
         else if index == 3 {
             Router.shared.currentEffect = .funnyCaricatures
         }
-//        selectPhotoAction()
-        let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
-        Router.shared.image = userImage
-        let vc = EditVC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        selectPhotoAction()
+//        let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
+//        Router.shared.image = userImage
+//        let vc = EditVC.instantiate()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

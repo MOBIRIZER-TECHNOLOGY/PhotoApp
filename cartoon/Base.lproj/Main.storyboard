@@ -329,11 +329,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="colorsCollectionView" destination="bUD-u4-Zme" id="glr-1E-bwk"/>
+                        <outlet property="categoryCollectionView" destination="bUD-u4-Zme" id="r1G-PI-zN1"/>
                         <outlet property="doneButton" destination="8ir-Lg-Mjv" id="LF3-0i-NIY"/>
                         <outlet property="effectView" destination="ZgT-Cc-WnU" id="V2j-SV-sjC"/>
-                        <outlet property="effectsCategoriesView" destination="AfC-pc-xg5" id="tJH-cw-udW"/>
-                        <outlet property="effectsCollectionView" destination="dig-J9-qOg" id="gxW-Z1-Y5s"/>
+                        <outlet property="effectsCategoriesView" destination="AfC-pc-xg5" id="1vo-2O-CJF"/>
+                        <outlet property="subCategoryCollectionView" destination="dig-J9-qOg" id="trR-oA-REh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlO-6E-tQT" sceneMemberID="firstResponder"/>
@@ -385,7 +385,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-R0-zg2">
-                                <rect key="frame" x="20" y="47" width="54" height="60"/>
+                                <rect key="frame" x="20" y="47" width="49" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="piq-P1-gLF"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="uNN-2R-I5t"/>
@@ -666,7 +666,7 @@
     </scenes>
     <resources>
         <image name="back_icn" width="25" height="25"/>
-        <image name="close_btn" width="30" height="30"/>
+        <image name="close_btn" width="25" height="25"/>
         <image name="done_icn" width="25" height="25"/>
         <image name="info_sel" width="25" height="25"/>
         <image name="menu_btn" width="25" height="25"/>

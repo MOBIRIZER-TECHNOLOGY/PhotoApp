@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "StyleTransfer_the_scream.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "7thumnail_the_scream.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

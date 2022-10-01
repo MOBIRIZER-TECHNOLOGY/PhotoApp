@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "StyleTransfer_la_muse.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "2thumnail_la_muse.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

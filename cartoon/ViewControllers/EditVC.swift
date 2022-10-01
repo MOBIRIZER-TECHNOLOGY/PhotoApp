@@ -17,14 +17,17 @@ class EditVC: BaseVC {
     
     @IBOutlet weak var effectView:EffectView?
     @IBOutlet weak var effectsCategoriesView: UIView!
-    @IBOutlet weak var effectsCollectionView: UICollectionView?
-    @IBOutlet weak var colorsCollectionView: UICollectionView?
+    @IBOutlet weak var categoryCollectionView: UICollectionView?
+    @IBOutlet weak var subCategoryCollectionView: UICollectionView?
 
     var semanticImage = SemanticImage()
-    var effects:[Effect] = []
-    var colors:[ColorEffect] = []
-    var selectedColorIndex = 0
-    var selecteEffectIndex = 0
+  
+    var categories:[Categories] = []
+    var items:[Items] = []
+    
+    var selecteSubCategoryIndex = 0
+    var selecteCategoryIndex = 0
+    
     var isColorModuleVisible = false
     
     internal var disposeBag = DisposeBag()
@@ -33,101 +36,71 @@ class EditVC: BaseVC {
         super.viewDidLoad()
         registerCollectionCell()
         setupView()
-        loadEffectsData()
-        loadColorsData()
-        self.selectItemAt(indexPath: IndexPath(row: 0, section: 0))
+        initialiseCategoryData()
+        if categories.count > 0 {
+            self.selectCategoryItemAt(index: 0)
+        }
     }
     
     func setupView() {
         self.effectView?.bgImageView?.image =  UIImage(named: "empty_edit_place_holder")
         effectsCategoriesView.backgroundColor = .clear
-        colorsCollectionView?.backgroundColor = .clear
-        effectsCollectionView?.backgroundColor = .clear
+        subCategoryCollectionView?.backgroundColor = .clear
+        categoryCollectionView?.backgroundColor = .clear
     }
     
     func registerCollectionCell() {
-        self.effectsCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
-        self.colorsCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
+        self.categoryCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
+        self.subCategoryCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
+        self.subCategoryCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
+        self.categoryCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
     }
     
-    func loadEffectsData() {
-        var effectsData:EffectsCodable?
-        self.effects.removeAll()
+    func initialiseCategoryData() {
+        self.categories.removeAll()
+        
+        //initialise style transfer
+        if  Router.shared.currentEffect == .styleTransfer {
+           initializeStyleTransferBackgrounds()
+            return
+       }
+        else {
+            //initialise category
+            var effectsData:EffectsManager?
+            if  Router.shared.currentEffect == .realisticCartoon {
+                effectsData = EffectsManager.loadFullChangeoverData()
 
-        if  Router.shared.currentEffect == .realisticCartoon {
-//            effectsData = EffectsCodable.loadFullChangeoverData()
-            effectsData = EffectsCodable.loadToonAvatarsData()
-//            effectsData = EffectsCodable.loadRealisticCartoonData()
+            }
+            else  if  Router.shared.currentEffect == .newProfilePic {
+                effectsData = EffectsManager.loadRealisticCartoonData()
+            }
+            else  if  Router.shared.currentEffect == .funnyCaricatures {
+//                effectsData = EffectsManager.loadFullChangeoverData()
+                effectsData = EffectsManager.loadToonAvatarsData()
 
-            if let effects = effectsData?.effects  {
-                for data in effects {
-                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
-                    if obj.thumbUrl != nil && obj.bgImageUrl != nil {
-                        self.effects.append(obj)
-                    }
-                }
             }
             
-        }
-        else  if  Router.shared.currentEffect == .newProfilePic {
-            effectsData = EffectsCodable.loadRealisticCartoonData()
-//            effectsData = EffectsCodable.loadToonAvatarsData()
-
-            if let effects = effectsData?.effects  {
-                for data in effects {
-                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
-                    
-                    if obj.thumbUrl != nil && obj.bgImageUrl != nil  {
-                        self.effects.append(obj)
+            if let categories = effectsData?.categories  {
+                for data in categories {
+                    if data.icon != nil {
+                        self.categories.append(data)
                     }
                 }
             }
         }
-        else  if  Router.shared.currentEffect == .styleTransfer {
-            initializeStyleTransferBackgrounds()
-        }
-        else  if  Router.shared.currentEffect == .funnyCaricatures {
-//            effectsData = EffectsCodable.loadToonAvatarsData()
-            effectsData = EffectsCodable.loadFullChangeoverData()
-
-            if let effects = effectsData?.effects  {
-                for data in effects {
-                    var obj = Effect(thumbUrl: data.thumbUrl, bgImageUrl: data.bgImageUrl, fgImageUrl: data.fgImageUrl, blendHashKey: String.empty, name: String.empty)
-                    
-                    if obj.thumbUrl != nil  && obj.bgImageUrl != nil {
-                        self.effects.append(obj)
-                    }
-                }
-            }
-        }
-
-        self.effectsCollectionView?.reloadData()
+        self.categoryCollectionView?.reloadData()
     }
     
-    func loadColorsData() {
-        return
-        var effectsData:EffectsCodable?
-        if  Router.shared.currentEffect == .realisticCartoon {
-            effectsData = EffectsCodable.loadFullChangeoverData()
-        }
-        else  if  Router.shared.currentEffect == .newProfilePic {
-            effectsData = EffectsCodable.loadRealisticCartoonData()
-        }
-        else  if  Router.shared.currentEffect == .styleTransfer {
-            // Will show color plate
-        }
-        else  if  Router.shared.currentEffect == .funnyCaricatures {
-            effectsData = EffectsCodable.loadToonAvatarsData()
-            
-        }
-        self.colors.removeAll()
-        if let effects = effectsData?.effects  {
-            for data in effects {
-                var data = ColorEffect(iconImage: data.thumbUrl!, backgroundImage: data.bgImageUrl ?? String.empty, blendHashKey: String.empty, name: String.empty)
-                self.colors.append(data)
+    func refreshSubCategoryData(index:Int) {
+        self.items.removeAll()
+        if let category = categories[safeIndex: index]  {
+            for data in category.items ?? [] {
+                if data.bg != nil && data.icon != nil{
+                    self.items.append(data)
+                }
             }
         }
-        self.colorsCollectionView?.reloadData()
+        self.subCategoryCollectionView?.reloadData()
     }
    
     override func viewDidAppear(_ animated: Bool) {
@@ -145,82 +118,87 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if effectsCollectionView == collectionView {
-            return self.effects.count
+        if categoryCollectionView == collectionView {
+            return self.categories.count
         }
         else {
-           return self.colors.count
+           return self.items.count
         }
     }
  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if effectsCollectionView == collectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectViewCell.reuseIdentifier, for: indexPath) as! EffectViewCell
+        if categoryCollectionView == collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorViewCell.reuseIdentifier, for: indexPath) as! ColorViewCell
            if Router.shared.currentEffect == .styleTransfer {
-               
-               let thumbUrl = self.effects[indexPath.row].thumbUrl
+               let thumbUrl = self.categories[indexPath.row].icon
                cell.imageView.image = UIImage(named: thumbUrl!)
             }
             else {
-                let thumbUrl = self.effects[indexPath.row].thumbUrl
-                let bgImageUrl = self.effects[indexPath.row].bgImageUrl
-                let fgImageUrl = self.effects[indexPath.row].fgImageUrl
-
+                let thumbUrl = self.categories[indexPath.row].icon
                 cell.imageView.image = nil
                 var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
                 Nuke.loadImage(with: url, into: cell.imageView)
             }
-            
-  
-            cell.setupUI(isSelected: indexPath.row == self.selecteEffectIndex)
+            cell.setupUI(isSelected: indexPath.row == self.selecteCategoryIndex)
             return cell
         }
         else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorViewCell.reuseIdentifier, for: indexPath) as! ColorViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectViewCell.reuseIdentifier, for: indexPath) as! EffectViewCell
             
-            let thumbUrl = self.effects[indexPath.row].thumbUrl
-            let bgImageUrl = self.effects[indexPath.row].bgImageUrl
+            
+            let thumbUrl = self.items[indexPath.row].icon
+            
+            if Router.shared.currentEffect == .styleTransfer {
+                let thumbUrl = self.categories[indexPath.row].icon
+                cell.imageView.image = UIImage(named: thumbUrl!)
+             }
+            else {
+                cell.imageView.image = nil
+                var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+                Nuke.loadImage(with: url, into: cell.imageView)
+                cell.setupUI(isSelected: indexPath.row == self.selecteSubCategoryIndex)
+            }
 
-            cell.imageView.image = nil
-            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
-            Nuke.loadImage(with: url, into: cell.imageView)
-            cell.setupUI(isSelected: indexPath.row == self.selectedColorIndex)
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if effectsCollectionView == collectionView {
-            return CGSize(width: 100, height: 100)
+        if categoryCollectionView == collectionView {
+            return CGSize(width: 75, height: 75)
         }
         else {
-            return CGSize(width: 75, height: 75)
+            return CGSize(width: 100, height: 100)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if effectsCollectionView == collectionView {
-            self.selecteEffectIndex = indexPath.row
-            self.effectsCollectionView?.reloadData()
-            self.selectItemAt(indexPath: indexPath)
+        if categoryCollectionView == collectionView {
+            self.selectCategoryItemAt(index: indexPath.row)
         }
         else {
-            self.selectedColorIndex = indexPath.row
-            self.colorsCollectionView?.reloadData()
-//            let effectBackground = self.colors[indexPath.row]
-//            self.selectItemAt(indexPath: indexPath)
+            self.selectSubCategoryItemAt(index: indexPath.row)
         }
     }
     
-    func selectItemAt(indexPath: IndexPath) {
+    func selectCategoryItemAt(index: Int) {
+        self.selecteCategoryIndex = index
         if Router.shared.currentEffect == .styleTransfer {
-            self.createStyleTransfer(indexPath: indexPath)
+            self.createStyleTransfer(index: index)
         }
         else {
-            loadEffectImages(indexPath: indexPath)
+            refreshSubCategoryData(index: index)
+            selectSubCategoryItemAt(index: 0)
         }
+        self.categoryCollectionView?.reloadData()
+
+     }
+    
+    func selectSubCategoryItemAt(index: Int) {
+        self.selecteSubCategoryIndex = index
+        loadEffectImages(index: index)
      }
 }
 

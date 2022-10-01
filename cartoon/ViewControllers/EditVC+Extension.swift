@@ -12,12 +12,12 @@ import Nuke
 import RxSwift
 
 extension EditVC {
-//    https://toon-app-s3.s3.ap-south-1.amazonaws.com/images/RealisticCartoon/template18c/c.png
-    func loadEffectImages(indexPath: IndexPath) {
+
+    func loadEffectImages(index: Int) {
         SwiftLoader.show(title: "Processing please wait...", animated: true)
-        let thumbUrl = self.effects[indexPath.row].thumbUrl
-        let bgImageUrl = self.effects[indexPath.row].bgImageUrl
-        let fgImageUrl = self.effects[indexPath.row].fgImageUrl
+        let thumbUrl = self.items[index].icon
+        let bgImageUrl = self.items[index].bg
+        let fgImageUrl = self.items[index].fg
         
         debugPrint("bgImageUrl test:",bgImageUrl)
         debugPrint("fgImageUrl test:",fgImageUrl)
@@ -31,16 +31,16 @@ extension EditVC {
                 .subscribe(onNext: { bgImageResponse,fgImageResponse in
                    
                     if Router.shared.currentEffect == .realisticCartoon {
-                        self.createRealisticCartoon(indexPath: indexPath,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
+                        self.createRealisticCartoon(index: index,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
                     }
                     else if Router.shared.currentEffect == .newProfilePic {
-                        self.createNewProfilePic(indexPath: indexPath,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
+                        self.createNewProfilePic(index: index,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
                     }
                     else if Router.shared.currentEffect == .styleTransfer {
-                        self.createStyleTransfer(indexPath: indexPath)
+                        self.createStyleTransfer(index: index)
                     }
                     else if Router.shared.currentEffect == .funnyCaricatures {
-                        self.createFunnyCaricatures(indexPath: indexPath,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
+                        self.createFunnyCaricatures(index: index,effectBackImage: bgImageResponse.image,effectFrontImage: fgImageResponse.image)
                     }
                     
             }).disposed(by: disposeBag)
@@ -52,16 +52,16 @@ extension EditVC {
                     var effectBackImage = $0.image
                    
                     if Router.shared.currentEffect == .realisticCartoon {
-                        self.createRealisticCartoon(indexPath: indexPath,effectBackImage: effectBackImage,effectFrontImage: nil)
+                        self.createRealisticCartoon(index: index ,effectBackImage: effectBackImage,effectFrontImage: nil)
                     }
                     else if Router.shared.currentEffect == .newProfilePic {
-                        self.createNewProfilePic(indexPath: indexPath,effectBackImage: effectBackImage,effectFrontImage: nil)
+                        self.createNewProfilePic(index: index,effectBackImage: effectBackImage,effectFrontImage: nil)
                     }
                     else if Router.shared.currentEffect == .styleTransfer {
-                        self.createStyleTransfer(indexPath: indexPath)
+                        self.createStyleTransfer(index: index)
                     }
                     else if Router.shared.currentEffect == .funnyCaricatures {
-                        self.createFunnyCaricatures(indexPath: indexPath,effectBackImage:effectBackImage,effectFrontImage: nil)
+                        self.createFunnyCaricatures(index: index,effectBackImage:effectBackImage,effectFrontImage: nil)
                     }
                     
                 },onFailure: { [self] error in
@@ -73,7 +73,7 @@ extension EditVC {
         }
     }
     
-    func createRealisticCartoon(indexPath: IndexPath,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+    func createRealisticCartoon(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             debugPrint("faceRectangle start")
             var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
@@ -97,7 +97,7 @@ extension EditVC {
     }
     
 
-    func createNewProfilePic(indexPath: IndexPath,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+    func createNewProfilePic(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
@@ -119,7 +119,7 @@ extension EditVC {
 
     }
     
-    func createFunnyCaricatures(indexPath: IndexPath,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+    func createFunnyCaricatures(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             var faceImage:UIImage? = semanticImage.faceWithoutShoulder(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
             faceImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
@@ -136,41 +136,41 @@ extension EditVC {
        }
     }
     
-    func createStyleTransfer(indexPath: IndexPath) {
+    func createStyleTransfer(index: Int) {
         SwiftLoader.show(title: "Processing please wait...", animated: true)
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             var outPutImage:UIImage?
-            if indexPath.row == 0 {
+            if index == 0 {
                 outPutImage = Router.shared.image?.applyCupheadEffects(returnResult: RemoveBackroundResult.finalImage)
             }
-            else if indexPath.row == 1 {
+            else if index == 1 {
                 outPutImage = Router.shared.image?.applyMosicEffects(returnResult: RemoveBackroundResult.finalImage)
             }
-            else if indexPath.row == 2 {
+            else if index == 2 {
                 outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 3 {//StyleTransfer_la_muse
+            else if index == 3 {//StyleTransfer_la_muse
                 outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 4 {//StyleTransfer_rain_princess
+            else if index == 4 {//StyleTransfer_rain_princess
                 outPutImage = Router.shared.image?.applyPrincessEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 5 {//StyleTransfer_shipwreck
+            else if index == 5 {//StyleTransfer_shipwreck
                 outPutImage = Router.shared.image?.applyShipwreckEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 6 {//StyleTransfer_the_scream
+            else if index == 6 {//StyleTransfer_the_scream
                 outPutImage = Router.shared.image?.applyScreamEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 7 {//StyleTransfer_udnie
+            else if index == 7 {//StyleTransfer_udnie
                 outPutImage = Router.shared.image?.applyUdnieEffects(returnResult: RemoveBackroundResult.finalImage)
             }
 
-            else if indexPath.row == 8 {//StyleTransfer_wave
+            else if index == 8 {//StyleTransfer_wave
                 outPutImage = Router.shared.image?.applyNightEffects(returnResult: RemoveBackroundResult.finalImage)
             }
             Router.shared.outPutImage = outPutImage
@@ -186,40 +186,42 @@ extension EditVC {
     
     func initializeStyleTransferBackgrounds(){
        
-        self.effects.removeAll()
-        var data = Effect(thumbUrl: "StyleTransfer_Cuphead", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
+        self.categories.removeAll()
         
+        var data = Categories()
         
-        data = Effect(thumbUrl: "StyleTransfer_Mosaic", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
+        data.icon = "StyleTransfer_Cuphead"
+        self.categories.append(data)
         
-        
-        data = Effect(thumbUrl: "StyleTransfer_Night", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
-    
-        data = Effect(thumbUrl: "StyleTransfer_la_muse", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
-    
-       
-        data = Effect(thumbUrl: "StyleTransfer_rain_princess", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
-    
-        
-         data = Effect(thumbUrl: "StyleTransfer_shipwreck", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-         self.effects.append(data)
-     
-        data = Effect(thumbUrl: "StyleTransfer_the_scream", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-         self.effects.append(data)
-     
-          
-        data = Effect(thumbUrl: "StyleTransfer_udnie", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
+        data.icon = "StyleTransfer_Mosaic"
+        self.categories.append(data)
         
     
-        data = Effect(thumbUrl: "StyleTransfer_wave", bgImageUrl: String.empty, fgImageUrl: String.empty, blendHashKey: String.empty, name: String.empty)
-        self.effects.append(data)
+        data.icon = "StyleTransfer_Night"
+        self.categories.append(data)
         
+    
+        data.icon = "StyleTransfer_la_muse"
+        self.categories.append(data)
+        
+        
+        data.icon = "StyleTransfer_rain_princess"
+        self.categories.append(data)
+        
+        
+        data.icon = "SStyleTransfer_shipwreck"
+        self.categories.append(data)
+        
+        
+        data.icon = "StyleTransfer_the_scream"
+        self.categories.append(data)
+        
+        
+        data.icon = "StyleTransfer_udnie"
+        self.categories.append(data)
+        
+        data.icon = "StyleTransfer_wave"
+        self.categories.append(data)
     }
     
     

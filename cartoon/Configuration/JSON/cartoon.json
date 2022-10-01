@@ -1,0 +1,899 @@
+{
+  "categories": [
+    {
+      "id": "template41_1",
+      "icon": "cartoon/template41_1/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template41_1",
+          "icon": "cartoon/template41_1/template41_1/template41_1_icon.png",
+          "bg": "cartoon/template41_1/template41_1/template41_1_back.png"
+        },
+        {
+          "id": "template41_2",
+          "icon": "cartoon/template41_1/template41_2/template41_2_icon.png",
+          "bg": "cartoon/template41_1/template41_2/template41_2_back.png"
+        },
+        {
+          "id": "template41_11",
+          "icon": "cartoon/template41_1/template41_11/template41_11_icon.png",
+          "bg": "cartoon/template41_1/template41_11/template41_11_back.png"
+        },
+        {
+          "id": "template42_5",
+          "icon": "cartoon/template41_1/template42_5/template42_5_icon.png",
+          "bg": "cartoon/template41_1/template42_5/template42_5_back.png"
+        },
+        {
+          "id": "template41_12",
+          "icon": "cartoon/template41_1/template41_12/template41_12_icon.png",
+          "bg": "cartoon/template41_1/template41_12/template41_12_back.png"
+        },
+        {
+          "id": "template41_18",
+          "icon": "cartoon/template41_1/template41_18/template41_18_icon.png",
+          "bg": "cartoon/template41_1/template41_18/template41_18_back.png"
+        },
+        {
+          "id": "template42_6",
+          "icon": "cartoon/template41_1/template42_6/template42_6_icon.png",
+          "bg": "cartoon/template41_1/template42_6/template42_6_back.png"
+        },
+        {
+          "id": "template41_13",
+          "icon": "cartoon/template41_1/template41_13/template41_13_icon.png",
+          "bg": "cartoon/template41_1/template41_13/template41_13_back.png"
+        },
+        {
+          "id": "template41_17",
+          "icon": "cartoon/template41_1/template41_17/template41_17_icon.png",
+          "bg": "cartoon/template41_1/template41_17/template41_17_back.png"
+        },
+        {
+          "id": "template41_7",
+          "icon": "cartoon/template41_1/template41_7/template41_7_icon.png",
+          "bg": "cartoon/template41_1/template41_7/template41_7_back.png"
+        },
+        {
+          "id": "template42_26",
+          "icon": "cartoon/template41_1/template42_26/template42_26_icon.png",
+          "bg": "cartoon/template41_1/template42_26/template42_26_back.png"
+        },
+        {
+          "id": "template41_21",
+          "icon": "cartoon/template41_1/template41_21/template41_21_icon.png",
+          "bg": "cartoon/template41_1/template41_21/template41_21_back.png"
+        },
+        {
+          "id": "template41_20",
+          "icon": "cartoon/template41_1/template41_20/template41_20_icon.png",
+          "bg": "cartoon/template41_1/template41_20/template41_20_back.png"
+        },
+        {
+          "id": "template42_10",
+          "icon": "cartoon/template41_1/template42_10/template42_10_icon.png",
+          "bg": "cartoon/template41_1/template42_10/template42_10_back.png"
+        },
+        {
+          "id": "template42_32",
+          "icon": "cartoon/template41_1/template42_32/template42_32_icon.png",
+          "bg": "cartoon/template41_1/template42_32/template42_32_back.png"
+        },
+        {
+          "id": "template42_31",
+          "icon": "cartoon/template41_1/template42_31/template42_31_icon.png",
+          "bg": "cartoon/template41_1/template42_31/template42_31_back.png"
+        },
+        {
+          "id": "template42_19",
+          "icon": "cartoon/template41_1/template42_19/template42_19_icon.png",
+          "bg": "cartoon/template41_1/template42_19/template42_19_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_58",
+      "icon": "cartoon/template42_58/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_58",
+          "icon": "cartoon/template42_58/template42_58/template42_58_icon.png",
+          "bg": "cartoon/template42_58/template42_58/template42_58_back.png"
+        },
+        {
+          "id": "template42_28",
+          "icon": "cartoon/template42_58/template42_28/template42_28_icon.png",
+          "bg": "cartoon/template42_58/template42_28/template42_28_back.png"
+        },
+        {
+          "id": "template41_24",
+          "icon": "cartoon/template42_58/template41_24/template41_24_icon.png",
+          "bg": "cartoon/template42_58/template41_24/template41_24_back.png"
+        },
+        {
+          "id": "template42_59",
+          "icon": "cartoon/template42_58/template42_59/template42_59_icon.png",
+          "bg": "cartoon/template42_58/template42_59/template42_59_back.png",
+          "fg": "cartoon/template42_58/template42_59/template42_59_front.png"
+        },
+        {
+          "id": "template42_29",
+          "icon": "cartoon/template42_58/template42_29/template42_29_icon.png",
+          "bg": "cartoon/template42_58/template42_29/template42_29_back.png"
+        },
+        {
+          "id": "template42_11",
+          "icon": "cartoon/template42_58/template42_11/template42_11_icon.png",
+          "bg": "cartoon/template42_58/template42_11/template42_11_back.png"
+        },
+        {
+          "id": "template41_19",
+          "icon": "cartoon/template42_58/template41_19/template41_19_icon.png",
+          "bg": "cartoon/template42_58/template41_19/template41_19_back.png"
+        },
+        {
+          "id": "template42_18",
+          "icon": "cartoon/template42_58/template42_18/template42_18_icon.png",
+          "bg": "cartoon/template42_58/template42_18/template42_18_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template77",
+      "icon": "cartoon/template77/template77_01_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template77_01",
+          "icon": "cartoon/template77/template77_01/template77_01_icon.png",
+          "bg": "cartoon/template77/template77_01/template77_01_back.png",
+          "fg": "cartoon/template77/template77_01/template77_01_front.png"
+        },
+        {
+          "id": "template77_02",
+          "icon": "cartoon/template77/template77_02/template77_02_icon.png",
+          "bg": "cartoon/template77/template77_02/template77_02_back.png",
+          "fg": "cartoon/template77/template77_02/template77_02_front.png"
+        },
+        {
+          "id": "template77_03",
+          "icon": "cartoon/template77/template77_03/template77_03_icon.png",
+          "bg": "cartoon/template77/template77_03/template77_03_back.png",
+          "fg": "cartoon/template77/template77_03/template77_03_front.png"
+        },
+        {
+          "id": "template77_04",
+          "icon": "cartoon/template77/template77_04/template77_04_icon.png",
+          "bg": "cartoon/template77/template77_04/template77_04_back.png",
+          "fg": "cartoon/template77/template77_04/template77_04_front.png"
+        },
+        {
+          "id": "template77_05",
+          "icon": "cartoon/template77/template77_05/template77_05_icon.png",
+          "bg": "cartoon/template77/template77_05/template77_05_back.png",
+          "fg": "cartoon/template77/template77_05/template77_05_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template41_25",
+      "icon": "cartoon/template41_25/template41_25_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template41_25",
+          "icon": "cartoon/template41_25/template41_25/template41_25_icon.png",
+          "bg": "cartoon/template41_25/template41_25/template41_25_back.png",
+          "fg": "cartoon/template41_25/template41_25/template41_25_front.png"
+        },
+        {
+          "id": "template41_26",
+          "icon": "cartoon/template41_25/template41_26/template41_26_icon.png",
+          "bg": "cartoon/template41_25/template41_26/template41_26_back.png",
+          "fg": "cartoon/template41_25/template41_26/template41_26_front.png"
+        },
+        {
+          "id": "template41_27",
+          "icon": "cartoon/template41_25/template41_27/template41_27_icon.png",
+          "bg": "cartoon/template41_25/template41_27/template41_27_back.png",
+          "fg": "cartoon/template41_25/template41_27/template41_27_front.png"
+        },
+        {
+          "id": "template42_8",
+          "icon": "cartoon/template41_25/template42_8/template42_8_icon.png",
+          "bg": "cartoon/template41_25/template42_8/template42_8_back.png",
+          "fg": "cartoon/template41_25/template42_8/template42_8_front.png"
+        },
+        {
+          "id": "template41_28",
+          "icon": "cartoon/template41_25/template41_28/template41_28_icon.png",
+          "bg": "cartoon/template41_25/template41_28/template41_28_back.png",
+          "fg": "cartoon/template41_25/template41_28/template41_28_front.png"
+        },
+        {
+          "id": "template42_35",
+          "icon": "cartoon/template41_25/template42_35/template42_35_icon.png",
+          "bg": "cartoon/template41_25/template42_35/template42_35_back.png",
+          "fg": "cartoon/template41_25/template42_35/template42_35_front.png"
+        },
+        {
+          "id": "template41_32",
+          "icon": "cartoon/template41_25/template41_32/template41_32_icon.png",
+          "bg": "cartoon/template41_25/template41_32/template41_32_back.png",
+          "fg": "cartoon/template41_25/template41_32/template41_32_front.png"
+        },
+        {
+          "id": "template41_36",
+          "icon": "cartoon/template41_25/template41_36/template41_36_icon.png",
+          "bg": "cartoon/template41_25/template41_36/template41_36_back.png",
+          "fg": "cartoon/template41_25/template41_36/template41_36_front.png"
+        },
+        {
+          "id": "template41_30",
+          "icon": "cartoon/template41_25/template41_30/template41_30_icon.png",
+          "bg": "cartoon/template41_25/template41_30/template41_30_back.png",
+          "fg": "cartoon/template41_25/template41_30/template41_30_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template48a",
+      "icon": "cartoon/template48a/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template48a",
+          "icon": "cartoon/template48a/template48a/template48a_icon.png",
+          "bg": "cartoon/template48a/template48a/template48a_back.png",
+          "fg": "cartoon/template48a/template48a/template48a_front.png"
+        },
+        {
+          "id": "template48b",
+          "icon": "cartoon/template48a/template48b/template48b_icon.png",
+          "bg": "cartoon/template48a/template48b/template48b_back.png",
+          "fg": "cartoon/template48a/template48b/template48b_front.png"
+        },
+        {
+          "id": "template53_4",
+          "icon": "cartoon/template48a/template53_4/template53_4_icon.png",
+          "bg": "cartoon/template48a/template53_4/template53_4_back.png"
+        },
+        {
+          "id": "template53_3",
+          "icon": "cartoon/template48a/template53_3/template53_3_icon.png",
+          "bg": "cartoon/template48a/template53_3/template53_3_back.png",
+          "fg": "cartoon/template48a/template53_3/template53_3_front.png"
+        },
+        {
+          "id": "template41_16",
+          "icon": "cartoon/template48a/template41_16/template41_16_icon.png",
+          "bg": "cartoon/template48a/template41_16/template41_16_back.png"
+        },
+        {
+          "id": "template42_25",
+          "icon": "cartoon/template48a/template42_25/template42_25_icon.png",
+          "bg": "cartoon/template48a/template42_25/template42_25_back.png"
+        },
+        {
+          "id": "template42_17",
+          "icon": "cartoon/template48a/template42_17/template42_17_icon.png",
+          "bg": "cartoon/template48a/template42_17/template42_17_back.png",
+          "fg": "cartoon/template48a/template42_17/template42_17_front.png"
+        },
+        {
+          "id": "template42_12",
+          "icon": "cartoon/template48a/template42_12/template42_12_icon.png",
+          "bg": "cartoon/template48a/template42_12/template42_12_back.png",
+          "fg": "cartoon/template48a/template42_12/template42_12_front.png"
+        },
+        {
+          "id": "template42_20",
+          "icon": "cartoon/template48a/template42_20/template42_20_icon.png",
+          "bg": "cartoon/template48a/template42_20/template42_20_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_55",
+      "icon": "cartoon/template42_55/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_55",
+          "icon": "cartoon/template42_55/template42_55/template42_55_icon.png",
+          "bg": "cartoon/template42_55/template42_55/template42_55_back.png"
+        },
+        {
+          "id": "template41_29",
+          "icon": "cartoon/template42_55/template41_29/template41_29_icon.png",
+          "bg": "cartoon/template42_55/template41_29/template41_29_back.png"
+        },
+        {
+          "id": "template42_57",
+          "icon": "cartoon/template42_55/template42_57/template42_57_icon.png",
+          "bg": "cartoon/template42_55/template42_57/template42_57_back.png"
+        },
+        {
+          "id": "template42_54",
+          "icon": "cartoon/template42_55/template42_54/template42_54_icon.png",
+          "bg": "cartoon/template42_55/template42_54/template42_54_back.png"
+        },
+        {
+          "id": "template42_56",
+          "icon": "cartoon/template42_55/template42_56/template42_56_icon.png",
+          "bg": "cartoon/template42_55/template42_56/template42_56_back.png"
+        },
+        {
+          "id": "template41_10",
+          "icon": "cartoon/template42_55/template41_10/template41_10_icon.png",
+          "bg": "cartoon/template42_55/template41_10/template41_10_back.png"
+        },
+        {
+          "id": "template42_9",
+          "icon": "cartoon/template42_55/template42_9/template42_9_icon.png",
+          "bg": "cartoon/template42_55/template42_9/template42_9_back.png"
+        },
+        {
+          "id": "template42_3",
+          "icon": "cartoon/template42_55/template42_3/template42_3_icon.png",
+          "bg": "cartoon/template42_55/template42_3/template42_3_back.png"
+        },
+        {
+          "id": "template42_34",
+          "icon": "cartoon/template42_55/template42_34/template42_34_icon.png",
+          "bg": "cartoon/template42_55/template42_34/template42_34_back.png",
+          "fg": "cartoon/template42_55/template42_34/template42_34_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_39",
+      "icon": "cartoon/template42_39/template42_39_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_39",
+          "icon": "cartoon/template42_39/template42_39/template42_39_icon.png",
+          "bg": "cartoon/template42_39/template42_39/template42_39_back.png"
+        },
+        {
+          "id": "template42_42",
+          "icon": "cartoon/template42_39/template42_42/template42_42_icon.png",
+          "bg": "cartoon/template42_39/template42_42/template42_42_back.png"
+        },
+        {
+          "id": "template42_40",
+          "icon": "cartoon/template42_39/template42_40/template42_40_icon.png",
+          "bg": "cartoon/template42_39/template42_40/template42_40_back.png"
+        },
+        {
+          "id": "template42_41",
+          "icon": "cartoon/template42_39/template42_41/template42_41_icon.png",
+          "bg": "cartoon/template42_39/template42_41/template42_41_back.png"
+        },
+        {
+          "id": "template42_44",
+          "icon": "cartoon/template42_39/template42_44/template42_44_icon.png",
+          "bg": "cartoon/template42_39/template42_44/template42_44_back.png"
+        },
+        {
+          "id": "template42_43",
+          "icon": "cartoon/template42_39/template42_43/template42_43_icon.png",
+          "bg": "cartoon/template42_39/template42_43/template42_43_back.png"
+        },
+        {
+          "id": "template42_45",
+          "icon": "cartoon/template42_39/template42_45/template42_45_icon.png",
+          "bg": "cartoon/template42_39/template42_45/template42_45_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template70",
+      "icon": "cartoon/template70/template70_01_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template70_01",
+          "icon": "cartoon/template70/template70_01/template70_01_icon.png",
+          "bg": "cartoon/template70/template70_01/template70_01_back.png",
+          "fg": "cartoon/template70/template70_01/template70_01_front.png"
+        },
+        {
+          "id": "template70_02",
+          "icon": "cartoon/template70/template70_02/template70_02_icon.png",
+          "bg": "cartoon/template70/template70_02/template70_02_back.png",
+          "fg": "cartoon/template70/template70_02/template70_02_front.png"
+        },
+        {
+          "id": "template70_03",
+          "icon": "cartoon/template70/template70_03/template70_03_icon.png",
+          "bg": "cartoon/template70/template70_03/template70_03_back.png"
+        },
+        {
+          "id": "template70_04",
+          "icon": "cartoon/template70/template70_04/template70_04_icon.png",
+          "bg": "cartoon/template70/template70_04/template70_04_back.png"
+        },
+        {
+          "id": "template70_06",
+          "icon": "cartoon/template70/template70_06/template70_06_icon.png",
+          "bg": "cartoon/template70/template70_06/template70_06_back.png",
+          "fg": "cartoon/template70/template70_06/template70_06_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_7",
+      "icon": "cartoon/template42_7/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_7",
+          "icon": "cartoon/template42_7/template42_7/template42_7_icon.png",
+          "bg": "cartoon/template42_7/template42_7/template42_7_back.png"
+        },
+        {
+          "id": "template42_21",
+          "icon": "cartoon/template42_7/template42_21/template42_21_icon.png",
+          "bg": "cartoon/template42_7/template42_21/template42_21_back.png"
+        },
+        {
+          "id": "template41_14",
+          "icon": "cartoon/template42_7/template41_14/template41_14_icon.png",
+          "bg": "cartoon/template42_7/template41_14/template41_14_back.png"
+        },
+        {
+          "id": "template42_13",
+          "icon": "cartoon/template42_7/template42_13/template42_13_icon.png",
+          "bg": "cartoon/template42_7/template42_13/template42_13_back.png"
+        },
+        {
+          "id": "template42_33",
+          "icon": "cartoon/template42_7/template42_33/template42_33_icon.png",
+          "bg": "cartoon/template42_7/template42_33/template42_33_back.png",
+          "fg": "cartoon/template42_7/template42_33/template42_33_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template41_4",
+      "icon": "cartoon/template41_4/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template41_4",
+          "icon": "cartoon/template41_4/template41_4/template41_4_icon.png",
+          "bg": "cartoon/template41_4/template41_4/template41_4_back.png"
+        },
+        {
+          "id": "template42_4",
+          "icon": "cartoon/template41_4/template42_4/template42_4_icon.png",
+          "bg": "cartoon/template41_4/template42_4/template42_4_back.png"
+        },
+        {
+          "id": "template42_2",
+          "icon": "cartoon/template41_4/template42_2/template42_2_icon.png",
+          "bg": "cartoon/template41_4/template42_2/template42_2_back.png"
+        },
+        {
+          "id": "template41_3",
+          "icon": "cartoon/template41_4/template41_3/template41_3_icon.png",
+          "bg": "cartoon/template41_4/template41_3/template41_3_back.png"
+        },
+        {
+          "id": "template41_15",
+          "icon": "cartoon/template41_4/template41_15/template41_15_icon.png",
+          "bg": "cartoon/template41_4/template41_15/template41_15_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template50",
+      "icon": "cartoon/template50/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template50_1",
+          "icon": "cartoon/template50/template50_1/1_icon.png",
+          "bg": "cartoon/template50/template50_1/1_back.png",
+          "fg": "cartoon/template50/template50_1/1_front.png"
+        },
+        {
+          "id": "template50_2",
+          "icon": "cartoon/template50/template50_2/2_icon.png",
+          "bg": "cartoon/template50/template50_2/2_back.png",
+          "fg": "cartoon/template50/template50_2/2_front.png"
+        },
+        {
+          "id": "template50_3",
+          "icon": "cartoon/template50/template50_3/3_icon.png",
+          "bg": "cartoon/template50/template50_3/3_back.png",
+          "fg": "cartoon/template50/template50_3/3_front.png"
+        },
+        {
+          "id": "template50_4",
+          "icon": "cartoon/template50/template50_4/4_icon.png",
+          "bg": "cartoon/template50/template50_4/4_back.png",
+          "fg": "cartoon/template50/template50_4/4_front.png"
+        },
+        {
+          "id": "template50_5",
+          "icon": "cartoon/template50/template50_5/5_icon.png",
+          "bg": "cartoon/template50/template50_5/5_back.png",
+          "fg": "cartoon/template50/template50_5/5_front.png"
+        },
+        {
+          "id": "template50_6",
+          "icon": "cartoon/template50/template50_6/6_icon.png",
+          "bg": "cartoon/template50/template50_6/06_back.png",
+          "fg": "cartoon/template50/template50_6/06_front.png"
+        },
+        {
+          "id": "template50_7",
+          "icon": "cartoon/template50/template50_7/7_icon.png",
+          "bg": "cartoon/template50/template50_7/07_back.png",
+          "fg": "cartoon/template50/template50_7/07_front.png"
+        },
+        {
+          "id": "template50_8",
+          "icon": "cartoon/template50/template50_8/8_icon.png",
+          "bg": "cartoon/template50/template50_8/08_back.png",
+          "fg": "cartoon/template50/template50_8/08_front.png"
+        },
+        {
+          "id": "template50_9",
+          "icon": "cartoon/template50/template50_9/9_icon.png",
+          "bg": "cartoon/template50/template50_9/09_back.png",
+          "fg": "cartoon/template50/template50_9/09_front.png"
+        },
+        {
+          "id": "template50_10",
+          "icon": "cartoon/template50/template50_10/10_icon.png",
+          "bg": "cartoon/template50/template50_10/10_back.png",
+          "fg": "cartoon/template50/template50_10/10_front.png"
+        },
+        {
+          "id": "template50_11",
+          "icon": "cartoon/template50/template50_11/11_icon.png",
+          "bg": "cartoon/template50/template50_11/11_back.png",
+          "fg": "cartoon/template50/template50_11/11_front.png"
+        },
+        {
+          "id": "template50_12",
+          "icon": "cartoon/template50/template50_12/12_icon.png",
+          "bg": "cartoon/template50/template50_12/12_back.png",
+          "fg": "cartoon/template50/template50_12/12_front.png"
+        },
+        {
+          "id": "template50_13",
+          "icon": "cartoon/template50/template50_13/13_icon.png",
+          "bg": "cartoon/template50/template50_13/13_back.png",
+          "fg": "cartoon/template50/template50_13/13_front.png"
+        },
+        {
+          "id": "template50_14",
+          "icon": "cartoon/template50/template50_14/14_icon.png",
+          "bg": "cartoon/template50/template50_14/14_back.png",
+          "fg": "cartoon/template50/template50_14/14_front.png"
+        },
+        {
+          "id": "template50_15",
+          "icon": "cartoon/template50/template50_15/15_icon.png",
+          "bg": "cartoon/template50/template50_15/15_back.png",
+          "fg": "cartoon/template50/template50_15/15_front.png"
+        },
+        {
+          "id": "template50_16",
+          "icon": "cartoon/template50/template50_16/16_icon.png",
+          "bg": "cartoon/template50/template50_16/16_back.png",
+          "fg": "cartoon/template50/template50_16/16_front.png"
+        },
+        {
+          "id": "template50_17",
+          "icon": "cartoon/template50/template50_17/17_icon.png",
+          "bg": "cartoon/template50/template50_17/17_back.png",
+          "fg": "cartoon/template50/template50_17/17_front.png"
+        },
+        {
+          "id": "template50_18",
+          "icon": "cartoon/template50/template50_18/18_icon.png",
+          "bg": "cartoon/template50/template50_18/18_back.png",
+          "fg": "cartoon/template50/template50_18/18_front.png"
+        },
+        {
+          "id": "template50_19",
+          "icon": "cartoon/template50/template50_19/19_icon.png",
+          "bg": "cartoon/template50/template50_19/19_back.png",
+          "fg": "cartoon/template50/template50_19/19_front.png"
+        },
+        {
+          "id": "template50_20",
+          "icon": "cartoon/template50/template50_20/20_icon.png",
+          "bg": "cartoon/template50/template50_20/20_back.png",
+          "fg": "cartoon/template50/template50_20/20_front.png"
+        },
+        {
+          "id": "template50_21",
+          "icon": "cartoon/template50/template50_21/21_icon.png",
+          "bg": "cartoon/template50/template50_21/21_back.png",
+          "fg": "cartoon/template50/template50_21/21_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_1",
+      "icon": "cartoon/template42_1/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_1",
+          "icon": "cartoon/template42_1/template42_1/template42_1_icon.png",
+          "bg": "cartoon/template42_1/template42_1/template42_1_back.png"
+        },
+        {
+          "id": "template42_15",
+          "icon": "cartoon/template42_1/template42_15/template42_15_icon.png",
+          "bg": "cartoon/template42_1/template42_15/template42_15_back.png",
+          "fg": "cartoon/template42_1/template42_15/template42_15_front.png"
+        },
+        {
+          "id": "template42_16",
+          "icon": "cartoon/template42_1/template42_16/template42_16_icon.png",
+          "bg": "cartoon/template42_1/template42_16/template42_16_back.png",
+          "fg": "cartoon/template42_1/template42_16/template42_16_front.png"
+        },
+        {
+          "id": "template53_9",
+          "icon": "cartoon/template42_1/template53_9/template53_9_icon.png",
+          "bg": "cartoon/template42_1/template53_9/template53_9_back.png"
+        },
+        {
+          "id": "template53_8",
+          "icon": "cartoon/template42_1/template53_8/template53_8_icon.png",
+          "bg": "cartoon/template42_1/template53_8/template53_8_back.png"
+        },
+        {
+          "id": "template53_2",
+          "icon": "cartoon/template42_1/template53_2/template53_2_icon.png",
+          "bg": "cartoon/template42_1/template53_2/template53_2_back.png",
+          "fg": "cartoon/template42_1/template53_2/template53_2_front.png"
+        },
+        {
+          "id": "template53_5",
+          "icon": "cartoon/template42_1/template53_5/template53_5_icon.png",
+          "bg": "cartoon/template42_1/template53_5/template53_5_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_27",
+      "icon": "cartoon/template42_27/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_27",
+          "icon": "cartoon/template42_27/template42_27/template42_27_icon.png",
+          "bg": "cartoon/template42_27/template42_27/template42_27_back.png",
+          "fg": "cartoon/template42_27/template42_27/template42_27_front.png"
+        },
+        {
+          "id": "template41_5",
+          "icon": "cartoon/template42_27/template41_5/template41_5_icon.png",
+          "bg": "cartoon/template42_27/template41_5/template41_5_back.png"
+        },
+        {
+          "id": "template41_23",
+          "icon": "cartoon/template42_27/template41_23/template41_23_icon.png",
+          "bg": "cartoon/template42_27/template41_23/template41_23_back.png"
+        },
+        {
+          "id": "template42_30",
+          "icon": "cartoon/template42_27/template42_30/template42_30_icon.png",
+          "bg": "cartoon/template42_27/template42_30/template42_30_back.png"
+        },
+        {
+          "id": "template41_9",
+          "icon": "cartoon/template42_27/template41_9/template41_9_icon.png",
+          "bg": "cartoon/template42_27/template41_9/template41_9_back.png"
+        },
+        {
+          "id": "template41_22",
+          "icon": "cartoon/template42_27/template41_22/template41_22_icon.png",
+          "bg": "cartoon/template42_27/template41_22/template41_22_back.png"
+        },
+        {
+          "id": "template42_24",
+          "icon": "cartoon/template42_27/template42_24/template42_24_icon.png",
+          "bg": "cartoon/template42_27/template42_24/template42_24_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_51",
+      "icon": "cartoon/template42_51/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_51",
+          "icon": "cartoon/template42_51/template42_51/template42_51_icon.png",
+          "bg": "cartoon/template42_51/template42_51/template42_51_back.png"
+        },
+        {
+          "id": "template42_53",
+          "icon": "cartoon/template42_51/template42_53/template42_53_icon.png",
+          "bg": "cartoon/template42_51/template42_53/template42_53_back.png"
+        },
+        {
+          "id": "template42_52",
+          "icon": "cartoon/template42_51/template42_52/template42_52_icon.png",
+          "bg": "cartoon/template42_51/template42_52/template42_52_back.png"
+        },
+        {
+          "id": "template42_22",
+          "icon": "cartoon/template42_51/template42_22/template42_22_icon.png",
+          "bg": "cartoon/template42_51/template42_22/template42_22_back.png"
+        },
+        {
+          "id": "template42_14",
+          "icon": "cartoon/template42_51/template42_14/template42_14_icon.png",
+          "bg": "cartoon/template42_51/template42_14/template42_14_back.png"
+        },
+        {
+          "id": "template42_50",
+          "icon": "cartoon/template42_51/template42_50/template42_50_icon.png",
+          "bg": "cartoon/template42_51/template42_50/template42_50_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_46",
+      "icon": "cartoon/template42_46/icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template42_46",
+          "icon": "cartoon/template42_46/template42_46/template42_46_icon.png",
+          "bg": "cartoon/template42_46/template42_46/template42_46_back.png"
+        },
+        {
+          "id": "template42_47",
+          "icon": "cartoon/template42_46/template42_47/template42_47_icon.png",
+          "bg": "cartoon/template42_46/template42_47/template42_47_back.png"
+        },
+        {
+          "id": "template42_48",
+          "icon": "cartoon/template42_46/template42_48/template42_48_icon.png",
+          "bg": "cartoon/template42_46/template42_48/template42_48_back.png"
+        },
+        {
+          "id": "template42_49",
+          "icon": "cartoon/template42_46/template42_49/template42_49_icon.png",
+          "bg": "cartoon/template42_46/template42_49/template42_49_back.png"
+        },
+        {
+          "id": "template42_23",
+          "icon": "cartoon/template42_46/template42_23/template42_23_icon.png",
+          "bg": "cartoon/template42_46/template42_23/template42_23_back.png"
+        }
+      ]
+    },
+    {
+      "id": "template53_10",
+      "icon": "cartoon/template53_10/template53_10_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template53_12",
+          "icon": "cartoon/template53_10/template53_12/template53_10_icon.png",
+          "bg": "cartoon/template53_10/template53_12/template53_10_back.png",
+          "fg": "cartoon/template53_10/template53_12/template53_10_front.png"
+        },
+        {
+          "id": "template53_squid2",
+          "icon": "cartoon/template53_10/template53_squid2/template53_squid2.png",
+          "bg": "cartoon/template53_10/template53_squid2/template53_squid2_back.png",
+          "fg": "cartoon/template53_10/template53_squid2/template53_squid2_front.png"
+        },
+        {
+          "id": "template41_6",
+          "icon": "cartoon/template53_10/template41_6/template41_6_icon.png",
+          "bg": "cartoon/template53_10/template41_6/template41_6_back.png"
+        },
+        {
+          "id": "template41_8",
+          "icon": "cartoon/template53_10/template41_8/template41_8_icon.png",
+          "bg": "cartoon/template53_10/template41_8/template41_8_back.png"
+        },
+        {
+          "id": "template53_squid1",
+          "icon": "cartoon/template53_10/template53_squid1/template53_squid1.png",
+          "bg": "cartoon/template53_10/template53_squid1/template53_squid1_back.png",
+          "fg": "cartoon/template53_10/template53_squid1/template53_squid1_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template42_36",
+      "icon": "cartoon/template42_36/template42_36_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template53_12",
+          "icon": "cartoon/template42_36/template53_12/template42_36_icon.png",
+          "bg": "cartoon/template42_36/template53_12/template42_36_back.png",
+          "fg": "cartoon/template42_36/template53_12/template42_36_front.png"
+        },
+        {
+          "id": "template42_heist",
+          "icon": "cartoon/template42_36/template42_heist/template42_heist_icon.png",
+          "bg": "cartoon/template42_36/template42_heist/template42_heist_back.png",
+          "fg": "cartoon/template42_36/template42_heist/template42_heist_front.png"
+        },
+        {
+          "id": "template42_38",
+          "icon": "cartoon/template42_36/template42_38/template42_38_icon.png",
+          "bg": "cartoon/template42_36/template42_38/template42_38_back.png",
+          "fg": "cartoon/template42_36/template42_38/template42_38_front.png"
+        },
+        {
+          "id": "template42_37",
+          "icon": "cartoon/template42_36/template42_37/template42_37_icon.png",
+          "bg": "cartoon/template42_36/template42_37/template42_37_back.png",
+          "fg": "cartoon/template42_36/template42_37/template42_37_front.png"
+        }
+      ]
+    },
+    {
+      "id": "template53_12",
+      "icon": "cartoon/template53_12/template53_12_icon.png",
+      "type": "bigHead",
+      "items": [
+        {
+          "id": "template53_12",
+          "icon": "cartoon/template53_12/template53_12/template53_12_icon.png",
+          "bg": "cartoon/template53_12/template53_12/template53_12_back.png",
+          "fg": "cartoon/template53_12/template53_12/template53_12_front.png"
+        },
+        {
+          "id": "template53_11",
+          "icon": "cartoon/template53_12/template53_11/template53_11_icon.png",
+          "bg": "cartoon/template53_12/template53_11/template53_11_back.png",
+          "fg": "cartoon/template53_12/template53_11/template53_11_front.png"
+        },
+        {
+          "id": "template54_4",
+          "icon": "cartoon/template53_12/template54_4/template54_4_icon.png",
+          "bg": "cartoon/template53_12/template54_4/template54_4_back.png",
+          "fg": "cartoon/template53_12/template54_4/template54_4_front.png"
+        },
+        {
+          "id": "template53_7",
+          "icon": "cartoon/template53_12/template53_7/template53_7_icon.png",
+          "bg": "cartoon/template53_12/template53_7/template53_7_back.png",
+          "fg": "cartoon/template53_12/template53_7/template53_7_front.png"
+        },
+        {
+          "id": "template53_13",
+          "icon": "cartoon/template53_12/template53_13/template53_13_icon.png",
+          "bg": "cartoon/template53_12/template53_13/template53_13_back.png",
+          "fg": "cartoon/template53_12/template53_13/template53_13_front.png"
+        },
+        {
+          "id": "template53_14",
+          "icon": "cartoon/template53_12/template53_14/template53_14_icon.png",
+          "bg": "cartoon/template53_12/template53_14/template53_14_back.png",
+          "fg": "cartoon/template53_12/template53_14/template53_14_front.png"
+        },
+        {
+          "id": "template53_6",
+          "icon": "cartoon/template53_12/template53_6/template53_6_icon.png",
+          "bg": "cartoon/template53_12/template53_6/template53_6_back.png",
+          "fg": "cartoon/template53_12/template53_6/template53_6_front.png"
+        }
+      ]
+    }
+  ]
+}

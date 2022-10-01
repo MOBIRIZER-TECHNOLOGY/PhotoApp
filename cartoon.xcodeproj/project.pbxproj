@@ -80,12 +80,15 @@
 		87A906B028DEFC09008EA07E /* segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906AF28DEFC09008EA07E /* segmentation.swift */; };
 		87A906B228DF0338008EA07E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B128DF0338008EA07E /* Extenstions.swift */; };
 		87A906B428DF03A0008EA07E /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B328DF039F008EA07E /* LogUtils.swift */; };
+		D41BBA3028E6183300338BFB /* cartoon.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2D28E6183300338BFB /* cartoon.json */; };
+		D41BBA3128E6183300338BFB /* profile.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2E28E6183300338BFB /* profile.json */; };
+		D41BBA3228E6183300338BFB /* fullbody.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2F28E6183300338BFB /* fullbody.json */; };
+		D41BBA3628E61A4900338BFB /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BBA3328E61A4900338BFB /* Categories.swift */; };
+		D41BBA3728E61A4900338BFB /* EffectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BBA3428E61A4900338BFB /* EffectsManager.swift */; };
+		D41BBA3828E61A4900338BFB /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BBA3528E61A4900338BFB /* Items.swift */; };
 		D423028428E290E300DC9D08 /* RxNuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423028328E290E300DC9D08 /* RxNuke.swift */; };
 		D445332928E35C0B00E745C8 /* GoProDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D445332828E35C0B00E745C8 /* GoProDetailCell.swift */; };
 		D445332B28E36F3500E745C8 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D445332A28E36F3500E745C8 /* EditVC+Extension.swift */; };
-		D4EE004628DF287400B4C639 /* FullChangeover.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004328DF287400B4C639 /* FullChangeover.json */; };
-		D4EE004728DF287400B4C639 /* RealisticCartoon.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004428DF287400B4C639 /* RealisticCartoon.json */; };
-		D4EE004828DF287400B4C639 /* ToonAvatars.json in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004528DF287400B4C639 /* ToonAvatars.json */; };
 		D4EE004B28DF29EA00B4C639 /* DynamicCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE004928DF29EA00B4C639 /* DynamicCardCell.swift */; };
 		D4EE004C28DF29EA00B4C639 /* DynamicCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004A28DF29EA00B4C639 /* DynamicCardCell.xib */; };
 		D4EE005528E08CE400B4C639 /* FullBodyCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EE004D28E08CE400B4C639 /* FullBodyCardCell.xib */; };
@@ -96,7 +99,6 @@
 		D4EE005A28E08CE400B4C639 /* FullBodyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005228E08CE400B4C639 /* FullBodyCardCell.swift */; };
 		D4EE005B28E08CE400B4C639 /* ProfilePicCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EE005328E08CE400B4C639 /* ProfilePicCardCell.xib */; };
 		D4EE005C28E08CE400B4C639 /* ProfilePicCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005428E08CE400B4C639 /* ProfilePicCardCell.swift */; };
-		D4EE005E28E0D2FE00B4C639 /* ColorEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005D28E0D2FE00B4C639 /* ColorEffect.swift */; };
 		D4EE006028E1405C00B4C639 /* JSONSaveLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE005F28E1405C00B4C639 /* JSONSaveLoad.swift */; };
 /* End PBXBuildFile section */
 
@@ -199,12 +201,15 @@
 		A3B6D14151A510B1E7242B23 /* Pods_cartoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB256D4A80485F0AB614F405 /* Pods-cartoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.debug.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41BBA2D28E6183300338BFB /* cartoon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cartoon.json; sourceTree = "<group>"; };
+		D41BBA2E28E6183300338BFB /* profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile.json; sourceTree = "<group>"; };
+		D41BBA2F28E6183300338BFB /* fullbody.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fullbody.json; sourceTree = "<group>"; };
+		D41BBA3328E61A4900338BFB /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		D41BBA3428E61A4900338BFB /* EffectsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsManager.swift; sourceTree = "<group>"; };
+		D41BBA3528E61A4900338BFB /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		D423028328E290E300DC9D08 /* RxNuke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNuke.swift; sourceTree = "<group>"; };
 		D445332828E35C0B00E745C8 /* GoProDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoProDetailCell.swift; sourceTree = "<group>"; };
 		D445332A28E36F3500E745C8 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
-		D4EE004328DF287400B4C639 /* FullChangeover.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FullChangeover.json; sourceTree = "<group>"; };
-		D4EE004428DF287400B4C639 /* RealisticCartoon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RealisticCartoon.json; sourceTree = "<group>"; };
-		D4EE004528DF287400B4C639 /* ToonAvatars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ToonAvatars.json; sourceTree = "<group>"; };
 		D4EE004928DF29EA00B4C639 /* DynamicCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCardCell.swift; sourceTree = "<group>"; };
 		D4EE004A28DF29EA00B4C639 /* DynamicCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCardCell.xib; sourceTree = "<group>"; };
 		D4EE004D28E08CE400B4C639 /* FullBodyCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullBodyCardCell.xib; sourceTree = "<group>"; };
@@ -215,7 +220,6 @@
 		D4EE005228E08CE400B4C639 /* FullBodyCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullBodyCardCell.swift; sourceTree = "<group>"; };
 		D4EE005328E08CE400B4C639 /* ProfilePicCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicCardCell.xib; sourceTree = "<group>"; };
 		D4EE005428E08CE400B4C639 /* ProfilePicCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicCardCell.swift; sourceTree = "<group>"; };
-		D4EE005D28E0D2FE00B4C639 /* ColorEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEffect.swift; sourceTree = "<group>"; };
 		D4EE005F28E1405C00B4C639 /* JSONSaveLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSaveLoad.swift; sourceTree = "<group>"; };
 		EA36FAD349F237563F7B01B9 /* Pods-cartoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.release.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.release.xcconfig"; sourceTree = "<group>"; };
 		F74BA3B6C4998E4162F235D4 /* Pods-cartoon-cartoonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon-cartoonUITests.debug.xcconfig"; path = "Target Support Files/Pods-cartoon-cartoonUITests/Pods-cartoon-cartoonUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -339,7 +343,9 @@
 				87A9069828DEF9C7008EA07E /* AI */,
 				87A9066D28DEF811008EA07E /* Card.swift */,
 				87A9066F28DEF838008EA07E /* Effect.swift */,
-				D4EE005D28E0D2FE00B4C639 /* ColorEffect.swift */,
+				D41BBA3428E61A4900338BFB /* EffectsManager.swift */,
+				D41BBA3328E61A4900338BFB /* Categories.swift */,
+				D41BBA3528E61A4900338BFB /* Items.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -472,9 +478,9 @@
 		D4EE004228DF284300B4C639 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				D4EE004328DF287400B4C639 /* FullChangeover.json */,
-				D4EE004428DF287400B4C639 /* RealisticCartoon.json */,
-				D4EE004528DF287400B4C639 /* ToonAvatars.json */,
+				D41BBA2D28E6183300338BFB /* cartoon.json */,
+				D41BBA2F28E6183300338BFB /* fullbody.json */,
+				D41BBA2E28E6183300338BFB /* profile.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -601,15 +607,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41BBA3128E6183300338BFB /* profile.json in Resources */,
+				D41BBA3028E6183300338BFB /* cartoon.json in Resources */,
 				87A9060D28DEE2A1008EA07E /* LaunchScreen.storyboard in Resources */,
 				87A9064D28DEF0C4008EA07E /* ColorViewCell.xib in Resources */,
 				D4EE004C28DF29EA00B4C639 /* DynamicCardCell.xib in Resources */,
-				D4EE004828DF287400B4C639 /* ToonAvatars.json in Resources */,
 				87A9066B28DEF6CF008EA07E /* CommonAlertVC.xib in Resources */,
+				D41BBA3228E6183300338BFB /* fullbody.json in Resources */,
 				D4EE005828E08CE400B4C639 /* StyleTransferCardCell.xib in Resources */,
 				D4EE005528E08CE400B4C639 /* FullBodyCardCell.xib in Resources */,
-				D4EE004628DF287400B4C639 /* FullChangeover.json in Resources */,
-				D4EE004728DF287400B4C639 /* RealisticCartoon.json in Resources */,
 				87A9063128DEE7F0008EA07E /* GoogleService-Info.plist in Resources */,
 				D4EE005628E08CE400B4C639 /* RealisticCartoonCardCell.xib in Resources */,
 				87A9060A28DEE2A1008EA07E /* Assets.xcassets in Resources */,
@@ -784,6 +790,7 @@
 				87A9066A28DEF6CF008EA07E /* CommonAlertVC.swift in Sources */,
 				87A9068828DEF917008EA07E /* CGImagePropertyOrientation.swift in Sources */,
 				873DA4EF28E37ECB00C03F79 /* bgRemover.mlpackage in Sources */,
+				D41BBA3828E61A4900338BFB /* Items.swift in Sources */,
 				D4EE005728E08CE400B4C639 /* RealisticCartoonCardCell.swift in Sources */,
 				87A9069228DEF917008EA07E /* CVPixelBuffer+Resize.swift in Sources */,
 				D4EE004B28DF29EA00B4C639 /* DynamicCardCell.swift in Sources */,
@@ -791,16 +798,17 @@
 				87A9069328DEF917008EA07E /* CVPixelBuffer+Rotate.swift in Sources */,
 				873DA4F828E37ECB00C03F79 /* Scream.mlmodel in Sources */,
 				873DA4F928E37ECB00C03F79 /* Wave.mlmodel in Sources */,
-				D4EE005E28E0D2FE00B4C639 /* ColorEffect.swift in Sources */,
 				87A906AB28DEFB6F008EA07E /* AccessibilityConstants.swift in Sources */,
 				87A9066928DEF6CF008EA07E /* UIViewExtension.swift in Sources */,
 				873DA4F328E37ECB00C03F79 /* night.mlmodel in Sources */,
 				87A9063C28DEED4F008EA07E /* SettingsVC.swift in Sources */,
 				873DA4EE28E37ECB00C03F79 /* paint.mlmodel in Sources */,
+				D41BBA3728E61A4900338BFB /* EffectsManager.swift in Sources */,
 				87A9064428DEEF9C008EA07E /* EffectView.swift in Sources */,
 				87A9068328DEF917008EA07E /* Array+Extensions.swift in Sources */,
 				87A906B028DEFC09008EA07E /* segmentation.swift in Sources */,
 				87A9068B28DEF917008EA07E /* MLModel+Images.swift in Sources */,
+				D41BBA3628E61A4900338BFB /* Categories.swift in Sources */,
 				D445332B28E36F3500E745C8 /* EditVC+Extension.swift in Sources */,
 				873DA4F728E37ECB00C03F79 /* Muse.mlmodel in Sources */,
 				D4EE005A28E08CE400B4C639 /* FullBodyCardCell.swift in Sources */,
