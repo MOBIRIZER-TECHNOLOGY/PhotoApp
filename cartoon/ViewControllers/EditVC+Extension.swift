@@ -14,20 +14,20 @@ import RxSwift
 extension EditVC {
 
     func loadEffectImages(index: Int) {
-        SwiftLoader.show(title: "Processing please wait...", animated: true)
         let thumbUrl = self.items[index].icon
         let bgImageUrl = self.items[index].bg
         let fgImageUrl = self.items[index].fg
         
         debugPrint("bgImageUrl test:",bgImageUrl)
         debugPrint("fgImageUrl test:",fgImageUrl)
-
+         SwiftLoader.show(title: "Processing please wait...", animated: true)
+//        return
         if fgImageUrl != nil && fgImageUrl != String.empty  && (fgImageUrl?.count ?? 0) > 5 {
             var bgUrl = URL(string: NetworkConstants.baseS3Url + (bgImageUrl ?? String.empty) )!
             var fgUrl = URL(string: NetworkConstants.baseS3Url + (fgImageUrl ?? String.empty) )!
             var bgImageRequest = ImagePipeline.shared.rx.loadImage(with: bgUrl).asObservable()
             var fgImageRequest = ImagePipeline.shared.rx.loadImage(with: fgUrl).asObservable()
-            Observable.combineLatest(bgImageRequest,bgImageRequest)
+            Observable.combineLatest(bgImageRequest,fgImageRequest)
                 .subscribe(onNext: { bgImageResponse,fgImageResponse in
                    
                     if Router.shared.currentEffect == .realisticCartoon {
@@ -95,16 +95,50 @@ extension EditVC {
             }
         }
     }
-    
 
     func createNewProfilePic(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+            debugPrint("faceRectangle start")
+//            var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
+            var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
+
+            faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
+            
+            debugPrint("applyPaintEffects start")
+            var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
+            
+            debugPrint("saliencyBlend start")
+            
+            var swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:faceCartoonImage!, backgroundUIImage: effectBackImage!)
+            if effectFrontImage != nil {
+                swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
+//                swappedImage = semanticImage.saliencyBlend(objectUIImage:effectFrontImage!, backgroundUIImage: swappedImage!)
+            }
+            Router.shared.outPutImage = swappedImage
+            debugPrint("processing stop")
+            
+            DispatchQueue.main.async {
+                self.effectView?.bgImageView?.image  = swappedImage
+                SwiftLoader.hide()
+                debugPrint("SwiftLoader hide")
+            }
+        }
+    }
+
+    
+    func createNewProfilePic__(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         
         DispatchQueue.global(qos: .userInitiated).async { [self] in
+            
             var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
-            faceImage = faceImage?.withBackground(color: UIColor.green)
+            
+//            faceImage = faceImage?.withBackground(color: UIColor.green)
             faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
+            
+            
             faceImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
             faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
+            
             var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: faceImage!)
             if effectFrontImage != nil {
                 swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
@@ -186,42 +220,42 @@ extension EditVC {
     
     func initializeStyleTransferBackgrounds(){
        
-        self.categories.removeAll()
+        self.items.removeAll()
         
-        var data = Categories()
+        var data = Items()
         
         data.icon = "StyleTransfer_Cuphead"
-        self.categories.append(data)
+        self.items.append(data)
         
         data.icon = "StyleTransfer_Mosaic"
-        self.categories.append(data)
+        self.items.append(data)
         
     
         data.icon = "StyleTransfer_Night"
-        self.categories.append(data)
+        self.items.append(data)
         
     
         data.icon = "StyleTransfer_la_muse"
-        self.categories.append(data)
+        self.items.append(data)
         
         
         data.icon = "StyleTransfer_rain_princess"
-        self.categories.append(data)
+        self.items.append(data)
         
         
-        data.icon = "SStyleTransfer_shipwreck"
-        self.categories.append(data)
+        data.icon = "StyleTransfer_shipwreck"
+        self.items.append(data)
         
         
         data.icon = "StyleTransfer_the_scream"
-        self.categories.append(data)
+        self.items.append(data)
         
         
         data.icon = "StyleTransfer_udnie"
-        self.categories.append(data)
+        self.items.append(data)
         
         data.icon = "StyleTransfer_wave"
-        self.categories.append(data)
+        self.items.append(data)
     }
     
     

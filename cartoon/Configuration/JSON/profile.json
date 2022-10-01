@@ -519,34 +519,6 @@
       ]
     },
     {
-      "id": "c_split",
-      "icon": "profile/c_split/split.png",
-      "colSpan": 5,
-      "type": "split",
-      "items": [
-        {
-          "id": "local_template2c",
-          "icon": "profile/c_split/local_template2c/toonapp_v2local_template2c.png"
-        },
-        {
-          "id": "local_template2a",
-          "icon": "profile/c_split/local_template2a/toonapp_v2local_template2a.png"
-        },
-        {
-          "id": "local_template3h",
-          "icon": "profile/c_split/local_template3h/toonapp_v2local_template3h.png"
-        },
-        {
-          "id": "local_template3e",
-          "icon": "profile/c_split/local_template3e/toonapp_v2local_template3e.png"
-        },
-        {
-          "id": "local_template3f",
-          "icon": "profile/c_split/local_template3f/toonapp_v2local_template3f.png"
-        }
-      ]
-    },
-    {
       "id": "c_smoke",
       "icon": "profile/c_smoke/smoke.png",
       "colSpan": 5,

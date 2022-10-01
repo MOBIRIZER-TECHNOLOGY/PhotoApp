@@ -37,9 +37,8 @@ class EditVC: BaseVC {
         registerCollectionCell()
         setupView()
         initialiseCategoryData()
-        if categories.count > 0 {
-            self.selectCategoryItemAt(index: 0)
-        }
+        self.selectCategoryItemAt(index: 0)
+
     }
     
     func setupView() {
@@ -50,8 +49,6 @@ class EditVC: BaseVC {
     }
     
     func registerCollectionCell() {
-        self.categoryCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
-        self.subCategoryCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
         self.subCategoryCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
         self.categoryCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
     }
@@ -69,20 +66,17 @@ class EditVC: BaseVC {
             var effectsData:EffectsManager?
             if  Router.shared.currentEffect == .realisticCartoon {
                 effectsData = EffectsManager.loadFullChangeoverData()
-
             }
             else  if  Router.shared.currentEffect == .newProfilePic {
                 effectsData = EffectsManager.loadRealisticCartoonData()
             }
             else  if  Router.shared.currentEffect == .funnyCaricatures {
-//                effectsData = EffectsManager.loadFullChangeoverData()
                 effectsData = EffectsManager.loadToonAvatarsData()
-
             }
             
             if let categories = effectsData?.categories  {
                 for data in categories {
-                    if data.icon != nil {
+                    if data.icon != nil && (data.items?.count ?? 0) > 0 {
                         self.categories.append(data)
                     }
                 }
@@ -100,6 +94,7 @@ class EditVC: BaseVC {
                 }
             }
         }
+        self.items = self.items.reversed()
         self.subCategoryCollectionView?.reloadData()
     }
    
@@ -128,38 +123,30 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if Router.shared.currentEffect == .styleTransfer {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectViewCell.reuseIdentifier, for: indexPath) as! EffectViewCell
+            let thumbUrl = self.items[indexPath.row].icon
+            cell.imageView.image = UIImage(named: thumbUrl!)
+            cell.setupUI(isSelected: indexPath.row == self.selecteSubCategoryIndex)
+            return cell
+         }
+        
         if categoryCollectionView == collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorViewCell.reuseIdentifier, for: indexPath) as! ColorViewCell
-           if Router.shared.currentEffect == .styleTransfer {
-               let thumbUrl = self.categories[indexPath.row].icon
-               cell.imageView.image = UIImage(named: thumbUrl!)
-            }
-            else {
-                let thumbUrl = self.categories[indexPath.row].icon
-                cell.imageView.image = nil
-                var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
-                Nuke.loadImage(with: url, into: cell.imageView)
-            }
+            let thumbUrl = self.categories[indexPath.row].icon
+            cell.imageView.image = nil
+            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+            Nuke.loadImage(with: url, into: cell.imageView)
             cell.setupUI(isSelected: indexPath.row == self.selecteCategoryIndex)
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectViewCell.reuseIdentifier, for: indexPath) as! EffectViewCell
-            
-            
+            cell.imageView.image = nil
             let thumbUrl = self.items[indexPath.row].icon
-            
-            if Router.shared.currentEffect == .styleTransfer {
-                let thumbUrl = self.categories[indexPath.row].icon
-                cell.imageView.image = UIImage(named: thumbUrl!)
-             }
-            else {
-                cell.imageView.image = nil
-                var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
-                Nuke.loadImage(with: url, into: cell.imageView)
-                cell.setupUI(isSelected: indexPath.row == self.selecteSubCategoryIndex)
-            }
-
+            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+            Nuke.loadImage(with: url, into: cell.imageView)
+            cell.setupUI(isSelected: indexPath.row == self.selecteSubCategoryIndex)
             return cell
         }
     }
@@ -184,21 +171,29 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func selectCategoryItemAt(index: Int) {
-        self.selecteCategoryIndex = index
         if Router.shared.currentEffect == .styleTransfer {
+            self.selecteSubCategoryIndex = index
             self.createStyleTransfer(index: index)
         }
         else {
+            self.selecteCategoryIndex = index
             refreshSubCategoryData(index: index)
             selectSubCategoryItemAt(index: 0)
         }
         self.categoryCollectionView?.reloadData()
-
+        self.subCategoryCollectionView?.reloadData()
      }
     
     func selectSubCategoryItemAt(index: Int) {
         self.selecteSubCategoryIndex = index
-        loadEffectImages(index: index)
+        if Router.shared.currentEffect == .styleTransfer {
+            self.createStyleTransfer(index: index)
+        }
+        else {
+            loadEffectImages(index: index)
+        }
+        self.subCategoryCollectionView?.reloadData()
+
      }
 }
 
