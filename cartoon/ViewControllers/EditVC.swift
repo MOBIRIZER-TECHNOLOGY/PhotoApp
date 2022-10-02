@@ -28,7 +28,13 @@ class EditVC: BaseVC {
     var selecteSubCategoryIndex = 0
     var selecteCategoryIndex = 0
     
+    @IBOutlet weak var effectTopMarginConstraint: NSLayoutConstraint!
     var isColorModuleVisible = false
+    
+    
+    @IBOutlet weak var emptyEffectImage: UIImageView!
+    @IBOutlet weak var emptyEffectLabel: UILabel!
+
     
     internal var disposeBag = DisposeBag()
 
@@ -40,9 +46,26 @@ class EditVC: BaseVC {
         self.selectCategoryItemAt(index: 0)
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateLayoutMargin()
+    }
     
+    func updateLayoutMargin() {
+        
+        let topViewHeight = 130 - 20
+        var bottomViewHeight = 210
+        if  Router.shared.currentEffect == .styleTransfer {
+            bottomViewHeight -= 60
+       }
+        var screenWidth: CGFloat = UIScreen.main.bounds.width
+        var screenHeight: CGFloat = UIScreen.main.bounds.height
+        var blankSpaceHeight = (Int(screenHeight - screenWidth) - topViewHeight - bottomViewHeight)
+        var topMargin = CGFloat(blankSpaceHeight/2) < 20 ? 20 : CGFloat(blankSpaceHeight/2)
+        effectTopMarginConstraint.constant = topMargin
+
+    }
     func setupView() {
-        self.effectView?.bgImageView?.image =  UIImage(named: "empty_edit_place_holder")
         effectsCategoriesView.backgroundColor = .clear
         subCategoryCollectionView?.backgroundColor = .clear
         categoryCollectionView?.backgroundColor = .clear
@@ -156,7 +179,7 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             return CGSize(width: 75, height: 75)
         }
         else {
-            return CGSize(width: 100, height: 100)
+            return CGSize(width: 70, height: 70)
         }
     }
     

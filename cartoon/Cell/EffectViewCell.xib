@@ -10,36 +10,48 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="EffectViewCell" reuseIdentifier="EffectViewCell" id="gTV-IL-0wX" customClass="EffectViewCell" customModule="cartoon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleThumb" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-wj-6YM">
-                        <rect key="frame" x="3" y="3" width="94" height="94"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleThumb" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-wj-6YM">
+                        <rect key="frame" x="3" y="4" width="64" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="94" id="Akf-x9-Fqr"/>
-                            <constraint firstAttribute="width" constant="94" id="F0K-6M-Cco"/>
+                            <constraint firstAttribute="height" constant="70" id="UKe-jP-uob"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Frame_btn_sel" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-E7-gIb" userLabel="Frame_image">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="IM8-9y-6Er"/>
+                            <constraint firstAttribute="height" constant="90" id="TkW-gQ-3Op"/>
                         </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="8IP-wj-6YM" secondAttribute="bottom" constant="3" id="0hg-RU-j3p"/>
-                <constraint firstItem="8IP-wj-6YM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="KVP-Ea-3Au"/>
-                <constraint firstItem="8IP-wj-6YM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="owi-8A-M5c"/>
-                <constraint firstAttribute="trailing" secondItem="8IP-wj-6YM" secondAttribute="trailing" constant="3" id="uXY-02-hwM"/>
+                <constraint firstAttribute="bottom" secondItem="ndb-E7-gIb" secondAttribute="bottom" id="50D-VE-PJf"/>
+                <constraint firstAttribute="trailing" secondItem="ndb-E7-gIb" secondAttribute="trailing" id="B39-NT-8eT"/>
+                <constraint firstAttribute="trailing" secondItem="8IP-wj-6YM" secondAttribute="trailing" constant="3" id="TLL-Ex-TIx"/>
+                <constraint firstItem="ndb-E7-gIb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XRV-o5-nS1"/>
+                <constraint firstItem="ndb-E7-gIb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aWH-h2-IlW"/>
+                <constraint firstItem="8IP-wj-6YM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="sFO-Ca-Drr"/>
+                <constraint firstItem="8IP-wj-6YM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="tK5-ry-0zU"/>
             </constraints>
             <size key="customSize" width="131" height="121"/>
             <connections>
+                <outlet property="frameImageView" destination="ndb-E7-gIb" id="OSs-V8-qeL"/>
                 <outlet property="imageView" destination="8IP-wj-6YM" id="Qan-Hi-M7F"/>
             </connections>
-            <point key="canvasLocation" x="200" y="44.7867298578199"/>
+            <point key="canvasLocation" x="200" y="44.075829383886251"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="Frame_btn_sel" width="123.5" height="159"/>
         <image name="SampleThumb" width="100" height="100"/>
     </resources>
 </document>

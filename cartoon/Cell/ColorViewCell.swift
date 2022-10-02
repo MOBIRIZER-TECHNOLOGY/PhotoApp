@@ -29,13 +29,13 @@ class ColorViewCell: BaseCollectionViewCell {
     
     func updateUI() {
         checkInimageView.isHidden = true
-        if self.isViewSelected {
-            self.contentView.backgroundColor = .orange
-            self.contentView.setCornerRadiusWith(radius: Float(self.contentView.frame.size.height) / 2, borderWidth: 2, borderColor: UIColor.red)
-        }
-        else {
-            self.contentView.backgroundColor = .gray
-            self.contentView.setCornerRadiusWith(radius: Float(self.contentView.frame.size.height) / 2, borderWidth: 2, borderColor: UIColor.clear)
-        }
+//        if self.isViewSelected {
+//            self.contentView.backgroundColor = .orange
+//            self.contentView.setCornerRadiusWith(radius: Float(self.contentView.frame.size.height) / 2, borderWidth: 2, borderColor: UIColor.red)
+//        }
+//        else {
+//            self.contentView.backgroundColor = .gray
+//            self.contentView.setCornerRadiusWith(radius: Float(self.contentView.frame.size.height) / 2, borderWidth: 2, borderColor: UIColor.clear)
+//        }
     }
 }

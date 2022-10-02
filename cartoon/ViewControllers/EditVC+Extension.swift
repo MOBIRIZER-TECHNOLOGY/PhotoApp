@@ -20,8 +20,10 @@ extension EditVC {
         
         debugPrint("bgImageUrl test:",bgImageUrl)
         debugPrint("fgImageUrl test:",fgImageUrl)
+        SwiftLoader.hide()
+        return
+
          SwiftLoader.show(title: "Processing please wait...", animated: true)
-//        return
         if fgImageUrl != nil && fgImageUrl != String.empty  && (fgImageUrl?.count ?? 0) > 5 {
             var bgUrl = URL(string: NetworkConstants.baseS3Url + (bgImageUrl ?? String.empty) )!
             var fgUrl = URL(string: NetworkConstants.baseS3Url + (fgImageUrl ?? String.empty) )!
@@ -121,6 +123,8 @@ extension EditVC {
                 self.effectView?.bgImageView?.image  = swappedImage
                 SwiftLoader.hide()
                 debugPrint("SwiftLoader hide")
+                self.emptyEffectImage.isHidden = true
+                self.emptyEffectLabel.isHidden = true
             }
         }
     }
@@ -148,6 +152,8 @@ extension EditVC {
             DispatchQueue.main.async {
                 self.effectView?.bgImageView?.image  = swappedImage
                 SwiftLoader.hide()
+                self.emptyEffectImage.isHidden = true
+                self.emptyEffectLabel.isHidden = true
             }
         }
 
@@ -165,6 +171,8 @@ extension EditVC {
                 if effectFrontImage != nil {
                     effectView?.fgImageView?.image = effectFrontImage
                 }
+                self.emptyEffectImage.isHidden = true
+                self.emptyEffectLabel.isHidden = true
                 SwiftLoader.hide()
             }
        }
@@ -209,6 +217,11 @@ extension EditVC {
             }
             Router.shared.outPutImage = outPutImage
             DispatchQueue.main.async {
+                self.emptyEffectImage.isHidden = true
+                self.emptyEffectLabel.isHidden = true
+
+                self.effectView?.bgImageView?.image  = outPutImage
+
                 self.effectView?.bgImageView?.image  = outPutImage
                 SwiftLoader.hide()
             }
