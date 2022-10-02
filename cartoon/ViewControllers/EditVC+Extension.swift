@@ -20,10 +20,10 @@ extension EditVC {
         
         debugPrint("bgImageUrl test:",bgImageUrl)
         debugPrint("fgImageUrl test:",fgImageUrl)
-        SwiftLoader.hide()
-        return
-
-         SwiftLoader.show(title: "Processing please wait...", animated: true)
+//        SwiftLoader.hide()
+//        return
+        SwiftLoader.show(title: "Processing please wait...", animated: true)
+        
         if fgImageUrl != nil && fgImageUrl != String.empty  && (fgImageUrl?.count ?? 0) > 5 {
             var bgUrl = URL(string: NetworkConstants.baseS3Url + (bgImageUrl ?? String.empty) )!
             var fgUrl = URL(string: NetworkConstants.baseS3Url + (fgImageUrl ?? String.empty) )!

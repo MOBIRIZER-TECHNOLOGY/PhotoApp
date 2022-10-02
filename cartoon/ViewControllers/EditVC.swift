@@ -52,16 +52,16 @@ class EditVC: BaseVC {
     }
     
     func updateLayoutMargin() {
-        
-        let topViewHeight = 130 - 20
-        var bottomViewHeight = 210
+        let topViewHeight = 160
+        var bottomViewHeight = 200
         if  Router.shared.currentEffect == .styleTransfer {
-            bottomViewHeight -= 60
+            bottomViewHeight -= 70
        }
-        var screenWidth: CGFloat = UIScreen.main.bounds.width
-        var screenHeight: CGFloat = UIScreen.main.bounds.height
+        var screenHeight:  CGFloat = UIScreen.main.bounds.height
+        var screenWidth: CGFloat = self.effectView?.frame.size.height ?? 0
+
         var blankSpaceHeight = (Int(screenHeight - screenWidth) - topViewHeight - bottomViewHeight)
-        var topMargin = CGFloat(blankSpaceHeight/2) < 20 ? 20 : CGFloat(blankSpaceHeight/2)
+        var topMargin = CGFloat(blankSpaceHeight/2) < 0 ? 0 : CGFloat(blankSpaceHeight/2)
         effectTopMarginConstraint.constant = topMargin
 
     }
@@ -74,7 +74,7 @@ class EditVC: BaseVC {
     func registerCollectionCell() {
         self.subCategoryCollectionView?.register(EffectViewCell.getNib(), forCellWithReuseIdentifier: EffectViewCell.reuseIdentifier)
         self.categoryCollectionView?.register(ColorViewCell.getNib(),forCellWithReuseIdentifier: ColorViewCell.reuseIdentifier)
-    }
+        }
     
     func initialiseCategoryData() {
         self.categories.removeAll()
@@ -179,7 +179,7 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
             return CGSize(width: 75, height: 75)
         }
         else {
-            return CGSize(width: 70, height: 70)
+            return CGSize(width: 70, height: 90)
         }
     }
     
@@ -261,3 +261,28 @@ extension EditVC {
     }
 }
 
+
+extension EditVC: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        //--- Change Scroll View Indicator Color ---//
+        if #available(iOS 13, *) {
+            let verticalIndicatorView = (scrollView.subviews[(scrollView.subviews.count - 1)].subviews[0])
+            let horizontalIndicatorView = (scrollView.subviews[(scrollView.subviews.count - 2)].subviews[0])
+            
+            verticalIndicatorView.backgroundColor = UIColor.orange
+            horizontalIndicatorView.backgroundColor = UIColor.orange
+            
+        } else {
+            
+            if let verticalIndicatorView: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 1)] as? UIImageView) {
+                verticalIndicatorView.backgroundColor = UIColor.orange
+            }
+
+            if let horizontalIndicatorView: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 2)] as? UIImageView) {
+                horizontalIndicatorView.backgroundColor = UIColor.orange
+            }
+        }
+   }
+}
