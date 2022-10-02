@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftLoader
 import Nuke
 import RxSwift
 import ZLImageEditor
@@ -20,6 +19,15 @@ class EditVC: BaseVC {
     @IBOutlet weak var categoryCollectionView: UICollectionView?
     @IBOutlet weak var subCategoryCollectionView: UICollectionView?
 
+    let progressBarsStackView: LinearProgressBar = {
+        let progressBar = LinearProgressBar()
+        progressBar.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        progressBar.progressBarColor = .systemOrange
+        progressBar.progressBarWidth = 4
+        progressBar.cornerRadius = 2
+        return progressBar
+    }()
+    
     var semanticImage = SemanticImage()
   
     var categories:[Categories] = []
@@ -43,9 +51,28 @@ class EditVC: BaseVC {
         registerCollectionCell()
         setupView()
         initialiseCategoryData()
-        self.selectCategoryItemAt(index: 0)
-
+        prepareDemoProgressBars()
+        createEffects()
     }
+
+    func prepareDemoProgressBars() {
+        progressBarsStackView.translatesAutoresizingMaskIntoConstraints = false
+        effectView?.addSubview(progressBarsStackView)
+        progressBarsStackView.centerYAnchor.constraint(equalTo: effectView!.bottomAnchor, constant: -5).isActive = true
+        progressBarsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        progressBarsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+    }
+    
+    func startProgressBar() {
+        progressBarsStackView.startAnimating()
+        progressBarsStackView.isHidden = false
+    }
+    
+    func stopProgressBar() {
+        progressBarsStackView.stopAnimating()
+        progressBarsStackView.isHidden = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateLayoutMargin()
@@ -196,7 +223,7 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     func selectCategoryItemAt(index: Int) {
         if Router.shared.currentEffect == .styleTransfer {
             self.selecteSubCategoryIndex = index
-            self.createStyleTransfer(index: index)
+            self.applyStyleTransferOnImage(index: index)
         }
         else {
             self.selecteCategoryIndex = index
@@ -210,7 +237,7 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     func selectSubCategoryItemAt(index: Int) {
         self.selecteSubCategoryIndex = index
         if Router.shared.currentEffect == .styleTransfer {
-            self.createStyleTransfer(index: index)
+            self.applyStyleTransferOnImage(index: index)
         }
         else {
             loadEffectImages(index: index)
@@ -266,7 +293,6 @@ extension EditVC: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        //--- Change Scroll View Indicator Color ---//
         if #available(iOS 13, *) {
             let verticalIndicatorView = (scrollView.subviews[(scrollView.subviews.count - 1)].subviews[0])
             let horizontalIndicatorView = (scrollView.subviews[(scrollView.subviews.count - 2)].subviews[0])
@@ -275,11 +301,9 @@ extension EditVC: UIScrollViewDelegate {
             horizontalIndicatorView.backgroundColor = UIColor.orange
             
         } else {
-            
             if let verticalIndicatorView: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 1)] as? UIImageView) {
                 verticalIndicatorView.backgroundColor = UIColor.orange
             }
-
             if let horizontalIndicatorView: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 2)] as? UIImageView) {
                 horizontalIndicatorView.backgroundColor = UIColor.orange
             }

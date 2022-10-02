@@ -23,6 +23,8 @@
 		873DA4F728E37ECB00C03F79 /* Muse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EA28E37ECB00C03F79 /* Muse.mlmodel */; };
 		873DA4F828E37ECB00C03F79 /* Scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EB28E37ECB00C03F79 /* Scream.mlmodel */; };
 		873DA4F928E37ECB00C03F79 /* Wave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 873DA4EC28E37ECB00C03F79 /* Wave.mlmodel */; };
+		8750AFCB28E9ECEA000226DE /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750AFC928E9ECEA000226DE /* ProgressBar.swift */; };
+		8750AFCC28E9ECEA000226DE /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750AFCA28E9ECEA000226DE /* LinearProgressBar.swift */; };
 		87A9060128DEE29F008EA07E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9060028DEE29F008EA07E /* AppDelegate.swift */; };
 		87A9060328DEE29F008EA07E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9060228DEE29F008EA07E /* SceneDelegate.swift */; };
 		87A9060828DEE29F008EA07E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A9060628DEE29F008EA07E /* Main.storyboard */; };
@@ -135,6 +137,8 @@
 		873DA4EA28E37ECB00C03F79 /* Muse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Muse.mlmodel; sourceTree = "<group>"; };
 		873DA4EB28E37ECB00C03F79 /* Scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Scream.mlmodel; sourceTree = "<group>"; };
 		873DA4EC28E37ECB00C03F79 /* Wave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Wave.mlmodel; sourceTree = "<group>"; };
+		8750AFC928E9ECEA000226DE /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		8750AFCA28E9ECEA000226DE /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		87A905FD28DEE29F008EA07E /* cartoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A9060028DEE29F008EA07E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A9060228DEE29F008EA07E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +265,15 @@
 				C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8750AFC828E9ECDE000226DE /* LinearProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				8750AFCA28E9ECEA000226DE /* LinearProgressBar.swift */,
+				8750AFC928E9ECEA000226DE /* ProgressBar.swift */,
+			);
+			path = LinearProgressBar;
 			sourceTree = "<group>";
 		};
 		87A905F428DEE29F008EA07E = {
@@ -407,6 +420,7 @@
 		87A9066328DEF6BD008EA07E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8750AFC828E9ECDE000226DE /* LinearProgressBar */,
 				87A906B328DF039F008EA07E /* LogUtils.swift */,
 				87A906B128DF0338008EA07E /* Extenstions.swift */,
 				D423028328E290E300DC9D08 /* RxNuke.swift */,
@@ -772,6 +786,7 @@
 				87A9067028DEF838008EA07E /* Effect.swift in Sources */,
 				D4EE005C28E08CE400B4C639 /* ProfilePicCardCell.swift in Sources */,
 				87A9060128DEE29F008EA07E /* AppDelegate.swift in Sources */,
+				8750AFCB28E9ECEA000226DE /* ProgressBar.swift in Sources */,
 				D423028428E290E300DC9D08 /* RxNuke.swift in Sources */,
 				873DA4ED28E37ECB00C03F79 /* mosaic.mlmodel in Sources */,
 				87A9069528DEF967008EA07E /* RemoveBackgroundCoreML.swift in Sources */,
@@ -784,6 +799,7 @@
 				87A9064728DEF01B008EA07E /* BaseCollectionViewCell.swift in Sources */,
 				87A9060328DEE29F008EA07E /* SceneDelegate.swift in Sources */,
 				87A9064928DEF068008EA07E /* BaseCardCell.swift in Sources */,
+				8750AFCC28E9ECEA000226DE /* LinearProgressBar.swift in Sources */,
 				D445332928E35C0B00E745C8 /* GoProDetailCell.swift in Sources */,
 				87A9063828DEEC20008EA07E /* BaseVC.swift in Sources */,
 				87A9069128DEF917008EA07E /* MLMultiArray+Image.swift in Sources */,
@@ -1001,7 +1017,7 @@
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cartoon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Toon Meh";
+				INFOPLIST_KEY_CFBundleDisplayName = Toonist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1032,7 +1048,7 @@
 				DEVELOPMENT_TEAM = 9YG7G7YB2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cartoon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Toon Meh";
+				INFOPLIST_KEY_CFBundleDisplayName = Toonist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

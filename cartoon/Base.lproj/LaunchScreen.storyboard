@@ -17,26 +17,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-WP-E1h">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9E-WP-E1h" secondAttribute="bottom" id="0bD-qM-95u"/>
+                            <constraint firstAttribute="bottom" secondItem="J9E-WP-E1h" secondAttribute="bottom" id="0bD-qM-95u"/>
                             <constraint firstItem="J9E-WP-E1h" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="7Kl-nZ-NLP"/>
-                            <constraint firstItem="J9E-WP-E1h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8aH-fV-OUn"/>
+                            <constraint firstItem="J9E-WP-E1h" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8aH-fV-OUn"/>
                             <constraint firstAttribute="trailing" secondItem="J9E-WP-E1h" secondAttribute="trailing" id="vZ7-zX-L9z"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.307692307692307" y="374.64454976303318"/>
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="393.33334350585938" height="770.66668701171875"/>
+        <image name="splash" width="187.33332824707031" height="348.66665649414062"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

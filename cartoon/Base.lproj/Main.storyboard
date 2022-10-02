@@ -46,7 +46,7 @@
                                     <action selector="settingBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gsq-u5-6yQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toon Meh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp8-7P-2GS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toonist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp8-7P-2GS">
                                 <rect key="frame" x="70" y="54" width="274" height="33.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33.670000000000002" id="Efi-tg-Zhy"/>
@@ -396,6 +396,8 @@
                         <outlet property="effectTopMarginConstraint" destination="4fi-kz-Xp4" id="ZJd-rc-seO"/>
                         <outlet property="effectView" destination="ZgT-Cc-WnU" id="V2j-SV-sjC"/>
                         <outlet property="effectsCategoriesView" destination="AfC-pc-xg5" id="1vo-2O-CJF"/>
+                        <outlet property="emptyEffectImage" destination="g2E-V5-a0c" id="fcS-dc-GEm"/>
+                        <outlet property="emptyEffectLabel" destination="2fz-tI-K7l" id="p2B-DT-Z31"/>
                         <outlet property="subCategoryCollectionView" destination="dig-J9-qOg" id="trR-oA-REh"/>
                     </connections>
                 </viewController>
@@ -459,14 +461,14 @@
                                     <action selector="closeButtonTapped:" destination="pEF-tU-baX" eventType="touchUpInside" id="K1j-SD-6QB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toon Meh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-se-4tY">
-                                <rect key="frame" x="135.33333333333337" y="364" width="143.66666666666663" height="44.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toonist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-se-4tY">
+                                <rect key="frame" x="153.66666666666666" y="364" width="106.99999999999997" height="44.333333333333314"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
                                 <color key="textColor" red="0.77453124520000005" green="0.41335046289999999" blue="0.32546263930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-Dw-tNg">
-                                <rect key="frame" x="269" y="348" width="40" height="26"/>
+                                <rect key="frame" x="250.66666666666663" y="348" width="40" height="26"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="OhY-Nh-S8K"/>
