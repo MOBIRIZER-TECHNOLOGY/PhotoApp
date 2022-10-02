@@ -74,7 +74,7 @@ extension EditVC {
     
     func applyRealisticCartoonOnImage(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
-            let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:Router.shared.image!, backgroundUIImage: effectBackImage!)
+            let swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:Router.shared.image!, backgroundUIImage: effectBackImage!.resized(to: CGSize(width: 1500, height:1500 ), scale: 1))
             Router.shared.outPutImage = swappedImage
             DispatchQueue.main.async {
                 self.effectView?.bgImageView?.image  = swappedImage
@@ -83,9 +83,10 @@ extension EditVC {
         }
     }
 
-    func applyNewProfilePicOnImage(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+    func applyNewProfilePicOnImage___(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
-            var swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:Router.shared.image!, backgroundUIImage: effectBackImage!)
+//            var swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:Router.shared.image!, backgroundUIImage: effectBackImage!)
+            var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: Router.shared.image!)
             if effectFrontImage != nil {
                 swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
 //                swappedImage = semanticImage.saliencyBlend(objectUIImage:effectFrontImage!, backgroundUIImage: swappedImage!)
@@ -94,11 +95,26 @@ extension EditVC {
             DispatchQueue.main.async {
                 self.effectView?.bgImageView?.image  = swappedImage
                 self.stopProgressBar()
-                self.emptyEffectImage.isHidden = true
-                self.emptyEffectLabel.isHidden = true
+
             }
         }
     }
+    
+    
+    func applyNewProfilePicOnImage(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+               var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!.resized(to: CGSize(width: 1500, height:1500 ), scale: 1), withImage: Router.shared.image!)
+               if effectFrontImage != nil {
+                   swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!.resized(to: CGSize(width: 1500, height:1500 ), scale: 1))
+               }
+               Router.shared.outPutImage = swappedImage
+               DispatchQueue.main.async {
+                   self.effectView?.bgImageView?.image  = swappedImage
+                   self.stopProgressBar()
+
+               }
+           }
+       }
 
     func applyFunnyCaricaturesOnImage(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
@@ -228,7 +244,6 @@ extension EditVC {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             if Router.shared.currentEffect == .realisticCartoon {
                 var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-                faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
                 var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
                 Router.shared.image = faceCartoonImage
             }
@@ -236,6 +251,7 @@ extension EditVC {
                 var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
                 faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
                 var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
+                faceCartoonImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
                 Router.shared.image = faceCartoonImage
             }
             else if Router.shared.currentEffect == .funnyCaricatures {
