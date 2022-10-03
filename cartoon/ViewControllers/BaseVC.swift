@@ -51,13 +51,13 @@ open class BaseVC: UIViewController {
     }
     
     
-    func settingPopOver(_ viewController: UIViewController) {
-        self.settingPopViewController = SettingsVC.instantiate()
-        //self.settingPopViewController?.showInView(viewController.view, animated: true)
-        //self.settingPopViewController?.delegate = self
-        self.settingPopViewController?.showInView(viewController.view, animated: true, { selectedOption in
-            print("Setting selected option: \(selectedOption.getSettingOptionsString())")
-        })
-    }
+//    func settingPopOver(_ viewController: UIViewController) {
+//        self.settingPopViewController = SettingsVC.instantiate()
+//        //self.settingPopViewController?.showInView(viewController.view, animated: true)
+//        //self.settingPopViewController?.delegate = self
+//        self.settingPopViewController?.showInView(viewController.view, animated: true, { selectedOption in
+//            print("Setting selected option: \(selectedOption.getSettingOptionsString())")
+//        })
+//    }
 }
 

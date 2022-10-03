@@ -79,55 +79,19 @@ class SettingsVC: BaseVC {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        self.popUpView.layer.cornerRadius = 5
-        self.popUpView.layer.shadowOpacity = 0.8
-        self.popUpView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        
+//        self.popUpView.layer.cornerRadius = 10
+//        self.popUpView.layer.shadowOpacity = 0.8
+//        self.popUpView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.popUpView.setCornerRadiusWith(radius: 10, borderWidth: 1, borderColor: UIColor.clear)
         self.tableView.reloadData()
     }
     
-    open func showInView(_ aView: UIView!, animated: Bool, _ settingClosure: @escaping((_ selectedOption: SettingOptions) -> Void)) {
-        self.view.frame =  CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.height)
-        self.settingClosure = settingClosure
-        
-        aView.addSubview(self.view)
-        if animated {
-            self.showAnimate()
-        }
-    }
-    
-    func showAnimate() {
-        self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        self.view.alpha = 0.0;
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.alpha = 1.0
-            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        });
-    }
-    
-    func removeAnimate() {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.view.alpha = 0.0;
-            }, completion:{(finished : Bool)  in
-                if (finished)
-                {
-                    self.view.removeFromSuperview()
-                }
-        });
-    }
-    
-    @IBAction open func closePopup(_ sender: AnyObject) {
-        self.removeAnimate()
-    }
-    
+
     @IBAction open func goProAction(_ sender: AnyObject) {
         let proVC = GoProVC.instantiate()
         proVC.modalPresentationStyle = .fullScreen
         self.present(proVC, animated: true, completion: nil)
     }
-
-
 }
 
 extension SettingsVC:  UITableViewDelegate,  UITableViewDataSource {
@@ -138,7 +102,6 @@ extension SettingsVC:  UITableViewDelegate,  UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = self.tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath)
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         if( !(cell != nil)) {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
@@ -151,7 +114,14 @@ extension SettingsVC:  UITableViewDelegate,  UITableViewDataSource {
     }
      
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
+        let screenHeight:  CGFloat = UIScreen.main.bounds.height
+        print("screenHeight",screenHeight)
+        if screenHeight < 700 {//667
+            return 50.0
+        }
+        else {//932
+            return 70.0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -161,7 +131,6 @@ extension SettingsVC:  UITableViewDelegate,  UITableViewDataSource {
         if let url = URL(string: "https://www.google.com") {
             UIApplication.shared.open(url)
         }
-        self.removeAnimate()
     }
     
 }

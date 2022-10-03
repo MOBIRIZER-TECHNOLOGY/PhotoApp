@@ -47,16 +47,15 @@ class HomeVC: BaseVC {
     
     @IBAction func settingBtnClick(_ sender: UIButton) {
         let vc = SettingsVC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true)
     }
     
     @IBAction func notificationBtnClick(_ sender: UIButton) {
         //We might remove this fetures
-        //let proVC = GoProVC.instantiate()
-        //proVC.modalPresentationStyle = .fullScreen
-        //self.present(proVC, animated: true, completion: nil)
-        
-        super.settingPopOver(self)
+        let proVC = GoProVC.instantiate()
+        proVC.modalPresentationStyle = .fullScreen
+        self.present(proVC, animated: true, completion: nil)
+//        super.settingPopOver(self)
     }
     
     @IBAction func updateCategories(_ sender: UIButton) {
