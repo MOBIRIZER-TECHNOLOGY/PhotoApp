@@ -10,6 +10,8 @@ import UIKit
 
 open class BaseVC: UIViewController {
     
+    var settingPopViewController: SettingsVC? = nil
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.yellow
@@ -46,6 +48,16 @@ open class BaseVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
             alert.dismiss(animated: true)
         }
+    }
+    
+    
+    func settingPopOver(_ viewController: UIViewController) {
+        self.settingPopViewController = SettingsVC.instantiate()
+        //self.settingPopViewController?.showInView(viewController.view, animated: true)
+        //self.settingPopViewController?.delegate = self
+        self.settingPopViewController?.showInView(viewController.view, animated: true, { selectedOption in
+            print("Setting selected option: \(selectedOption.getSettingOptionsString())")
+        })
     }
 }
 

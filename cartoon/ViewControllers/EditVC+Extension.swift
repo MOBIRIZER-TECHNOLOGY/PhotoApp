@@ -19,7 +19,6 @@ extension EditVC {
         
         debugPrint("bgImageUrl test:",bgImageUrl)
         debugPrint("fgImageUrl test:",fgImageUrl)
-        
         self.startProgressBar()
         
         if fgImageUrl != nil && fgImageUrl != String.empty  && (fgImageUrl?.count ?? 0) > 5 {
