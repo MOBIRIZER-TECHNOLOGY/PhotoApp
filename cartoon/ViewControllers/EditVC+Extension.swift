@@ -65,7 +65,7 @@ extension EditVC {
                 },onFailure: { [self] error in
                     DispatchQueue.main.async {
                         self.stopProgressBar()
-                        showImageLoadingErrorAlert()
+                        self.showImageLoadingErrorAlert()
                     }
             }).disposed(by: disposeBag)
         }
@@ -82,24 +82,6 @@ extension EditVC {
         }
     }
 
-    func applyNewProfilePicOnImage___(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-//            var swappedImage:UIImage? = semanticImage.saliencyBlend(objectUIImage:Router.shared.image!, backgroundUIImage: effectBackImage!)
-            var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!, withImage: Router.shared.image!)
-            if effectFrontImage != nil {
-                swappedImage =  UIImage.imageByCombiningImage(firstImage: swappedImage!, withImage: effectFrontImage!)
-//                swappedImage = semanticImage.saliencyBlend(objectUIImage:effectFrontImage!, backgroundUIImage: swappedImage!)
-            }
-            Router.shared.outPutImage = swappedImage
-            DispatchQueue.main.async {
-                self.effectView?.bgImageView?.image  = swappedImage
-                self.stopProgressBar()
-
-            }
-        }
-    }
-    
-    
     func applyNewProfilePicOnImage(index: Int,effectBackImage: UIImage?,effectFrontImage: UIImage?) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
                var swappedImage:UIImage? = UIImage.imageByCombiningImage(firstImage: effectBackImage!.resized(to: CGSize(width: 1500, height:1500 ), scale: 1), withImage: Router.shared.image!)
@@ -131,7 +113,7 @@ extension EditVC {
     }
     
     func applyStyleTransferOnImage(index: Int) {
-        self.showProgressBar()
+        self.startProgressBar()
 
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             var outPutImage:UIImage?
@@ -178,15 +160,11 @@ extension EditVC {
             }
         }
     }
-    
-    
-
 }
 
 extension EditVC {
     
     func initializeStyleTransferBackgrounds(){
-       
         self.items.removeAll()
         
         var data = Items()

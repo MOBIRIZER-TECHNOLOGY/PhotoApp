@@ -21,9 +21,9 @@ class EditVC: BaseVC {
 
     let progressBarsStackView: LinearProgressBar = {
         let progressBar = LinearProgressBar()
-        progressBar.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        progressBar.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
         progressBar.progressBarColor = .systemOrange
-        progressBar.progressBarWidth = 4
+        progressBar.progressBarWidth = 7
         progressBar.cornerRadius = 2
         return progressBar
     }()
@@ -39,11 +39,9 @@ class EditVC: BaseVC {
     @IBOutlet weak var effectTopMarginConstraint: NSLayoutConstraint!
     var isColorModuleVisible = false
     
-    
     @IBOutlet weak var emptyEffectImage: UIImageView!
     @IBOutlet weak var emptyEffectLabel: UILabel!
 
-    
     internal var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -58,9 +56,9 @@ class EditVC: BaseVC {
     func prepareDemoProgressBars() {
         progressBarsStackView.translatesAutoresizingMaskIntoConstraints = false
         effectView?.addSubview(progressBarsStackView)
-        progressBarsStackView.centerYAnchor.constraint(equalTo: effectView!.bottomAnchor, constant: -5).isActive = true
-        progressBarsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        progressBarsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        progressBarsStackView.centerYAnchor.constraint(equalTo: effectView!.bottomAnchor, constant: -7).isActive = true
+        progressBarsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        progressBarsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -0).isActive = true
     }
     
     func startProgressBar() {
@@ -84,11 +82,11 @@ class EditVC: BaseVC {
         if  Router.shared.currentEffect == .styleTransfer {
             bottomViewHeight -= 70
        }
-        var screenHeight:  CGFloat = UIScreen.main.bounds.height
-        var screenWidth: CGFloat = self.effectView?.frame.size.height ?? 0
+        let screenHeight:  CGFloat = UIScreen.main.bounds.height
+        let screenWidth: CGFloat = self.effectView?.frame.size.height ?? 0
 
-        var blankSpaceHeight = (Int(screenHeight - screenWidth) - topViewHeight - bottomViewHeight)
-        var topMargin = CGFloat(blankSpaceHeight/2) < 0 ? 0 : CGFloat(blankSpaceHeight/2)
+        let blankSpaceHeight = (Int(screenHeight - screenWidth) - topViewHeight - bottomViewHeight)
+        let topMargin = CGFloat(blankSpaceHeight/2) < 0 ? 0 : CGFloat(blankSpaceHeight/2)
         effectTopMarginConstraint.constant = topMargin
 
     }
@@ -105,7 +103,6 @@ class EditVC: BaseVC {
     
     func initialiseCategoryData() {
         self.categories.removeAll()
-        
         //initialise style transfer
         if  Router.shared.currentEffect == .styleTransfer {
            initializeStyleTransferBackgrounds()
