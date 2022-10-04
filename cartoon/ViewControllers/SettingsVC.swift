@@ -44,6 +44,27 @@ enum SettingOptions {
         case .none:
             return nil
         case .share:
+            return UIImage(named: "share_icn")
+        case .about:
+            return UIImage(named: "about_icn")
+        case .policy:
+            return UIImage(named: "privacy_icn")
+        case .terms:
+            return UIImage(named: "terms_icn")
+        case .contact:
+            return UIImage(named: "contact_icn")
+        case .feedback:
+            return UIImage(named: "feedback_icn")
+        case .rateus:
+            return UIImage(named: "share_icn")
+        }
+    }
+    
+    func getSettingOptionsSelectedImages() -> UIImage? {
+        switch self {
+        case .none:
+            return nil
+        case .share:
             return UIImage(named: "share_icn1")
         case .about:
             return UIImage(named: "about_icn1")
@@ -59,6 +80,7 @@ enum SettingOptions {
             return UIImage(named: "share_icn1")
         }
     }
+    
     
     static let allValidValues = [ SettingOptions.share, SettingOptions.about, SettingOptions.policy, SettingOptions.terms,  SettingOptions.contact, SettingOptions.feedback, SettingOptions.rateus]
     
@@ -79,9 +101,6 @@ class SettingsVC: BaseVC {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-//        self.popUpView.layer.cornerRadius = 10
-//        self.popUpView.layer.shadowOpacity = 0.8
-//        self.popUpView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         self.popUpView.setCornerRadiusWith(radius: 10, borderWidth: 1, borderColor: UIColor.clear)
         self.tableView.reloadData()
     }

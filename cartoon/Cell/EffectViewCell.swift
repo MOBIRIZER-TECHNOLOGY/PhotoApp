@@ -14,6 +14,7 @@ class EffectViewCell: BaseCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        frameImageView.tintColor =  UIColor.clear
     }
 
     func setupUI(isSelected: Bool ) {
