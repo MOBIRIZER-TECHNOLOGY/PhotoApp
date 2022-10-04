@@ -82,6 +82,7 @@
 		87A906B028DEFC09008EA07E /* segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906AF28DEFC09008EA07E /* segmentation.swift */; };
 		87A906B228DF0338008EA07E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B128DF0338008EA07E /* Extenstions.swift */; };
 		87A906B428DF03A0008EA07E /* LogUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A906B328DF039F008EA07E /* LogUtils.swift */; };
+		BDC5484A28E9678E003B0420 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5484928E9678E003B0420 /* DesignableUITextField.swift */; };
 		D41BBA3028E6183300338BFB /* cartoon.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2D28E6183300338BFB /* cartoon.json */; };
 		D41BBA3128E6183300338BFB /* profile.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2E28E6183300338BFB /* profile.json */; };
 		D41BBA3228E6183300338BFB /* fullbody.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BBA2F28E6183300338BFB /* fullbody.json */; };
@@ -204,6 +205,7 @@
 		9CE3AB3C64D18A031A96B640 /* Pods-cartoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoon.debug.xcconfig"; path = "Target Support Files/Pods-cartoon/Pods-cartoon.debug.xcconfig"; sourceTree = "<group>"; };
 		A3B6D14151A510B1E7242B23 /* Pods_cartoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB256D4A80485F0AB614F405 /* Pods-cartoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonTests.debug.xcconfig"; path = "Target Support Files/Pods-cartoonTests/Pods-cartoonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDC5484928E9678E003B0420 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		C181CD342867F4EA8E073059 /* Pods_cartoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41BBA2D28E6183300338BFB /* cartoon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cartoon.json; sourceTree = "<group>"; };
 		D41BBA2E28E6183300338BFB /* profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile.json; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				87A9067128DEF917008EA07E /* CoreMLHelpers */,
 				87A9066428DEF6CF008EA07E /* CustomAlert */,
 				D4EE005F28E1405C00B4C639 /* JSONSaveLoad.swift */,
+				BDC5484928E9678E003B0420 /* DesignableUITextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				87A9069528DEF967008EA07E /* RemoveBackgroundCoreML.swift in Sources */,
 				87A906AD28DEFB6F008EA07E /* ImageConstants.swift in Sources */,
 				87A9066C28DEF6CF008EA07E /* ExtensionUIViewController.swift in Sources */,
+				BDC5484A28E9678E003B0420 /* DesignableUITextField.swift in Sources */,
 				87A9064C28DEF0C4008EA07E /* ColorViewCell.swift in Sources */,
 				873DA4F428E37ECB00C03F79 /* Udnie.mlmodel in Sources */,
 				87A9068928DEF917008EA07E /* UIImage+RawBytes.swift in Sources */,
@@ -942,7 +946,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -996,7 +1000,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1024,6 +1028,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1055,6 +1060,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
