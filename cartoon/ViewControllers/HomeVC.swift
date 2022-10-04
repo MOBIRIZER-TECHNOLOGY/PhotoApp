@@ -180,8 +180,7 @@ extension HomeVC {
                         Router.shared.image = photo.image
                         var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
                         if (faceImage != nil) {
-                            // let vc = ImageSelectorVC.instantiate()
-                            let vc = EditVC.instantiate()
+                            let vc = DrawingVC.instantiate()
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                         else {
