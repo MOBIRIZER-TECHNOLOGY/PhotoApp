@@ -46,6 +46,21 @@ class ShareVC: BaseVC {
     @IBAction func linkedAction(_ sender: UIButton) {
     }
     
+    @IBAction func shareAction(_ sender: UIButton) {
+        guard (Router.shared.outPutImage != nil) else {
+            return
+        }
+        // set up activity view controller
+        let imageToShare =  [Router.shared.outPutImage] // [ self.effectView?.bgImageView?.image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
     
     
 }

@@ -215,31 +215,4 @@ extension EditVC {
             itemimage: nil,
             actions: arrayActions)
        }
-    
-    func createEffects() {
-        self.startProgressBar()
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-            if Router.shared.currentEffect == .realisticCartoon {
-                var faceImage:UIImage? = Router.shared.image?.resized(to: CGSize(width: 1200, height:1200 ), scale: 1)
-                var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-                Router.shared.image = faceCartoonImage
-            }
-            else if Router.shared.currentEffect == .newProfilePic {
-                var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
-                faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-                var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-                faceCartoonImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-                Router.shared.image = faceCartoonImage
-            }
-            else if Router.shared.currentEffect == .funnyCaricatures {
-                var faceImage:UIImage? = semanticImage.faceWithoutShoulder(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
-                faceImage = faceImage?.removeBackground(returnResult: RemoveBackroundResult.finalImage)
-                var faceCartoonImage = faceImage?.applyPaintEffects(returnResult: RemoveBackroundResult.finalImage)
-                Router.shared.image = faceCartoonImage
-            }
-            DispatchQueue.main.async {
-                self.selectCategoryItemAt(index: 0)
-            }
-        }
-    }
 }

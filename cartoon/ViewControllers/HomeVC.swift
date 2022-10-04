@@ -91,7 +91,7 @@ class HomeVC: BaseVC {
 //        selectPhotoAction()
         let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
         Router.shared.image = userImage
-        let vc = EditVC.instantiate()
+        let vc = DrawingVC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

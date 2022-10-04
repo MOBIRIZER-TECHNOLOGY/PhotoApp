@@ -29,7 +29,7 @@ class EditVC: BaseVC {
     }()
     
     var semanticImage = SemanticImage()
-  
+
     var categories:[Categories] = []
     var items:[Items] = []
     
@@ -50,7 +50,7 @@ class EditVC: BaseVC {
         setupView()
         initialiseCategoryData()
         prepareDemoProgressBars()
-        createEffects()
+        self.selectCategoryItemAt(index: 0)
     }
 
     func prepareDemoProgressBars() {
@@ -246,27 +246,14 @@ extension EditVC:  UICollectionViewDataSource, UICollectionViewDelegate {
 
 extension EditVC {
     
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBAction func doneBtnClick(_ sender: UIButton) {
         let vc = ShareVC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    @IBAction func shareAction(_ sender: UIButton) {
-        guard (Router.shared.outPutImage != nil) else {
-            return
-        }
-        // set up activity view controller
-        let imageToShare = [ self.effectView?.bgImageView?.image ]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        
-        // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
-        
-        // present the view controller
-        self.present(activityViewController, animated: true, completion: nil)
-    }
-    
     
     @IBAction func editAction(_ sender: UIButton) {
         guard (Router.shared.outPutImage != nil) else {
