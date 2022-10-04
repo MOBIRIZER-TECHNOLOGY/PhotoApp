@@ -8,22 +8,44 @@
 import UIKit
 
 class ShareVC: BaseVC {
-
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var getHighQltyBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.bottomView.roundCorners([.topLeft, .topRight], radius: 10.0 )
+        getHighQltyBtn.layer.cornerRadius = getHighQltyBtn.frame.height / 2
+        //getHighQltyBtn.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func homeButtonAction(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
-    */
-
+    
+    @IBAction func removeWatermarkAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func getHighQualityAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func saveAction(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func whatsupAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func fbAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func instaAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func linkedAction(_ sender: UIButton) {
+    }
+    
+    
+    
 }

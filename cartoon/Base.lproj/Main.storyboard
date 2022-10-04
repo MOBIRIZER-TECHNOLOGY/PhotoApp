@@ -406,21 +406,6 @@
             </objects>
             <point key="canvasLocation" x="878.26086956521749" y="51.5625"/>
         </scene>
-        <!--ShareVC-->
-        <scene sceneID="AZX-Qi-imr">
-            <objects>
-                <viewController storyboardIdentifier="ShareVC" id="VRd-dt-73a" customClass="ShareVC" customModule="cartoon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lVF-b7-MoI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5so-3z-2gE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Fr-9m-Ymg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="880" y="731"/>
-        </scene>
         <!--Go ProVC-->
         <scene sceneID="IAr-2y-8C5">
             <objects>
@@ -849,19 +834,187 @@
             </objects>
             <point key="canvasLocation" x="163.768115942029" y="730.58035714285711"/>
         </scene>
+        <!--ShareVC-->
+        <scene sceneID="iv9-1b-hx9">
+            <objects>
+                <viewController storyboardIdentifier="ShareVC" id="0wL-1x-qMB" customClass="ShareVC" customModule="cartoon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaR-Bp-jeM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_banner" translatesAutoresizingMaskIntoConstraints="NO" id="Nqg-Eb-kk2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="540"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="540" id="RAH-ge-9et"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-2d-Jsx">
+                                <rect key="frame" x="9.9999999999999964" y="44" width="54.666666666666657" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="GYB-LE-Zid"/>
+                                    <constraint firstAttribute="height" constant="60" id="nXF-C0-kab"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system"/>
+                                <connections>
+                                    <action selector="homeButtonAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="mYm-4U-P7t"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a7-RT-T1l">
+                                <rect key="frame" x="0.0" y="602" width="414" height="294"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-S4-9hJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-SW-KIX">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVD-Vl-BrY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="92"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="whatsapp_icn"/>
+                                                        <connections>
+                                                            <action selector="whatsupAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="n9g-4j-Q88"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-CJ-v1m">
+                                                        <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="92"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="fb_icn"/>
+                                                        <connections>
+                                                            <action selector="fbAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="7Yn-tX-2r6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bz-gH-vPX">
+                                                        <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="92"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="instagram_icn"/>
+                                                        <connections>
+                                                            <action selector="instaAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="eds-62-kpa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRY-S7-AJY">
+                                                        <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="92"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="linkedin_icn"/>
+                                                        <connections>
+                                                            <action selector="linkedAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="wKv-bE-uwh"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6m-Ig-h2L">
+                                                <rect key="frame" x="132" y="132" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="WxC-ez-MMN"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.88406348229999998" green="0.47244054079999998" blue="0.36859500410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove Watermark">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="removeWatermarkAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="hIm-1V-aUO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbB-Tu-3Gd">
+                                                <rect key="frame" x="50" y="202" width="314" height="50"/>
+                                                <color key="backgroundColor" red="0.8918890357" green="0.47636729480000001" blue="0.37251645329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="kUO-Wy-0up"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.88348722639999999" green="0.88348722639999999" blue="0.88348722639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GET HIGH QUALTY">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="getHighQualityAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="ci5-44-l93"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CbB-Tu-3Gd" secondAttribute="trailing" constant="50" id="F2z-2L-yWf"/>
+                                            <constraint firstAttribute="trailing" secondItem="TXS-SW-KIX" secondAttribute="trailing" id="U5D-PT-YZm"/>
+                                            <constraint firstItem="CbB-Tu-3Gd" firstAttribute="leading" secondItem="A1S-S4-9hJ" secondAttribute="leading" constant="50" id="cwu-5D-BdU"/>
+                                            <constraint firstItem="TXS-SW-KIX" firstAttribute="leading" secondItem="A1S-S4-9hJ" secondAttribute="leading" id="tZg-yK-iVk"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="A1S-S4-9hJ" firstAttribute="leading" secondItem="0a7-RT-T1l" secondAttribute="leading" id="ChQ-Td-onJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="A1S-S4-9hJ" secondAttribute="trailing" id="aUY-eT-JdK"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="A1S-S4-9hJ" secondAttribute="bottom" id="po8-UO-9hD"/>
+                                    <constraint firstItem="A1S-S4-9hJ" firstAttribute="leading" secondItem="0a7-RT-T1l" secondAttribute="leading" id="s6i-9u-rWa"/>
+                                    <constraint firstItem="A1S-S4-9hJ" firstAttribute="top" secondItem="0a7-RT-T1l" secondAttribute="top" id="u0l-z4-CMq"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kml-cI-9vb">
+                                <rect key="frame" x="350" y="44" width="54" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cxu-Cy-1WR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="jF0-UH-mcr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="save_icn"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="0wL-1x-qMB" eventType="touchUpInside" id="BYk-KE-3yL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BP5-CK-Jhq"/>
+                        <color key="backgroundColor" red="0.78231126070000001" green="0.65900057550000002" blue="0.30579075220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FCH-2d-Jsx" firstAttribute="top" secondItem="BP5-CK-Jhq" secondAttribute="top" id="2Wc-AU-vhK"/>
+                            <constraint firstAttribute="bottom" secondItem="0a7-RT-T1l" secondAttribute="bottom" id="7Ju-mH-uWo"/>
+                            <constraint firstItem="kml-cI-9vb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FCH-2d-Jsx" secondAttribute="trailing" constant="8" symbolic="YES" id="O1b-K5-Q4Z"/>
+                            <constraint firstItem="Nqg-Eb-kk2" firstAttribute="top" secondItem="FaR-Bp-jeM" secondAttribute="top" id="Rze-11-VVC"/>
+                            <constraint firstItem="BP5-CK-Jhq" firstAttribute="trailing" secondItem="Nqg-Eb-kk2" secondAttribute="trailing" id="SLP-Qq-d9X"/>
+                            <constraint firstItem="Nqg-Eb-kk2" firstAttribute="leading" secondItem="BP5-CK-Jhq" secondAttribute="leading" id="UCS-64-8gQ"/>
+                            <constraint firstItem="0a7-RT-T1l" firstAttribute="trailing" secondItem="Nqg-Eb-kk2" secondAttribute="trailing" id="c5k-aP-XZW"/>
+                            <constraint firstItem="BP5-CK-Jhq" firstAttribute="trailing" secondItem="kml-cI-9vb" secondAttribute="trailing" constant="10" id="cjW-5C-Uvw"/>
+                            <constraint firstItem="FCH-2d-Jsx" firstAttribute="leading" secondItem="BP5-CK-Jhq" secondAttribute="leading" constant="10" id="gC1-6D-oOg"/>
+                            <constraint firstItem="0a7-RT-T1l" firstAttribute="leading" secondItem="BP5-CK-Jhq" secondAttribute="leading" id="sbn-Or-1rC"/>
+                            <constraint firstItem="kml-cI-9vb" firstAttribute="top" secondItem="BP5-CK-Jhq" secondAttribute="top" id="t9x-TB-rIQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="0a7-RT-T1l" id="jXi-oX-UO3"/>
+                        <outlet property="getHighQltyBtn" destination="CbB-Tu-3Gd" id="PsL-jX-bze"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8A-H5-Jie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="730.58035714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back_icn" width="25" height="25"/>
         <image name="close_btn" width="16.666666030883789" height="16.666666030883789"/>
         <image name="done_icn" width="25" height="25"/>
         <image name="empty_edit_place_holder" width="558" height="524"/>
+        <image name="fb_icn" width="71.5" height="71.5"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="info_sel" width="25" height="25"/>
+        <image name="instagram_icn" width="71.5" height="71.5"/>
+        <image name="linkedin_icn" width="71.5" height="71.5"/>
         <image name="menu_btn" width="25" height="25"/>
         <image name="pro" width="380.66665649414062" height="314.66665649414062"/>
+        <image name="save_icn" width="30" height="30"/>
         <image name="settingBanner" width="393.33334350585938" height="175.66667175292969"/>
+        <image name="share_banner" width="1180" height="1551"/>
         <image name="tab_button_sel" width="112.5" height="43.5"/>
         <image name="tab_button_unsel" width="112.5" height="43.5"/>
         <image name="upper_img_logo" width="241.5" height="102"/>
+        <image name="whatsapp_icn" width="71.5" height="71.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
