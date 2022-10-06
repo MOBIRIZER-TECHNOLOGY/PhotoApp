@@ -51,6 +51,10 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
 ### <a id="ChangeLog"></a>Change Log
 > [More logs](https://github.com/longitachi/ZLImageEditor/blob/master/CHANGELOG.md)
 ```
+● 1.1.4
+  Add:
+    Can change tool icon's highlited color.
+    Support Arabic language.
 ● 1.1.3
   Add:
     Adapt iPad.
@@ -62,16 +66,11 @@ ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editMode
     Support for custom text.
     Support redo in graffiti and mosaic tools.
     Add wrapper for ZLImageEditor compatible types.
-● 1.1.1
-  Add:
-    Can select custom font before adding text sticker.
-    Change the authority of ZLEditImageViewController to open.
-    Add ZLImageEditorUIConfiguration.
 ...
 ```
 
 ### <a id="Languages"></a>Languages
-🇨🇳 Chinese, 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩 Indonesian, 🇪🇸 Spanish, 🇵🇹 Portuguese, 🇹🇷 Turkey.
+🇨🇳 Chinese, 🇺🇸 English, 🇯🇵 Japanese, 🇫🇷 French, 🇩🇪 German, 🇷🇺 Russian, 🇻🇳 Vietnamese, 🇰🇷 Korean, 🇲🇾 Malay, 🇮🇹 Italian, 🇮🇩 Indonesian, 🇪🇸 Spanish, 🇵🇹 Portuguese, 🇹🇷 Turkey , Arabic
 
 ### <a id="Installation"></a>Installation
 There are four ways to use ZLImageEditor in your project:

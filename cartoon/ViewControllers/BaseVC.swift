@@ -10,7 +10,6 @@ import UIKit
 
 open class BaseVC: UIViewController {
     
-    var settingPopViewController: SettingsVC? = nil
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +48,6 @@ open class BaseVC: UIViewController {
             alert.dismiss(animated: true)
         }
     }
-    
-    
-//    func settingPopOver(_ viewController: UIViewController) {
-//        self.settingPopViewController = SettingsVC.instantiate()
-//        //self.settingPopViewController?.showInView(viewController.view, animated: true)
-//        //self.settingPopViewController?.delegate = self
-//        self.settingPopViewController?.showInView(viewController.view, animated: true, { selectedOption in
-//            print("Setting selected option: \(selectedOption.getSettingOptionsString())")
-//        })
-//    }
+
 }
 

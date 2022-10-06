@@ -13,7 +13,6 @@ class EffectViewCell: BaseCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         frameImageView.tintColor =  UIColor.clear
     }
 
@@ -21,11 +20,9 @@ class EffectViewCell: BaseCollectionViewCell {
         super.layoutSubviews()
         if isSelected{
             self.frameImageView.image = UIImage(named: "Frame_btn_sel")
-//            self.setCornerRadiusWith(radius: 10, borderWidth: 2, borderColor: UIColor.orange)
         }
         else {
             self.frameImageView.image = UIImage(named: "Frame_btn_unsel")
-//            self.setCornerRadiusWith(radius: 10, borderWidth: 2, borderColor: UIColor.gray)
         }
     }
 }

@@ -13,6 +13,7 @@ public final class Router: NSObject {
     var image: UIImage? =  nil
     var outPutImage: UIImage? =  nil
     public var currentEffect: Effects = Effects.none
+    public var selectedTabIndex: Int = 0
     public func initialize() {
     }
 }

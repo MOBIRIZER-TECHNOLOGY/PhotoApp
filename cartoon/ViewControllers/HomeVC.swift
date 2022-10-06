@@ -8,6 +8,7 @@
 import UIKit
 import YPImagePicker
 import SSSpinnerButton
+import Nuke
 
 class HomeVC: BaseVC {
     
@@ -25,11 +26,32 @@ class HomeVC: BaseVC {
     var semanticImage = SemanticImage()
     var cards:[Card] = []
     
+    var popularItems:[Items] = []
+    var trendingItems:[Items] = []
+    
+    let flowlayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 20
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return layout
+    }()
+    
+    let pinterestLayout: PinterestLayout = {
+        var layout = PinterestLayout()
+        layout.columnsCount = 2
+        layout.contentPadding = PinterestLayout.Padding(horizontal: 5, vertical: 5)
+        layout.cellsPadding = PinterestLayout.Padding(horizontal: 10, vertical: 10)
+        return layout
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initialisePopularAndTrendingData()
+        Router.shared.selectedTabIndex = 0
         self.effectsButton.isSelected = true
         registerCollectionCell()
         Router.shared.navigationController = self.navigationController
+        cardCollectionView?.setCollectionViewLayout(flowlayout, animated: true)
         cardCollectionView?.reloadData()
     }
     
@@ -43,6 +65,9 @@ class HomeVC: BaseVC {
         self.cardCollectionView?.register(StyleTransferCardCell.getNib(),forCellWithReuseIdentifier: StyleTransferCardCell.reuseIdentifier)
         
         self.cardCollectionView?.register(FullBodyCardCell.getNib(),forCellWithReuseIdentifier: FullBodyCardCell.reuseIdentifier)
+        
+        self.cardCollectionView?.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.reuseIdentifier)
+
      }
     
     @IBAction func settingBtnClick(_ sender: UIButton) {
@@ -64,12 +89,32 @@ class HomeVC: BaseVC {
         trendingButton.isSelected = false
         sender.isSelected = true
         if sender == effectsButton {
-       
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.collectionViewLayout.invalidateLayout()
+            Router.shared.selectedTabIndex = 0
+            self.cardCollectionView?.setCollectionViewLayout(flowlayout, animated: true)
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.setContentOffset(CGPoint.zero, animated: false)
+
         }
         else if sender == popularButton {
-            
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.collectionViewLayout.invalidateLayout()
+            Router.shared.selectedTabIndex = 1
+            self.cardCollectionView?.setCollectionViewLayout(pinterestLayout, animated: true)
+            pinterestLayout.delegate = self as PinterestLayoutDelegate
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.setContentOffset(CGPoint.zero, animated: false)
+
         }
         else if sender == trendingButton {
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.collectionViewLayout.invalidateLayout()
+            Router.shared.selectedTabIndex = 2
+            self.cardCollectionView?.setCollectionViewLayout(pinterestLayout, animated: true)
+            pinterestLayout.delegate = self as PinterestLayoutDelegate
+            self.cardCollectionView?.reloadData()
+            self.cardCollectionView?.setContentOffset(CGPoint.zero, animated: false)
 
         }
     }
@@ -88,33 +133,50 @@ class HomeVC: BaseVC {
         else if index == 3 {
             Router.shared.currentEffect = .funnyCaricatures
         }
-//        selectPhotoAction()
-        let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
-        Router.shared.image = userImage
-        let vc = DrawingVC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        selectPhotoAction(item: nil)
+//        let userImage:UIImage = UIImage(named: "demo_10")! //5,6,12
+//        Router.shared.image = userImage
+//        let vc = DrawingVC.instantiate()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
 
 extension HomeVC:  UICollectionViewDataSource, UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if Router.shared.selectedTabIndex == 1 {
+           let item = self.popularItems[indexPath.row]
+            selectPhotoAction(item: item)
+
+       }  else if Router.shared.selectedTabIndex == 1 {
+           let item = self.trendingItems[indexPath.row]
+           selectPhotoAction(item: item)
+       }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2 // first for static cards and second for dyanamic cards
+        return 1 // first for static cards and second for dyanamic cards
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section  == 0 {
+        if Router.shared.selectedTabIndex == 0 {
             return  Constants.cards.count
         }
+        else if Router.shared.selectedTabIndex == 1 {
+            return popularItems.count
+        }
+        else if Router.shared.selectedTabIndex == 2 {
+            return trendingItems.count
+        }
         else {
-            return 0 //will add dynamic cards
+            return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
  
-        if indexPath.section  == 0 {
+        if Router.shared.selectedTabIndex == 0 {
             
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RealisticCartoonCardCell.reuseIdentifier, for: indexPath) as! RealisticCartoonCardCell
@@ -142,8 +204,32 @@ extension HomeVC:  UICollectionViewDataSource, UICollectionViewDelegate {
                 return cell
             }
         }
+        else if Router.shared.selectedTabIndex == 1 {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCell.reuseIdentifier, for: indexPath) as! BannerCell
+        
+            let thumbUrl = self.popularItems[indexPath.row].icon
+            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+            Nuke.loadImage(with: url, into: cell.imageView)
+ 
+            cell.imageContentMode = .scaleAspectFit
+            cell.clipsToBounds = true
+            cell.layer.cornerRadius = 10
+            cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            return cell
+        }
         else {
-            //Configure dyanamic crads
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCell.reuseIdentifier, for: indexPath) as! BannerCell
+
+            let thumbUrl = self.trendingItems[indexPath.row].icon
+            var url = URL(string: NetworkConstants.baseS3Url + (thumbUrl ?? String.empty) )!
+            Nuke.loadImage(with: url, into: cell.imageView)
+            
+            cell.imageContentMode = .scaleAspectFit
+            cell.clipsToBounds = true
+            cell.layer.cornerRadius = 10
+            cell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            return cell
         }
         return UICollectionViewCell()
     }
@@ -167,7 +253,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 
 extension HomeVC {
     
-    func selectPhotoAction() {
+    func selectPhotoAction( item: Items?) {
         // Here we configure the picker to only show videos, no photos.
         var config = YPImagePickerConfiguration()
         config.screens = [.library, .photo]
@@ -181,6 +267,7 @@ extension HomeVC {
                         var faceImage:UIImage? = semanticImage.faceRectangle(uiImage:Router.shared.image!)?.resized(to: CGSize(width: 1200, height:1200), scale: 1)
                         if (faceImage != nil) {
                             let vc = DrawingVC.instantiate()
+                            vc.item = item
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                         else {
@@ -208,9 +295,22 @@ extension HomeVC {
     }
 }
 
+extension HomeVC: PinterestLayoutDelegate {
+    func cellSize(indexPath: IndexPath) -> CGSize {
+        var height = 100.0
+        var width = 100.0
+        if indexPath.row % 2 == 0{
+            height = 100
+            width = 100
+        }
 
+        let cellWidth = pinterestLayout.width
+        let size = CGSize(width: Int(cellWidth), height: Int((height/width) * cellWidth))
+        return size
+    }
+}
 
-
+ 
 
 //
 //

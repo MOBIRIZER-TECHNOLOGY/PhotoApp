@@ -7,17 +7,21 @@
 
 import UIKit
 
+
 class ShareVC: BaseVC {
     
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var getHighQltyBtn: UIButton!
-    
+    @IBOutlet weak var effectView:UIImageView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bottomView.roundCorners([.topLeft, .topRight], radius: 10.0 )
         getHighQltyBtn.layer.cornerRadius = getHighQltyBtn.frame.height / 2
         //getHighQltyBtn.isHidden = true
+        self.effectView?.image  = Router.shared.outPutImage
     }
+ 
     
     @IBAction func homeButtonAction(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -61,6 +65,6 @@ class ShareVC: BaseVC {
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
-    
-    
+     
 }
+

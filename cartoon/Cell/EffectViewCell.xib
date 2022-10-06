@@ -17,20 +17,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Frame_btn_sel" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-E7-gIb" userLabel="Frame_image">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="70" id="IM8-9y-6Er"/>
-                            <constraint firstAttribute="height" constant="90" id="TkW-gQ-3Op"/>
-                        </constraints>
-                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleThumb" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-wj-6YM">
                         <rect key="frame" x="3" y="4" width="64" height="70"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="UKe-jP-uob"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Frame_btn_sel" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-E7-gIb" userLabel="Frame_image">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="IM8-9y-6Er"/>
+                            <constraint firstAttribute="height" constant="90" id="TkW-gQ-3Op"/>
                         </constraints>
                     </imageView>
                 </subviews>

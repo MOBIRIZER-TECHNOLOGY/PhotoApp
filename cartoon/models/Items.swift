@@ -6,6 +6,8 @@ struct Items: Codable {
   var icon : String? = nil
   var bg   : String? = nil
   var fg   : String? = nil
+  var effect: Effects = Effects.none
+
 
   enum CodingKeys: String, CodingKey {
     case id   = "id"
@@ -20,6 +22,7 @@ struct Items: Codable {
     icon = try values.decodeIfPresent(String.self , forKey: .icon )
     bg   = try values.decodeIfPresent(String.self , forKey: .bg   )
     fg   = try values.decodeIfPresent(String.self , forKey: .fg   )
+    effect = Effects.none
   }
 
   init() {}

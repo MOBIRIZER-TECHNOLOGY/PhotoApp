@@ -107,6 +107,7 @@ extension EditVC {
                 }
                 self.emptyEffectImage.isHidden = true
                 self.emptyEffectLabel.isHidden = true
+                Router.shared.outPutImage = Router.shared.image!
                 self.stopProgressBar()
             }
        }
